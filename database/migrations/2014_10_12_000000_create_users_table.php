@@ -3,6 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 return new class extends Migration
 {
@@ -24,6 +26,8 @@ return new class extends Migration
             $table->string('profile_photo_path', 2048)->nullable();
             $table->timestamps();
         });
+        DB::table('users')->insert(array('name'=>'Natalia Quiroga','email'=>'nataliaquirogag@gmail.com','password'=>Hash::make('987654321')));
+        DB::table('users')->insert(array('name'=>'Paul Cruz','email'=>'paulcruz@gmail.com','password'=>Hash::make('12345678')));
     }
 
     /**
