@@ -3,6 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
+
 
 class CreateCiudadsTable extends Migration
 {
@@ -16,9 +18,13 @@ class CreateCiudadsTable extends Migration
         Schema::create('ciudads', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->char('abreviatura',3);
+            $table->char('abreviatura',4);
             $table->timestamps();
         });
+        DB::table('ciudads')->insert(array('nombre'=>'La paz','abreviatura'=>'LP'));
+        DB::table('ciudads')->insert(array('nombre'=>'Oruro','abreviatura'=>'OR'));
+        DB::table('ciudads')->insert(array('nombre'=>'Potosi','abreviatura'=>'PT'));
+        DB::table('ciudads')->insert(array('nombre'=>'Cochabamba','abreviatura'=>'CBB'));
     }
 
     /**

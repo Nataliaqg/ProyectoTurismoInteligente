@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Ciudads;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,13 +16,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('welcome');
 });
 
-Route::middleware([
+Route::middleware([ //protegido para entrar al dashboard
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
-])->group(function () {
-    Route::get('/dash',[DashboardController::class,'index'])->name('dash');
-});
+])->group(function () { //lo que esta adentro necesita previa autentificacion
+    
+    Route::get('/dashboard',function(){
+    return view('dashboard');
+    })->name('dashboard');
+
+    //Ciudad
+  //  Route::get('/ciudades',Ciudads::class);
+
+
+}); //cierra grupo de rutas que necesitan autentificacion
+
+
+
+

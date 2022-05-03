@@ -12,6 +12,8 @@ class Ciudad extends Model
 {
     use HasFactory;
 
+    protected $fillable=['nombre','abreviatura']; //atributos que seran manipulados
+
     public function hoteles(){ //Recupera info de los hoteles
         return $this->hasMany('App\Models\Hotel');
     }
