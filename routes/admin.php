@@ -5,8 +5,10 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Livewire\Admin\Ciudad\ShowCiudad;
 use App\Http\Livewire\Admin\Ciudad\CreateCiudad;
 use App\Http\Livewire\Admin\Ciudad\EditCiudad;
+use App\Http\Livewire\Admin\Home;
 
-Route::get('',[HomeController::class,'index'])->name('admin.index');
+Route::get("",Home::class)->name('admin.index');
+//Route::get('',[HomeController::class,'index'])->name('admin.index');
 
 //Rutas CIUDAD
 Route::get('/ciudad', ShowCiudad::class)->name('ciudad.show');
