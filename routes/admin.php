@@ -6,6 +6,8 @@ use App\Http\Livewire\Admin\Ciudad\ShowCiudad;
 use App\Http\Livewire\Admin\Ciudad\CreateCiudad;
 use App\Http\Livewire\Admin\Ciudad\EditCiudad;
 use App\Http\Livewire\Admin\Home;
+use App\Http\Livewire\Admin\Usuario\UserComponent;
+
 
 Route::get("",Home::class)->name('admin.index');
 //Route::get('',[HomeController::class,'index'])->name('admin.index');
@@ -16,3 +18,6 @@ Route::get('/ciudad', ShowCiudad::class)->name('ciudad.show');
 Route::get('ciudad/create',CreateCiudad::class)->name('admin.ciudad.create');
 
 Route::get('ciudad/{ciudad}/edit',EditCiudad::class)->name('admin.ciudad.edit');
+
+//Ruta Usuario
+Route::get('users',UserComponent::class)->name('admin.users.index');
