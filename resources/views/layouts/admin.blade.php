@@ -1,19 +1,51 @@
-@extends('adminlte::page')
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-@section('title', 'Dashboard')
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
-@section('content_header')
-    <h1>Dashboard</h1>
-@stop
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
-@section('content')
-    <p>Welcome to this beautiful admin panel.</p>
-@stop
+        <!-- Styles -->
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{asset('vendor/fontawesome-free/css/all.min.css')}}">
 
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
+        @livewireStyles
 
-@section('js')
-    <script> console.log('Hi!'); </script>
-@stop
+        <!-- Scripts -->
+        <script src="{{ mix('js/app.js') }}" defer></script>
+
+        {{--SweetAlert2--}}
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+    <body class="font-sans antialiased">
+        <x-jet-banner />
+
+        <div class="min-h-screen bg-gray-100">
+            @livewire('navigation-menu') {{--Utiliza el de jet --}}
+
+            @if (isset($header))
+            <header class="bg-white shadow">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    {{ $header }}
+                </div>
+            </header>
+            @endif
+
+            <!-- Page Content -->
+            <main>
+                {{ $slot }}
+            </main>
+        </div>
+
+        @stack('modals')
+
+        @livewireScripts
+
+        @stack('script')
+    </body>
+</html>

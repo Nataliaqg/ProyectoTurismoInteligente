@@ -19,12 +19,10 @@ class CreateCiudadsTable extends Migration
             $table->id();
             $table->string('nombre');
             $table->char('abreviatura',4);
+            $table->string('slug');
             $table->timestamps();
         });
-        DB::table('ciudads')->insert(array('nombre'=>'La paz','abreviatura'=>'LP'));
-        DB::table('ciudads')->insert(array('nombre'=>'Oruro','abreviatura'=>'OR'));
-        DB::table('ciudads')->insert(array('nombre'=>'Potosi','abreviatura'=>'PT'));
-        DB::table('ciudads')->insert(array('nombre'=>'Cochabamba','abreviatura'=>'CBB'));
+       
     }
 
     /**
