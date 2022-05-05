@@ -6,6 +6,9 @@ use App\Http\Livewire\Admin\Ciudad\ShowCiudad;
 use App\Http\Livewire\Admin\Ciudad\CreateCiudad;
 use App\Http\Livewire\Admin\Ciudad\EditCiudad;
 use App\Http\Livewire\Admin\Home;
+use App\Http\Livewire\Admin\Lugar\CreateLugarturistico;
+use App\Http\Livewire\Admin\Lugar\EditLugarturistico;
+use App\Http\Livewire\Admin\Lugar\ShowLugarTuristico;
 use App\Http\Livewire\Admin\Usuario\UserComponent;
 
 
@@ -21,3 +24,8 @@ Route::get('ciudad/{ciudad}/edit',EditCiudad::class)->name('admin.ciudad.edit');
 
 //Ruta Usuario
 Route::get('users',UserComponent::class)->name('admin.users.index');
+
+// Ruta lugar turistico
+Route::get('lugarturisticos', ShowLugarTuristico::class)->name('admin.lugarturistico.show');
+Route::get('lugarturisticos/{lugarturistico}/edit', EditLugarturistico::class)->name('admin.lugarturisticos.edit');
+Route::get('lugarturisticos/create', CreateLugarturistico::class)->name('admin.lugarturisticos.create');
