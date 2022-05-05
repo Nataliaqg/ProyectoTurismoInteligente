@@ -27,7 +27,7 @@ class CreateCiudad extends Component
 
         $ciudad->save();
 
-        return redirect()->route('admin.ciudad.edit',$ciudad);
+        return redirect()->route('ciudad.show');
     }
 
     public function updatedNombre($value){

@@ -6,9 +6,9 @@
                 <h1 class="font-semibold text-xl text-gray-800 leading-tight">
                     Ciudades
                 </h1>
-                <x-jet-danger-button wire:click="$emit('deleteCiudad')">
+               {{-- <x-jet-danger-button wire:click="$emit('deleteCiudad')">
                     Eliminar
-                </x-jet-danger-button>
+                </x-jet-danger-button>--}}
             </div>
         </div>
     </header>

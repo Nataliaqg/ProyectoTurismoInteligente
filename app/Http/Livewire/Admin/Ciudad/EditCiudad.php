@@ -21,7 +21,6 @@ class EditCiudad extends Component
 
     public function mount(Ciudad $ciudad){ //captura lo que se envia desde la url
         $this->ciudad=$ciudad;
-
     }
 
     public function refreshCiudad(){
@@ -33,6 +32,11 @@ class EditCiudad extends Component
         $this->slug = $this->ciudad->slug;
     }
 
+    public function updatedCiudadAbreviatura($value){
+        $this->ciudad->slug= Str::slug($value);
+        $this->slug = $this->ciudad->slug;
+    }
+
     public function save(){
         $rules=$this->rules;
 
@@ -40,7 +44,7 @@ class EditCiudad extends Component
 
        
        $this->validate($rules);
-
+       //$this->ciudad->abreviatura=$this->abreviatura;
        $this->ciudad->slug=$this->slug;
 
        $this->ciudad->save();
