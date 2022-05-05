@@ -75,7 +75,7 @@
         wire:target="save"
             wire:click="save"
             class="ml-auto">
-            Crear producto
+            Crear Lugar Turistico
         </x-jet-button>
     </div>
 
