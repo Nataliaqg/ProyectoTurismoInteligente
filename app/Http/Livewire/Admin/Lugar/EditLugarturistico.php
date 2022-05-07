@@ -30,9 +30,10 @@ class EditLugarturistico extends Component
 
     }
     // no se para que es esto 
-    public function getCiudadProperty(){
+   /* public function getCiudadProperty(){
         return Ciudad::find($this->lugarturistico->ciudad_id);
-    }
+    }*/
+
     public function save(){
         $rules = $this->rules;       
 

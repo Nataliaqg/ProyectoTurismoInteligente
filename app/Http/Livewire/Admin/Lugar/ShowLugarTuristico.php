@@ -13,25 +13,31 @@ class ShowLugarTuristico extends Component
     use WithPagination;
     public $search;   
     public $lugarturistico;
-    protected $listeners = ['delete'];
+    public $b='false';
+    protected $listeners = ['delete2'=>'delete'];
 
      //para que cuando busque valla a la paginacion correcta 
     
     public function updatingSearch(){
         $this->resetPage();
     }
-    public function mount(){
-        $this->getLugarturisticos();
-    }
+  
     // para refresacr la inforamcion de los lugares
-    public function getLugarturisticos(){
-        $this->lugarturistico = LugarTuristico::all();
+    
+    public function delete($lugarturistico){
+        $b='true';
+         $idnombre = LugarTuristico::find($lugarturistico);        
+        $idnombre->delete();
+       
+
+
+       
     }
 
-    public function delete(LugarTuristico $lugarturistico){
+   /* public function delete(LugarTuristico $lugarturistico){
         $lugarturistico->delete();
-        $this->getLugarturisticos();
-    }    
+     
+    }  */  
 
     public function render()
     {

@@ -20,8 +20,7 @@ class CreateLugarturistico extends Component
         'descripcion' =>'required',
         'direccion' =>'required',
         'precio' =>'required', 
-        'horaEntrada' =>'nullable',
-        'horaSalida' =>'nullable',
+        'horaEntrada' =>'nullable',       
     ];
 
 

@@ -7,7 +7,8 @@
             <a type="button" href="{{ route('admin.lugarturisticos.create') }}"
                 class=" absolute top-15 right-5 p-sm inline-block px-6 py-2 border-2 border-green-500 text-green-500 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">
                 agregar un nuevo lugar
-            </a>           
+            </a> 
+               
               
     </x-slot>
 
@@ -52,6 +53,9 @@
                             <th scope="col" class="relative px-6 py-3">
                                 <span class="sr-only">Editar</span>
                             </th>
+                            <th scope="col" class="relative px-6 py-3">
+                                <span class="sr-only">eliminar</span>
+                            </th>
                            
 
                         </tr>
@@ -94,15 +98,23 @@
                                 </td>
 
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    {{ $lugarturistico->entrada }} horas
+                                    {{ $lugarturistico->horaEntrada }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    {{ $lugarturistico->salida }} horas
+                                    {{ $lugarturistico->horaSalida }} 
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <a href="{{ route('admin.lugarturisticos.edit', $lugarturistico) }}"
                                         class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                </td>                               
+                                </td> 
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <a class="pl-2 hover:text-red-600 cursor-pointer"
+                                        wire:click="$emit('deleteLugarTuristico', {{ $lugarturistico->id}})">
+                                        Eliminar
+                                    </a>
+                                </td>                          
+
+
 
                             </tr>
                         @endforeach
@@ -139,7 +151,7 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
 
-                        Livewire.emitTo('admin.show-lugar-turistico', 'delete', lugarturisticoId)
+                        Livewire.emitTo('admin.lugar.show-lugar-turistico', 'delete2', lugarturisticoId)
 
                         Swal.fire(
                             'Deleted!',

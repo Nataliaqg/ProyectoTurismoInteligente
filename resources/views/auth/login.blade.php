@@ -6,12 +6,14 @@
 
         <x-jet-validation-errors class="mb-4" />
 
+         <!-- no  borrar-->
         @if (session('status'))
             <div class="mb-4 font-medium text-sm text-green-600">
                 {{ session('status') }}
             </div>
         @endif
 
+        <!-- no  borrar-->
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
@@ -44,5 +46,6 @@
                 </x-jet-button>
             </div>
         </form>
+
     </x-jet-authentication-card>
 </x-guest-layout>
