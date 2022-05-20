@@ -8,12 +8,11 @@ use Illuminate\Support\Str;
 
 class EditCiudad extends Component
 {
-    public $ciudad,$slug;
+    public $ciudad; 
 
     
     protected $rules =[
         'ciudad.nombre' => 'required',
-        'ciudad.slug' => 'required|unique:ciudads,slug',
         'ciudad.abreviatura'=>'required'
     ];
 
@@ -27,33 +26,13 @@ class EditCiudad extends Component
         $this->ciudad=$this->ciudad->fresh();
     }
 
-    public function updatedCiudadNombre($value){
-        $this->ciudad->slug= Str::slug($value);
-        $this->slug = $this->ciudad->slug;
-    }
-
-    public function updatedCiudadAbreviatura($value){
-        $this->ciudad->slug= Str::slug($value);
-        $this->slug = $this->ciudad->slug;
-    }
-
     public function save(){
         $rules=$this->rules;
 
-        $rules['slug'] = 'required|unique:ciudads,slug,'. $this->ciudad->id;
-
-       
        $this->validate($rules);
-       //$this->ciudad->abreviatura=$this->abreviatura;
-       $this->ciudad->slug=$this->slug;
-
+       
        $this->ciudad->save();
        $this->emit('saved');
-    }
-
-    public function delete(){
-        $this->ciudad->delete();
-        return redirect()->route('admin.index'); //redireccciono a mi listado de ciudades
     }
 
     public function render()

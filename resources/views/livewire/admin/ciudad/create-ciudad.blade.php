@@ -11,17 +11,7 @@
         <x-jet-input-error for="nombre" />
     </div>
 
-     {{-- Slug --}}
-     <div class="mb-4">
-        <x-jet-label value="Slug" />
-        <x-jet-input type="text"
-            disabled
-            wire:model="slug"
-            class="w-full bg-gray-200" 
-            placeholder="Ingrese el slug de la ciudad" />
-    <x-jet-input-error for="slug" />
-    </div>
-
+     
     {{-- Abreviatura --}}
     <div class="mb-4">
         <x-jet-label value="Abreviatura" />

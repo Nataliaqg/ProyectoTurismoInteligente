@@ -19,7 +19,6 @@ class CreateCiudadsTable extends Migration
             $table->id();
             $table->string('nombre');
             $table->char('abreviatura',4);
-            $table->string('slug');
             $table->timestamps();
         });
        

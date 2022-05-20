@@ -9,10 +9,9 @@ use Illuminate\Support\Str;
 
 class CreateCiudad extends Component
 {
-    public $nombre, $slug,$abreviatura;
+    public $nombre,$abreviatura; 
     protected $rules =[
         'nombre' => 'required',
-        'slug' => 'required|unique:ciudads',
         'abreviatura'=>'required'
     ];
 
@@ -22,7 +21,6 @@ class CreateCiudad extends Component
 
         $ciudad= new Ciudad();
         $ciudad->nombre=$this->nombre;
-        $ciudad->slug=$this->slug;
         $ciudad->abreviatura=$this->abreviatura;
 
         $ciudad->save();
@@ -30,10 +28,7 @@ class CreateCiudad extends Component
         return redirect()->route('ciudad.show');
     }
 
-    public function updatedNombre($value){
-        $this->slug= Str::slug($value);
-    }
-
+  
     public function render()
     {
         return view('livewire.admin.ciudad.create-ciudad')->layout('layouts.admin');
