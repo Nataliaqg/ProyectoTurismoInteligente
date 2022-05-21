@@ -1,6 +1,6 @@
 <div class=' max max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-gray-700'>
     <h1 class="  text-3xl text-center font-semibold mb-8">
-        Complete la informacion para crear un lugar turistico
+        Complete la informacion para crear un hotel
     </h1>
     {{-- las ciudades a elegir --}}
     <div class="grid grid-cols-2 gap-6 mb-4">
@@ -18,15 +18,15 @@
         </div>
         <x-jet-action-message class="mr-3 text-center font-semibold text-xl italic underline decoration-dotted "
             on="saved">
-            Lugar turistico Creado 
+            Hotel creado
         </x-jet-action-message>
+
     </div>
 
     {{-- Nombre --}}
     <div class="mb-4">
         <x-jet-label value="Nombre" />
-        <x-jet-input type="text" class="w-full" wire:model="nombre"
-            placeholder="Ingrese el nombre del lugar turistico" />
+        <x-jet-input type="text" class="w-full" wire:model="nombre" placeholder="Ingrese el nombre del hotel" />
         <x-jet-input-error for="nombre" />
     </div>
 
@@ -47,43 +47,37 @@
         <x-jet-input-error for="direccion" />
     </div>
 
-
     <div class="grid grid-cols-3 gap-6 mb-4">
-        {{-- precio --}}
+        {{-- telefono --}}
         <div>
-            <x-jet-label value="Precio" />
-            <x-jet-input wire:model="precio" 
-            type="number"           
-            step=".01" />
-            <x-jet-input-error for="precio" />
+            <x-jet-label value="Telefono" />
+            <x-jet-input wire:model="telefono" type="number" />
+            <x-jet-input-error for="telefono" />
         </div>
-        {{-- entrada --}}
+        {{-- categoria --}}
         <div class="mb-4">
-            <x-jet-label value="Hora de Entrada" />
-            <x-jet-input type="time"
-             wire:model="horaEntrada" placeholder="Ingrese la hora de entrada" />
-            <x-jet-input-error for="horaEntrada" />
+            <x-jet-label value="Categoria" />
+            <x-jet-input type="number" class="w-full" wire:model="categoria"
+                placeholder="Ingrese la categoria" />
+            <x-jet-input-error for="categoria" />
         </div>
-        {{-- salida --}}
-        <div class="mb-4">
-            <x-jet-label value="Hora de salida" />
-            <x-jet-input type="time" 
-            wire:model="horaSalida" placeholder="Ingrese la hora de salida" />
-            <x-jet-input-error for="horaSalida" />
+        {{-- numero maximo de mesas --}}
+        <div>
+            <x-jet-label value="Numero maximo de habitaciones" />
+            <x-jet-input wire:model="capacidadMaximaHabitacion" type="number" />
+            <x-jet-input-error for="capacidadMaximaHabitacion" />
         </div>
+
     </div>
 
     <div class="justify-end items-center mt-4">
-        <x-jet-button
-        wire:loading.attr="disabled"
-        wire:target="save"
-            wire:click="save"
-            class="ml-auto">
-            Crear Lugar Turistico
+        <x-jet-button wire:loading.attr="disabled" wire:target="save" wire:click="save" class="ml-auto">
+            Crear Hotel
         </x-jet-button>
         <x-jet-button>
-            <a href="{{ route('admin.lugarturistico.show') }}">Luagares Turisticos</a>
+            <a href="{{ route('admin.hotel.show') }}">hoteles</a>
         </x-jet-button>
+      
     </div>
 
 </div>

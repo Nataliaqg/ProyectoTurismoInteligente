@@ -13,7 +13,7 @@ class ShowLugarTuristico extends Component
     use WithPagination;
     public $search;   
     public $lugarturistico;
-    public $b='false';
+   
     protected $listeners = ['delete2'=>'delete'];
 
      //para que cuando busque valla a la paginacion correcta 
@@ -22,16 +22,13 @@ class ShowLugarTuristico extends Component
         $this->resetPage();
     }
   
-    // para refresacr la inforamcion de los lugares
+    // para refrescar la inforamcion de los lugares
     
     public function delete($lugarturistico){
-        $b='true';
+      
          $idnombre = LugarTuristico::find($lugarturistico);        
-        $idnombre->delete();
-       
+        $idnombre->delete();     
 
-
-       
     }
 
    /* public function delete(LugarTuristico $lugarturistico){

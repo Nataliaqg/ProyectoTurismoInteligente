@@ -21,8 +21,8 @@ class CreateLugarTuristicosTable extends Migration
             $table->time('horaEntrada');
             $table->time('horaSalida');
             $table->integer('precio')->nullable(); //puede que sea de libre ingre
-            $table->unsignedBigInteger('ciudads_id');
-            $table->foreign('ciudads_id')->references('id')->on('ciudads');
+            $table->unsignedBigInteger('ciudad_id');
+            $table->foreign('ciudad_id')->references('id')->on('ciudads');
             $table->timestamps();
         });
     }
