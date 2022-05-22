@@ -27,7 +27,7 @@ Route::get('ciudad', ShowCiudad::class)->name('admin.ciudad.show');
 Route::get('ciudad/create',CreateCiudad::class)->name('admin.ciudad.create');
 Route::get('ciudad/{ciudad}/edit',EditCiudad::class)->name('admin.ciudad.edit');
 
-//Ruta Usuario
+//Ruta Usuarios
 Route::get('users',UserComponent::class)->name('admin.users.index');
 
 
