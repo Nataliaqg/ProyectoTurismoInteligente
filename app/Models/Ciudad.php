@@ -26,4 +26,8 @@ class Ciudad extends Model
     public function restaurantes(){ //Recupera info de los restaurantes
         return $this->hasMany('App\Models\Restaurante');
     }
+
+    public function viajes(){ //Recupera info de los restaurantes
+        return $this->hasMany('App\Models\Viaje');
+    }
 }

@@ -18,4 +18,7 @@ class Transporte extends Model
     public function agencia(){
         return $this->belongsTo(Agencia::class);
     }
+    public function viajes(){
+        return $this->hasMany(Viaje::class);
+    }
 }
