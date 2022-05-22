@@ -43,10 +43,11 @@ class CreateLugarturistico extends Component
         $lugarturistico->direccion = $this->direccion;
         $lugarturistico->horaEntrada = $this->horaEntrada;
         $lugarturistico->horaSalida = $this->horaSalida;
-        $lugarturistico->ciudads_id =$this->ciudad_id;
+        $lugarturistico->ciudad_id =$this->ciudad_id;
 
         $lugarturistico->save();
-        return redirect()->route('admin.lugarturisticos.edit', $lugarturistico);
+        $this->emit('saved');
+        
     }
 
     /*public function getListaProductos(){
