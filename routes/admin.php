@@ -36,7 +36,6 @@ Route::get('lugarturisticos', ShowLugarTuristico::class)->name('admin.lugarturis
 Route::get('lugarturisticos/{lugarturistico}/edit', EditLugarturistico::class)->name('admin.lugarturisticos.edit');
 Route::get('lugarturisticos/create', CreateLugarturistico::class)->name('admin.lugarturisticos.create');
 
-<<<<<<< HEAD
 //Ruta Restaurante 
 Route::get('restaurantes', ShowRestaurante::class)->name('admin.restaurante.show');
 Route::get('restaurantes/create', CreateRestaurante::class)->name('admin.restaurante.create');
@@ -52,7 +51,5 @@ Route::get('hoteles/{hotel}/edit',EditHotel::class)->name('admin.hotel.edit');
 Route::post('lugarturisticos/{lugarturistico}/files',[LugarController::class,'files'])->name('admin.lugar.files');
 Route::post('restaurantes/{restaurante}/files',[RestauranteController::class,'files'])->name('admin.restaurante.files');
 Route::post('hoteles/{hotel}/files',[HotelController::class,'files'])->name('admin.hotel.files');
-=======
 //Ruta Viaje
 Route::get('viaje',ShowViaje::class)->name('admin.viaje.show');
->>>>>>> abd5d012713e4876a71c0821635caefd2623eaf4
