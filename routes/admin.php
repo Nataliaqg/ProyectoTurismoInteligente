@@ -49,7 +49,7 @@ Route::get('hoteles', ShowHotel::class)->name('admin.hotel.show');
 Route::get('hoteles/create',CreateHotel::class)->name('admin.hotel.create');
 Route::get('hoteles/{hotel}/edit',EditHotel::class)->name('admin.hotel.edit');
 
-//ruta para las imagenes´
+//ruta para las imagenes
 Route::post('lugarturisticos/{lugarturistico}/files',[LugarController::class,'files'])->name('admin.lugar.files');
 Route::post('restaurantes/{restaurante}/files',[RestauranteController::class,'files'])->name('admin.restaurante.files');
 Route::post('hoteles/{hotel}/files',[HotelController::class,'files'])->name('admin.hotel.files');
