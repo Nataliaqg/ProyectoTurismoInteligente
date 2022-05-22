@@ -2,13 +2,20 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\HotelController;
 use App\Http\Livewire\Admin\Ciudad\ShowCiudad;
 use App\Http\Livewire\Admin\Ciudad\CreateCiudad;
 use App\Http\Livewire\Admin\Ciudad\EditCiudad;
 use App\Http\Livewire\Admin\Home;
+use App\Http\Livewire\Admin\Hotel\CreateHotel;
+use App\Http\Livewire\Admin\Hotel\EditHotel;
+use App\Http\Livewire\Admin\Hotel\ShowHotel;
 use App\Http\Livewire\Admin\Lugar\CreateLugarturistico;
 use App\Http\Livewire\Admin\Lugar\EditLugarturistico;
 use App\Http\Livewire\Admin\Lugar\ShowLugarTuristico;
+use App\Http\Livewire\Admin\Restaurante\CreateRestaurante;
+use App\Http\Livewire\Admin\Restaurante\EditRestaurante;
+use App\Http\Livewire\Admin\Restaurante\ShowRestaurante;
 use App\Http\Livewire\Admin\Usuario\UserComponent;
 use App\Http\Livewire\Admin\Viaje\ShowViaje;
 
@@ -22,6 +29,7 @@ Route::get('ciudad/{ciudad}/edit',EditCiudad::class)->name('admin.ciudad.edit');
 
 //Ruta Usuario
 Route::get('users',UserComponent::class)->name('admin.users.index');
+
 
 // Ruta lugar turistico
 Route::get('lugarturisticos', ShowLugarTuristico::class)->name('admin.lugarturistico.show');

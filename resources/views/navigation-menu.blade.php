@@ -39,7 +39,17 @@
                         {{ __('Viajes') }}
                     </x-jet-nav-link>
                 </div>
-
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{route('admin.restaurante.show')}}" :active="request()->routeIs('admin.restaurante.show')">
+                        {{ __('Restaurantes') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{route('admin.hotel.show')}}" :active="request()->routeIs('admin.hotel.show')">
+                        {{ __('Hoteles') }}
+                    </x-jet-nav-link>
+                </div>
+               
             </div>
 
 

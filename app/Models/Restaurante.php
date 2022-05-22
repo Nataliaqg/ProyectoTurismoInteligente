@@ -10,7 +10,14 @@ class Restaurante extends Model
 {
     use HasFactory;
 
-    public function ciudad(){
+    public function ciudad()
+    {
         return $this->belongsTo('App\Models\Ciudad');
+    }
+
+    //relacion uno a muchos polimorfica
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'imageable');
     }
 }

@@ -22,8 +22,8 @@ class CreateRestaurantesTable extends Migration
             $table->time('horaCierre');
             $table->integer('telefono');
             $table->unsignedSmallInteger('capacidadMaximaMesa');
-            $table->unsignedBigInteger('ciudads_id');
-            $table->foreign('ciudads_id')->references('id')->on('ciudads');
+            $table->unsignedBigInteger('ciudad_id');
+            $table->foreign('ciudad_id')->references('id')->on('ciudads');
             $table->timestamps();
         });
     }

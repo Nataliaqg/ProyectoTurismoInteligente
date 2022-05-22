@@ -13,7 +13,10 @@ class Hotel extends Model
 public function ciudad(){ //en singular pq solo tiene una
     return $this->belongsTo('App\Models\Ciudad');
 }
-
+//relacion uno a muchos polimorfica
+public function images(){
+    return $this->morphMany(Image::class,'imageable');
+}
 
 
 }

@@ -21,8 +21,8 @@ class CreateHotelsTable extends Migration
             $table->unsignedSmallInteger('categoria');
             $table->integer('telefono');
             $table->unsignedSmallInteger('capacidadMaximaHabitacion');
-            $table->unsignedBigInteger('ciudads_id');
-            $table->foreign('ciudads_id')->references('id')->on('ciudads');
+            $table->unsignedBigInteger('ciudad_id');
+            $table->foreign('ciudad_id')->references('id')->on('ciudads');
             $table->timestamps();
         });
     }
