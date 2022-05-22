@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin\Restaurante;
 
+use App\Models\Bitacora;
 use Livewire\Component;
 use App\Models\Ciudad;
 use App\Models\Image;
@@ -40,6 +41,8 @@ class EditRestaurante extends Component
         $rules = $this->rules;
         $this->validate($rules);
         $this->restaurante->save();
+        $bitacora = new Bitacora();
+        $bitacora->crear('Restaurante  Actualizado');    
         $this->emit('saved');
     }
     public function deleteImage(Image $image)

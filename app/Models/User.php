@@ -61,4 +61,10 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    // relacion de uno a muchos
+    public function bitacora()
+    {
+        return $this->hasMany(Bitacora::class, 'idUsuario');
+    }
 }

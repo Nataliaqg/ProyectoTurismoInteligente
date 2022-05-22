@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Admin\Lugar;
 
-
+use App\Models\Bitacora;
 use Livewire\Component;
 use App\Models\LugarTuristico;
 use App\Models\Ciudad;
@@ -46,6 +46,8 @@ class CreateLugarturistico extends Component
         $lugarturistico->ciudad_id =$this->ciudad_id;
 
         $lugarturistico->save();
+        $bitacora = new Bitacora();
+        $bitacora->crear('Lugar Turistico  Creado');    
         $this->emit('saved');
         
     }

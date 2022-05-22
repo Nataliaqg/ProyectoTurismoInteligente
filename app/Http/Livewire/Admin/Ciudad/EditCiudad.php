@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin\Ciudad;
 
+use App\Models\Bitacora;
 use Livewire\Component;
 use App\Models\Ciudad;
 use Illuminate\Support\Str;
@@ -32,6 +33,8 @@ class EditCiudad extends Component
        $this->validate($rules);
        
        $this->ciudad->save();
+       $bitacora = new Bitacora();
+       $bitacora->crear('ciudad editada');
        $this->emit('saved');
     }
 

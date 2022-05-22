@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin\Ciudad;
 
+use App\Models\Bitacora;
 use App\Models\Ciudad;
 use Livewire\Component;
 
@@ -24,6 +25,8 @@ class CreateCiudad extends Component
         $ciudad->abreviatura=$this->abreviatura;
 
         $ciudad->save();
+        $bitacora = new Bitacora();
+        $bitacora->crear('Nueva Ciudad Creada: ' .$ciudad->nombre);     
 
         return redirect()->route('ciudad.show');
     }

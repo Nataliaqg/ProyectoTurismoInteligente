@@ -49,6 +49,11 @@
                         {{ __('Hoteles') }}
                     </x-jet-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{route('admin.bitacora')}}" :active="request()->routeIs('admin.bitacora')">
+                        {{ __('Bitacora') }}
+                    </x-jet-nav-link>
+                </div>
                
             </div>
 

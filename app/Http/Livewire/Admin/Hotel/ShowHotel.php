@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin\Hotel;
 
+use App\Models\Bitacora;
 use App\Models\Ciudad;
 use App\Models\Hotel;
 use Livewire\Component;
@@ -22,6 +23,9 @@ class ShowHotel extends Component
    public function delete($hotel){
        $idnombre = Hotel::find($hotel);
        $idnombre->delete();
+       $bitacora = new Bitacora();
+       $bitacora->crear('Hotel Eliminado');       
+   
        
    }
    public function mount(Hotel $hotel)

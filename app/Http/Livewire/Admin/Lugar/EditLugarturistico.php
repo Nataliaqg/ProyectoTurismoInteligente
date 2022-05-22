@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Admin\Lugar;
 
-
+use App\Models\Bitacora;
 use Livewire\Component;
 use App\Models\Ciudad;
 use App\Models\Image;
@@ -47,6 +47,8 @@ class EditLugarturistico extends Component
 
         $this->validate($rules);
         $this->lugarturistico->save();
+        $bitacora = new Bitacora();
+        $bitacora->crear('Lugar Turistico Actualizado');    
         //emitir une evento o escuchar
         $this->emit('saved');
     }

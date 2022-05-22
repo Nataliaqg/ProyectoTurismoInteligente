@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin\Restaurante;
 
+use App\Models\Bitacora;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Restaurante;
@@ -21,6 +22,8 @@ class ShowRestaurante extends Component
     public function delete($restaurante){
         $idnombre = Restaurante::find($restaurante);
         $idnombre->delete();
+        $bitacora = new Bitacora();
+        $bitacora->crear('Restaurante Eliminado');    
     }
     public function render()
 

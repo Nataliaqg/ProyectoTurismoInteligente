@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin\Lugar;
 
+use App\Models\Bitacora;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\LugarTuristico;
@@ -28,6 +29,8 @@ class ShowLugarTuristico extends Component
       
          $idnombre = LugarTuristico::find($lugarturistico);        
         $idnombre->delete();     
+        $bitacora = new Bitacora();
+        $bitacora->crear('Lugar Turistico Eliminado');    
 
     }
 

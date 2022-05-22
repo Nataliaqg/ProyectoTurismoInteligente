@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin\Hotel;
 
+use App\Models\Bitacora;
 use App\Models\Ciudad;
 use App\Models\Hotel;
 use Livewire\Component;
@@ -43,7 +44,10 @@ class CreateHotel extends Component
         $hotel->capacidadMaximaHabitacion = $this->capacidadMaximaHabitacion;
         
         $hotel->ciudad_id = $this->ciudad_id; //////////////////
+       
         $hotel->save();
+        $bitacora = new Bitacora();
+        $bitacora->crear('nuevo Hotel creado');
         $this->emit('saved');
     }
 

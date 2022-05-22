@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin\Hotel;
 
+use App\Models\Bitacora;
 use App\Models\Ciudad;
 use App\Models\Hotel;
 use App\Models\Image;
@@ -41,6 +42,9 @@ class EditHotel extends Component
         $rules = $this->rules;
         $this->validate($rules);
         $this->hotel->save();
+        $bitacora = new Bitacora();
+        $bitacora->crear('Hotel actualizado');       
+      
         $this->emit('saved');
     }
     public function deleteImage(Image $image)

@@ -15,6 +15,7 @@ use App\Http\Livewire\Admin\Hotel\ShowHotel;
 use App\Http\Livewire\Admin\Lugar\CreateLugarturistico;
 use App\Http\Livewire\Admin\Lugar\EditLugarturistico;
 use App\Http\Livewire\Admin\Lugar\ShowLugarTuristico;
+use App\Http\Livewire\Admin\LwBitacora;
 use App\Http\Livewire\Admin\Restaurante\CreateRestaurante;
 use App\Http\Livewire\Admin\Restaurante\EditRestaurante;
 use App\Http\Livewire\Admin\Restaurante\ShowRestaurante;
@@ -56,3 +57,6 @@ Route::post('restaurantes/{restaurante}/files',[RestauranteController::class,'fi
 Route::post('hoteles/{hotel}/files',[HotelController::class,'files'])->name('admin.hotel.files');
 //Ruta Viaje
 Route::get('viaje',ShowViaje::class)->name('admin.viaje.show');
+
+//bitacora
+Route::get('bitacoras',LwBitacora::class)->name('admin.bitacora');

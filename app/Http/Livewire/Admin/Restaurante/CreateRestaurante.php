@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin\Restaurante;
 
+use App\Models\Bitacora;
 use Livewire\Component;
 use App\Models\Restaurante;
 use App\Models\Ciudad;
@@ -46,6 +47,8 @@ class CreateRestaurante extends Component
         $restaurante->capacidadMaximaMesa = $this->numeromaxmesas;
         $restaurante->ciudad_id = $this->ciudad_id; //////////////////
         $restaurante->save();
+        $bitacora = new Bitacora();
+        $bitacora->crear('Restaurante Creado');    
         $this->emit('saved');
         //return redirect()->route()
 
