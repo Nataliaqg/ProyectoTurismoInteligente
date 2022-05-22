@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\HotelController;
+use App\Http\Controllers\Admin\Lugar\LugarController;
+use App\Http\Controllers\Admin\RestauranteController;
 use App\Http\Livewire\Admin\Ciudad\ShowCiudad;
 use App\Http\Livewire\Admin\Ciudad\CreateCiudad;
 use App\Http\Livewire\Admin\Ciudad\EditCiudad;
@@ -18,6 +20,7 @@ use App\Http\Livewire\Admin\Restaurante\EditRestaurante;
 use App\Http\Livewire\Admin\Restaurante\ShowRestaurante;
 use App\Http\Livewire\Admin\Usuario\UserComponent;
 use App\Http\Livewire\Admin\Viaje\ShowViaje;
+
 
 Route::get("",Home::class)->name('admin.index');
 //Route::get('',[HomeController::class,'index'])->name('admin.index');
