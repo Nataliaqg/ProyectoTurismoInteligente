@@ -46,6 +46,8 @@
                             <th scope="col" class="relative px-6 py-3">
                                 <span class="sr-only">Editar</span>
                             </th>
+                            
+
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
@@ -71,6 +73,10 @@
 
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <a href="{{ route('admin.ciudad.edit', $ciudad) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                    <a class="pl-2 hover:text-red-600 cursor-pointer"
+                                        wire:click="$emit('deleteCiudad', {{ $ciudad->id}})">
+                                        Eliminar
+                                    </a>
                                 </td>
                             </tr>
 
@@ -96,6 +102,39 @@
 
         </x-table-responsive>
     </div>
+
+    {{---------------------------------------}}
+
+@push('script')
+<script>
+    Livewire.on('deleteCiudad', ciudad => {
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                Livewire.emitTo('admin.ciudad.show-ciudad', 'delete',ciudad); //directorio,el nombre del evento,parametro
+
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+            }
+        })
+
+    })
+
+   
+</script>
+@endpush
 
 
 </div>

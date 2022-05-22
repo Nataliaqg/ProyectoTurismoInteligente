@@ -6,9 +6,6 @@
                 <h1 class="font-semibold text-xl text-gray-800 leading-tight">
                     Ciudades
                 </h1>
-               {{-- <x-jet-danger-button wire:click="$emit('deleteCiudad')">
-                    Eliminar
-                </x-jet-danger-button>--}}
             </div>
         </div>
     </header>
@@ -30,17 +27,7 @@
         <x-jet-input-error for="ciudad.nombre" />
     </div>
 
-     {{-- Slug --}}
-     <div class="mb-4">
-        <x-jet-label value="Slug" />
-        <x-jet-input type="text"
-            disabled
-            wire:model="ciudad.slug"
-            class="w-full bg-gray-200" 
-            placeholder="Ingrese el slug de la ciudad" />
-    <x-jet-input-error for="ciudad.slug" />
-    </div>
-
+     
     {{-- Abreviatura --}}
     <div class="mb-4">
         <x-jet-label value="Abreviatura" />
@@ -69,39 +56,6 @@
 </div>
 
 </div>
-
-{{---------------------------------------}}
-
-@push('script')
-        <script>
-            Livewire.on('deleteCiudad', () => {
-
-                Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-
-                        Livewire.emitTo('admin.edit-ciudad', 'delete');
-
-                        Swal.fire(
-                            'Deleted!',
-                            'Your file has been deleted.',
-                            'success'
-                        )
-                    }
-                })
-
-            })
-
-           
-        </script>
-    @endpush
 
 
 </div>

@@ -10,11 +10,16 @@ class ShowCiudad extends Component
 {
     use WithPagination;
     public $search;
+    public $listeners=['delete'];
 
     public function updatingSearch(){
         $this->resetPage();
     }
-    
+
+    public function delete($ciudad){
+        $idnombre = Ciudad::find($ciudad);        
+        $idnombre->delete();
+    }
     
     public function render()
     {

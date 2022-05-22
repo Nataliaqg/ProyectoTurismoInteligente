@@ -18,5 +18,7 @@ class DatabaseSeeder extends Seeder
         Storage::makeDirectory('lugarturisticos');
         // \App\Models\User::factory(10)->create();
         $this->call(UserSeeder::class);
+        $this->call(CiudadSeeder::class);
     }
+
 }
