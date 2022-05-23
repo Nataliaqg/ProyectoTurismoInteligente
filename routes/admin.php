@@ -5,6 +5,9 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\HotelController;
 use App\Http\Controllers\Admin\Lugar\LugarController;
 use App\Http\Controllers\Admin\RestauranteController;
+use App\Http\Livewire\Admin\Agencia\CreateAgencia;
+use App\Http\Livewire\Admin\Agencia\EditAgencia;
+use App\Http\Livewire\Admin\Agencia\ShowAgencia;
 use App\Http\Livewire\Admin\Ciudad\ShowCiudad;
 use App\Http\Livewire\Admin\Ciudad\CreateCiudad;
 use App\Http\Livewire\Admin\Ciudad\EditCiudad;
@@ -58,5 +61,13 @@ Route::post('hoteles/{hotel}/files',[HotelController::class,'files'])->name('adm
 //Ruta Viaje
 Route::get('viaje',ShowViaje::class)->name('admin.viaje.show');
 
+
+//Rutas Agencia
+Route::get('/agencias',ShowAgencia::class)->name('admin.agencias.show');
+Route::get('agencias/{agencia}/edit',EditAgencia::class)->name('admin.agencia.edit');
+Route::get('agencias/create',CreateAgencia::class)->name('admin.agencia.create');
+
 //bitacora
 Route::get('bitacoras',LwBitacora::class)->name('admin.bitacora');
+
+

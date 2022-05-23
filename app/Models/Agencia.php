@@ -10,7 +10,7 @@ class Agencia extends Model
     use HasFactory;
 
 
-    protected $fillable = ['id', 'name'];
+    protected $fillable = ['id', 'nombre','tipo'];
 
     //Relacion uno a muchos 
 

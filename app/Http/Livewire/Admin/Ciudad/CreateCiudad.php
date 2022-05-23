@@ -28,7 +28,7 @@ class CreateCiudad extends Component
         $bitacora = new Bitacora();
         $bitacora->crear('Nueva Ciudad Creada: ' .$ciudad->nombre);     
 
-        return redirect()->route('ciudad.show');
+        return redirect()->route('admin.ciudad.show');
     }
 
   
