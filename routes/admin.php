@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\HotelController;
 use App\Http\Controllers\Admin\Lugar\LugarController;
 use App\Http\Controllers\Admin\RestauranteController;
+use App\Http\Controllers\UserExportController;
 use App\Http\Livewire\Admin\Agencia\CreateAgencia;
 use App\Http\Livewire\Admin\Agencia\EditAgencia;
 use App\Http\Livewire\Admin\Agencia\ShowAgencia;
@@ -23,6 +24,10 @@ use App\Http\Livewire\Admin\LwBitacora;
 use App\Http\Livewire\Admin\Restaurante\CreateRestaurante;
 use App\Http\Livewire\Admin\Restaurante\EditRestaurante;
 use App\Http\Livewire\Admin\Restaurante\ShowRestaurante;
+use App\Http\Livewire\Admin\Transporte\CreateTransporte;
+use App\Http\Livewire\Admin\Transporte\EditTransporte;
+use App\Http\Livewire\Admin\Transporte\ShowTransporte;
+use App\Http\Livewire\Admin\Usuario\ShowUser;
 use App\Http\Livewire\Admin\Usuario\UserComponent;
 use App\Http\Livewire\Admin\Viaje\CreateViaje;
 use App\Http\Livewire\Admin\Viaje\EditViaje;
@@ -38,7 +43,9 @@ Route::get('ciudad/create',CreateCiudad::class)->name('admin.ciudad.create');
 Route::get('ciudad/{ciudad}/edit',EditCiudad::class)->name('admin.ciudad.edit');
 
 //Ruta Usuarios
-Route::get('users',UserComponent::class)->name('admin.users.index');
+//Modificar
+Route::get('roles',UserComponent::class)->name('admin.roles.index');
+Route::get('users',ShowUser::class)->name('admin.users.show');
 
 
 // Ruta lugar turistico
@@ -69,9 +76,15 @@ Route::get('viaje/{viaje}/edit',EditViaje::class)->name('admin.viaje.edit');
 Route::get('/agencias',ShowAgencia::class)->name('admin.agencias.show');
 Route::get('agencias/{agencia}/edit',EditAgencia::class)->name('admin.agencia.edit');
 Route::get('agencias/create',CreateAgencia::class)->name('admin.agencia.create');
+//Rutas Trasnporte
+Route::get('/transportes',ShowTransporte::class)->name('admin.transportes.show');
+Route::get('/transportes/{transporte}/edit',EditTransporte::class)->name('admin.transporte.edit');
+Route::get('/transportes/create',CreateTransporte::class)->name('admin.transporte.create');
+
 
 //bitacora
 Route::get('bitacoras',LwBitacora::class)->name('admin.bitacora');
 Route::get('contraseña',ContraBitacora::class)->name('admin.contraseñabitacora');
 
-
+//Prueba Exportar EXCEL Y PDF
+Route::get('users/export',[UserExportController::class,'exportAllUsers'])->name('users.export');

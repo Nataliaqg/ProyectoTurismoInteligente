@@ -23,16 +23,27 @@
                 
 
                 
-                    <x-jet-nav-link href="{{route('admin.users.index')}}" :active="request()->routeIs('admin.users.index')">
-                        {{ __('Usuarios') }}
-                    </x-jet-nav-link>
-                
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link href="{{route('admin.roles.index')}}" :active="request()->routeIs('admin.roles.index')">
+                            {{ __('Rol') }}
+                        </x-jet-nav-link>
+                    </div>
+    
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link href="{{route('admin.users.show')}}" :active="request()->routeIs('admin.users.show')">
+                            {{ __('Usuarios') }}
+                        </x-jet-nav-link>
+                    </div>
 
                 
                     <x-jet-nav-link href="{{route('admin.lugarturistico.show')}}" :active="request()->routeIs('admin.lugarturistico.show')">
                         {{ __('Lugares Turisticos') }}
                     </x-jet-nav-link>
                 
+                    <x-jet-nav-link href="{{route('admin.transportes.show')}}" :active="request()->routeIs('admin.transportes.show')">
+                        {{ __('Transportes') }}
+                    </x-jet-nav-link>
+
                     <x-jet-nav-link href="{{route('admin.agencias.show')}}" :active="request()->routeIs('admin.agencias.show')">
                         {{ __('Agencias') }}
                     </x-jet-nav-link>
