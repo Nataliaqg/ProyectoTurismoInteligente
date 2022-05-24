@@ -18,7 +18,7 @@
                 
 
                     <x-jet-nav-link href="{{route('admin.ciudad.show')}}" :active="request()->routeIs('admin.ciudad.show')">
-                        {{ __('Gestionar Ciudad') }}
+                        {{ __('Ciudad') }}
                     </x-jet-nav-link>
                 
 
@@ -50,10 +50,10 @@
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{route('admin.bitacora')}}" :active="request()->routeIs('admin.bitacora')">
+                    <x-jet-nav-link href="{{route('admin.contraseñabitacora')}}" :active="request()->routeIs('admin.contraseñabitacora')">
                         {{ __('Bitacora') }}
                     </x-jet-nav-link>
-                </div>
+                </div>               
                
             </div>
 

@@ -13,7 +13,7 @@ class HotelController extends Controller
         $request->validate([
             'file'=>'required|image|max:2048'
         ]);
-       $url = Storage::put('hoteles', $request->file('file'));
+       $url = Storage::put('public/hoteles', $request->file('file'));
         $hotel->images()->create(
             [
                 'url' => $url  

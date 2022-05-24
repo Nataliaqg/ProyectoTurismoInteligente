@@ -14,7 +14,7 @@ class LugarController extends Controller
         $request->validate([
             'file'=>'required|image|max:2048'
         ]);
-       $url =   Storage::put('lugarturisticos', $request->file('file'));
+       $url =   Storage::put('public/lugarturisticos', $request->file('file'));
         $lugarturistico->images()->create(
             [
                 'url' => $url
