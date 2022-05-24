@@ -48,7 +48,7 @@ class CreateRestaurante extends Component
         $restaurante->ciudad_id = $this->ciudad_id; //////////////////
         $restaurante->save();
         $bitacora = new Bitacora();
-        $bitacora->crear('Restaurante Creado');    
+        $bitacora->crear('Restaurante Creado: ' .$restaurante->nombre);    
         $this->emit('saved');
         //return redirect()->route()
 

@@ -13,7 +13,7 @@ class RestauranteController extends Controller
         $request->validate([
             'file'=>'required|image|max:2048'
         ]);
-       $url = Storage::put('restaurantes', $request->file('file'));
+       $url = Storage::put('public/restaurantes', $request->file('file'));
         $restaurante->images()->create(
             [
                 'url' => $url  

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin\Agencia;
 
 use App\Models\Agencia;
+use App\Models\Bitacora;
 use Livewire\Component;
 
 class EditAgencia extends Component
@@ -31,6 +32,8 @@ class EditAgencia extends Component
         $this->agencia->save();
 
         $this->emit('saved');
+        $bitacora = new Bitacora();
+        $bitacora->crear('Agencia: ' .$this->agencia->nombre .' Actualizada'); 
 
         return redirect()->route('admin.agencias.show');
     }

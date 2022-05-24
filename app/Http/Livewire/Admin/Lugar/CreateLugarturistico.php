@@ -47,7 +47,7 @@ class CreateLugarturistico extends Component
 
         $lugarturistico->save();
         $bitacora = new Bitacora();
-        $bitacora->crear('Lugar Turistico  Creado');    
+        $bitacora->crear('Lugar Turistico  Creado: ' .$lugarturistico->nombre);            
         $this->emit('saved');
         
     }

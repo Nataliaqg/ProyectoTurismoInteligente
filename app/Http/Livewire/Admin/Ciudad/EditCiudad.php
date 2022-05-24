@@ -34,7 +34,7 @@ class EditCiudad extends Component
        
        $this->ciudad->save();
        $bitacora = new Bitacora();
-       $bitacora->crear('ciudad editada');
+       $bitacora->crear('ciudad editada :' .$this->ciudad->nombre);
        $this->emit('saved');
     }
 

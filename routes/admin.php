@@ -11,6 +11,7 @@ use App\Http\Livewire\Admin\Agencia\ShowAgencia;
 use App\Http\Livewire\Admin\Ciudad\ShowCiudad;
 use App\Http\Livewire\Admin\Ciudad\CreateCiudad;
 use App\Http\Livewire\Admin\Ciudad\EditCiudad;
+use App\Http\Livewire\Admin\ContraBitacora;
 use App\Http\Livewire\Admin\Home;
 use App\Http\Livewire\Admin\Hotel\CreateHotel;
 use App\Http\Livewire\Admin\Hotel\EditHotel;
@@ -71,5 +72,6 @@ Route::get('agencias/create',CreateAgencia::class)->name('admin.agencia.create')
 
 //bitacora
 Route::get('bitacoras',LwBitacora::class)->name('admin.bitacora');
+Route::get('contraseña',ContraBitacora::class)->name('admin.contraseñabitacora');
 
 

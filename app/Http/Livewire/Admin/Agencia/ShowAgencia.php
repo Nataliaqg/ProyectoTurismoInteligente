@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin\Agencia;
 
 use App\Models\Agencia;
+use App\Models\Bitacora;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -24,6 +25,9 @@ class ShowAgencia extends Component
       
         $agencia = Agencia::find($agencia);        
         $agencia->delete();
+        $bitacora = new Bitacora();
+        $bitacora->crear('Agencia eliminada ' .$agencia->nombre); 
+        
 
    }
 
