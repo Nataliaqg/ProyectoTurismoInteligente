@@ -33,7 +33,9 @@
                         {{ __('Lugares Turisticos') }}
                     </x-jet-nav-link>
                 
-
+                    <x-jet-nav-link href="{{route('admin.agencias.show')}}" :active="request()->routeIs('admin.agencias.show')">
+                        {{ __('Agencias') }}
+                    </x-jet-nav-link>
                 
                     <x-jet-nav-link href="{{route('admin.viaje.show')}}" :active="request()->routeIs('admin.viaje.show')">
                         {{ __('Viajes') }}
