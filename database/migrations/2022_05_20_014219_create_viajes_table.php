@@ -18,8 +18,8 @@ class CreateViajesTable extends Migration
             $table->date('fecha');
             $table->time('hora');
             $table->integer('precio');
-            $table->unsignedBigInteger('transportes_id');
-            $table->foreign('transportes_id')->references('id')->on('transportes');
+            $table->unsignedBigInteger('transporte_id');
+            $table->foreign('transporte_id')->references('id')->on('transportes');
             $table->unsignedBigInteger('ciudadOrigen_id');
             $table->foreign('ciudadOrigen_id')->references('id')->on('ciudads');
             $table->unsignedBigInteger('ciudadDestino_id');

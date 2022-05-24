@@ -23,6 +23,8 @@ use App\Http\Livewire\Admin\Restaurante\CreateRestaurante;
 use App\Http\Livewire\Admin\Restaurante\EditRestaurante;
 use App\Http\Livewire\Admin\Restaurante\ShowRestaurante;
 use App\Http\Livewire\Admin\Usuario\UserComponent;
+use App\Http\Livewire\Admin\Viaje\CreateViaje;
+use App\Http\Livewire\Admin\Viaje\EditViaje;
 use App\Http\Livewire\Admin\Viaje\ShowViaje;
 
 
@@ -60,8 +62,8 @@ Route::post('restaurantes/{restaurante}/files',[RestauranteController::class,'fi
 Route::post('hoteles/{hotel}/files',[HotelController::class,'files'])->name('admin.hotel.files');
 //Ruta Viaje
 Route::get('viaje',ShowViaje::class)->name('admin.viaje.show');
-
-
+Route::get('viaje/create',CreateViaje::class)->name('admin.viaje.create');
+Route::get('viaje/{viaje}/edit',EditViaje::class)->name('admin.viaje.edit');
 //Rutas Agencia
 Route::get('/agencias',ShowAgencia::class)->name('admin.agencias.show');
 Route::get('agencias/{agencia}/edit',EditAgencia::class)->name('admin.agencia.edit');

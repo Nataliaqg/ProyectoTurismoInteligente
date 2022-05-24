@@ -22,8 +22,7 @@ class EditHotel extends Component
         'hotel.direccion' => 'required',
         'hotel.telefono' => 'required',
         'hotel.categoria' => 'required',
-        'hotel.capacidadMaximaHabitacion' => 'required',
-        
+        'hotel.capacidadMaximaHabitacion' => 'required',    
     ]; 
     protected $listeners = ['refreshHotel'];
     public function mount(Hotel $hotel)

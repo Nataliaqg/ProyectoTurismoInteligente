@@ -18,11 +18,11 @@ class Viaje extends Model
     }
 
     public function ciudadOrigen(){
-        return $this->belongsTo('App\Models\Ciudad');
+        return $this->belongsTo('App\Models\Ciudad','ciudadOrigen_id');
     }
     
     public function ciudadDestino(){
-        return $this->belongsTo('App\Models\Ciudad');
+        return $this->belongsTo('App\Models\Ciudad','ciudadDestino_id');
     }
 
 }
