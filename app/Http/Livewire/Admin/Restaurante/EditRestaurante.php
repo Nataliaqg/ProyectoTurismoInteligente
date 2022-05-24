@@ -42,7 +42,7 @@ class EditRestaurante extends Component
         $this->validate($rules);
         $this->restaurante->save();
         $bitacora = new Bitacora();
-        $bitacora->crear('Restaurante  Actualizado');    
+        $bitacora->crear('Restaurante: ' .$this->restaurante->nombre .' Actualizada');   
         $this->emit('saved');
     }
     public function deleteImage(Image $image)

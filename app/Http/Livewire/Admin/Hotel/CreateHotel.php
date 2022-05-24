@@ -47,7 +47,8 @@ class CreateHotel extends Component
        
         $hotel->save();
         $bitacora = new Bitacora();
-        $bitacora->crear('nuevo Hotel creado');
+        $bitacora->crear('nuevo Hotel creado: ' . $hotel->nombre);
+            
         $this->emit('saved');
     }
 

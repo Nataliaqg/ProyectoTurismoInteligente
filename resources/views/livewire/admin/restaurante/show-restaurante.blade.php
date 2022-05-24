@@ -160,21 +160,21 @@
             Livewire.on('deleteRestaurante', restauranteId => {
 
                 Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
+                    title: 'Estas Seguro?',
+                    text: "Los datos se borraran permanentemente!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
+                    confirmButtonText: 'Si, eliminar!'
                 }).then((result) => {
                     if (result.isConfirmed) {
 
                         Livewire.emitTo('admin.restaurante.show-restaurante', 'delete2', restauranteId)
 
                         Swal.fire(
-                            'Deleted!',
-                            'Your file has been deleted.',
+                            'Borrado!',
+                            'El registro ha sido eliminado.',
                             'success'
                         )
                     }

@@ -159,21 +159,21 @@
             Livewire.on('deleteLugarTuristico', lugarturisticoId => {
 
                 Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
+                    title: 'Estas Seguro?',
+                    text: "Los datos se borraran permanentemente!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
+                    confirmButtonText: 'Si, eliminar!'
                 }).then((result) => {
                     if (result.isConfirmed) {
 
                         Livewire.emitTo('admin.lugar.show-lugar-turistico', 'delete2', lugarturisticoId)
 
                         Swal.fire(
-                            'Deleted!',
-                            'Your file has been deleted.',
+                            'Borrado!',
+                            'El registro ha sido eliminado.',
                             'success'
                         )
                     }

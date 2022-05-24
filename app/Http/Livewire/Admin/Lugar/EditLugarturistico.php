@@ -48,7 +48,7 @@ class EditLugarturistico extends Component
         $this->validate($rules);
         $this->lugarturistico->save();
         $bitacora = new Bitacora();
-        $bitacora->crear('Lugar Turistico Actualizado');    
+        $bitacora->crear('Lugar Turistico : ' .$this->lugarturistico->nombre .' Actualizada');    
         //emitir une evento o escuchar
         $this->emit('saved');
     }

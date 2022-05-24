@@ -43,7 +43,7 @@ class EditHotel extends Component
         $this->validate($rules);
         $this->hotel->save();
         $bitacora = new Bitacora();
-        $bitacora->crear('Hotel actualizado');       
+        $bitacora->crear('Hotel: ' .$this->hotel->nombre .' Actualizada');    
       
         $this->emit('saved');
     }
