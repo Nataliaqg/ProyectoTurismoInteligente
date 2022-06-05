@@ -86,5 +86,5 @@ Route::get('/transportes/create',CreateTransporte::class)->name('admin.transport
 Route::get('bitacoras',LwBitacora::class)->name('admin.bitacora');
 Route::get('contraseña',ContraBitacora::class)->name('admin.contraseñabitacora');
 
-//Prueba Exportar EXCEL Y PDF
+//Prueba Exportar EXCEL 
 Route::get('users/export',[UserExportController::class,'exportAllUsers'])->name('users.export');

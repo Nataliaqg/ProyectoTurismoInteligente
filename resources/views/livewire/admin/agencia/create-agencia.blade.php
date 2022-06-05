@@ -5,20 +5,7 @@
 
 
     <div class="bg-white shadow-xl rounded-lg p-6">
-        {{-- <div class="grid grid-cols-1">
-            <div>
-                <x-jet-label value="Agencias" />
-                <select class="w-full form-control" wire:model="agencia_id">
-                    <option value="" selected disabled>Seleccione una Agencia</option>
-
-                    @foreach ($agencias as $agencia)
-                        <option value="{{$agencia->id}}">{{$agencia->nombre}}</option>
-                    @endforeach
-
-                </select>
-            </div>
-        </div> --}}
-
+     
             {{-- Nombre --}}
         <div class="mb-4">
             <x-jet-label value="Nombre"/>
