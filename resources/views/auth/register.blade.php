@@ -47,8 +47,8 @@
                 <div class="leading-loose">
 
 
-                    {{-- Validaciones, falta ponerlo en español y darle estilos --}}
-                        <x-jet-validation-errors class="mb-4" />
+                    {{-- Validaciones se ve mal en algunas pantallas --}}
+                        {{-- <x-jet-validation-errors class="mb-4" /> --}}
 
                         @if (session('status'))
                             <div class="mb-4 font-medium text-sm text-green-600">
@@ -63,10 +63,12 @@
                     <form method="POST" action="{{ route('register') }}" class="max-w-sm m-4 p-10 bg-black bg-opacity-25 rounded shadow-xl">
                     @csrf
 
+                            {{-- Validaciones del Formulario: se ve mal en algunas pantallas --}}
+                            <x-jet-validation-errors class="mb-4" />
 
                             {{-- Titulo del Formulario --}}
                         <h1
-                            class="mb-4 text-xl font-semibold text-center text-white dark:text-gray-200"
+                             class="mb-1 text-4xl font-semibold text-center text-white dark:text-gray-200"
                             >
                             {{ __('Registrarse') }}
                         </h1>
@@ -75,10 +77,10 @@
 
                         {{-- Input de Confirmar Nombre --}}
 
-                        <div class="mt-2">
+                        <div class="">
                             <label class="block text-sm text-black" for="name">Nombre</label>
                             <input 
-                            class="w-full px-5 py-1 text-gray-700 bg-gray-300 rounded focus:outline-none focus:bg-white form-input" 
+                            class="w-full px-5  text-gray-700 bg-gray-300 rounded focus:outline-none focus:bg-white form-input" 
                             type="text" 
                             id="name"  
                             placeholder="Escriba su Nombre" 
@@ -88,12 +90,40 @@
                         </div>
 
 
+                        {{-- Input del Telefono --}}
+
+                        <div class="">
+                            <label class="block text-sm text-black" for="telefono">Telefono</label>
+                            <input 
+                            class="w-full px-5  text-gray-700 bg-gray-300 rounded focus:outline-none focus:bg-white form-input" 
+                            type="number" 
+                            id="telefono"  
+                            placeholder="Digite su numero de Telefono" 
+                            name="telefono" required 
+                            value="{{ old('telefono') }}"
+                            >
+                        </div>
+  
+                        {{-- Input de la Edad --}}
+  
+                            <div class="">
+                                <label class="block text-sm text-black" for="edad">Edad</label>
+                                <input 
+                                class="w-full px-5  text-gray-700 bg-gray-300 rounded focus:outline-none focus:bg-white form-input" 
+                                type="number" 
+                                id="edad"  
+                                placeholder="Digite su Edad" 
+                                name="edad" required 
+                                value="{{ old('edad') }}"
+                                >
+                            </div>
+
                         {{-- Input de Email --}}
 
-                        <div class="mt-2">
+                        <div class="">
                             <label class="block text-sm text-black" for="email">E-mail</label>
                             <input 
-                            class="w-full px-5 py-1 text-gray-700 bg-gray-300 rounded focus:outline-none focus:bg-white form-input" 
+                            class="w-full px-5  text-gray-700 bg-gray-300 rounded focus:outline-none focus:bg-white form-input" 
                             type="email" 
                             id="email"  
                             placeholder="Escriba su Correo" 
@@ -103,11 +133,25 @@
                         </div>
 
 
+                        {{-- Input del Carnet de Identidad --}}
+
+                        <div class="">
+                            <label class="block text-sm text-black" for="carnetIdentidad">Carnet de Identidad</label>
+                            <input 
+                            class="w-full px-5  text-gray-700 bg-gray-300 rounded focus:outline-none focus:bg-white form-input" 
+                            type="number" 
+                            id="carnetIdentidad"  
+                            placeholder="Digite su Carnet de Identidad" 
+                            name="carnetIdentidad" required 
+                            value="{{ old('carnetIdentidad') }}"
+                            >
+                        </div>
+
                             {{-- Input de Password --}}
-                        <div class="mt-2">
+                        <div class="">
                             <label class="block  text-sm text-black">Contraseña</label>
                             <input 
-                            class="w-full px-5 py-1 text-gray-700 bg-gray-300 rounded focus:outline-none focus:bg-white form-input"
+                            class="w-full px-5  text-gray-700 bg-gray-300 rounded focus:outline-none focus:bg-white form-input"
                             type="password" 
                             id="password" 
                             placeholder="***************"
@@ -117,10 +161,10 @@
 
 
                             {{-- Input de Confirmar Password --}}
-                        <div class="mt-2">
+                        <div class="">
                             <label class="block  text-sm text-black">Confirmar Contraseña</label>
                             <input 
-                            class="w-full px-5 py-1 text-gray-700 bg-gray-300 rounded focus:outline-none focus:bg-white form-input"
+                            class="w-full px-5  text-gray-700 bg-gray-300 rounded focus:outline-none focus:bg-white form-input"
                             type="password"
                             id="password_confirmation" 
                             placeholder="***************" 

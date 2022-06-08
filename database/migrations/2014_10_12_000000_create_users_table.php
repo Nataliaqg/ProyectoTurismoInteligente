@@ -24,6 +24,9 @@ return new class extends Migration
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
+            $table->unsignedBigInteger('carnetIdentidad')->unique();
+            $table->unsignedBigInteger('telefono');
+            $table->unsignedSmallInteger('edad');
             $table->timestamps();
         });
         //DB::table('users')->insert(array('name'=>'Natalia Quiroga','email'=>'nataliaquirogag@gmail.com','password'=>Hash::make('987654321')));
