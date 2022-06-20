@@ -37,8 +37,27 @@
                 Crear Agencia
             </x-jet-button>
         </div>
-
+        <x-jet-button>
+            <a  href="{{ route('admin.agencias.show') }}">Agencias</a>
+        </x-jet-button>
     </div>
+
+         @push('script')
+            <script>
+                Livewire.on('saved', agencia => {
+
+                    Swal.fire(
+                    'Creado exitosamente!',
+                    'Creaste una Agencia!',
+                    'success'
+                    )
+
+                    Livewire.emitTo('admin.usuario.edit-user','saved',agencia); 
+                })
+
+            
+            </script>
+        @endpush
 
 
 </div>

@@ -34,6 +34,8 @@ class CreateAgencia extends Component
         $agencia->tipo = $this->tipo;
 
         $agencia->save();
+        $this->emit('saved');
+
         $bitacora = new Bitacora();
         $bitacora->crear('Nueva Agencia Creada: ' .$agencia->nombre);  
         return redirect()->route('admin.agencias.show');

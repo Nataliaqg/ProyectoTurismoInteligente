@@ -27,6 +27,8 @@ use App\Http\Livewire\Admin\Restaurante\ShowRestaurante;
 use App\Http\Livewire\Admin\Transporte\CreateTransporte;
 use App\Http\Livewire\Admin\Transporte\EditTransporte;
 use App\Http\Livewire\Admin\Transporte\ShowTransporte;
+use App\Http\Livewire\Admin\Usuario\CreateUser;
+use App\Http\Livewire\Admin\Usuario\EditUser;
 use App\Http\Livewire\Admin\Usuario\ShowUser;
 use App\Http\Livewire\Admin\Usuario\UserComponent;
 use App\Http\Livewire\Admin\Viaje\CreateViaje;
@@ -43,9 +45,10 @@ Route::get('ciudad/create',CreateCiudad::class)->name('admin.ciudad.create');
 Route::get('ciudad/{ciudad}/edit',EditCiudad::class)->name('admin.ciudad.edit');
 
 //Ruta Usuarios
-//Modificar
-Route::get('roles',UserComponent::class)->name('admin.roles.index');
+Route::get('rol',UserComponent::class)->name('admin.roles.index');
 Route::get('users',ShowUser::class)->name('admin.users.show');
+Route::get('users/create',CreateUser::class)->name('admin.user.create');
+Route::get('users/{user}/edit',EditUser::class)->name('admin.user.edit');
 
 
 // Ruta lugar turistico
@@ -86,5 +89,10 @@ Route::get('/transportes/create',CreateTransporte::class)->name('admin.transport
 Route::get('bitacoras',LwBitacora::class)->name('admin.bitacora');
 Route::get('contraseña',ContraBitacora::class)->name('admin.contraseñabitacora');
 
-//Prueba Exportar EXCEL 
-Route::get('users/export',[UserExportController::class,'exportAllUsers'])->name('users.export');
+//Reportes Usuarios
+Route::get('users/export/excel',[UserExportController::class,'exportAllUsersExcel'])->name('users.exportExcel');
+Route::get('users/export/csv',[UserExportController::class,'exportAllUsersCSV'])->name('users.exportCSV');
+Route::get('users/export/html',[UserExportController::class,'exportAllUsersHTML'])->name('users.exportHTML');
+Route::get('users/export/pdf',[UserExportController::class,'exportAllUsersPDF'])->name('users.exportPDF');
+Route::get('users/export/ODS',[UserExportController::class,'exportAllUsersODS'])->name('users.exportODS');
+Route::get('users/export/TSV',[UserExportController::class,'exportAllUsersTSV'])->name('users.exportTSV');
