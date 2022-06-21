@@ -133,9 +133,7 @@
                             Rol
                         </th>
 
-                        <th scope="col" class="relative px-6 py-3">
-                            <span class="sr-only">Editar</span>
-                        </th>
+                       
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
@@ -208,22 +206,7 @@
                                 </label>
                             </td>
 
-                             {{-- EDITAR --}}
-                             <td class="px-4 py-2  whitespace-nowrap text-right text-sm font-medium">
-                                <a href="{{ route('admin.user.edit', $user) }}" class="text-indigo-600 hover:text-indigo-900">
-                                    Editar
-                                </a>
-
-                            </td>
-
-                            {{-- ELIMINAR --}}
-                            <td class="px-4 py-2  whitespace-nowrap text-right text-sm font-medium">
-
-                                <a class="text-red-500 hover:text-red-900 cursor-pointer"
-                                    wire:click="$emit('deleteUser',{{$user->id}})">
-                                       Eliminar
-                                </a>
-                            </td>
+                           
                         </tr>
 
                     @endforeach

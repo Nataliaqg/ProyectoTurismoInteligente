@@ -45,6 +45,8 @@ class CreateTransporte extends Component
         $transporte->agencias_id =$this->agencias_id;
 
         $transporte->save();
+        $this->emit('saved');
+
         return redirect()->route('admin.transportes.show');
     }
 

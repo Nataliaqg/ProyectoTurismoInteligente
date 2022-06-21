@@ -16,6 +16,7 @@
                     @endforeach
 
                 </select>
+                <x-jet-input-error for="agencias_id"/>
             </div>
         </div>
 
@@ -43,7 +44,7 @@
          </div>
 
              {{-- Capacidad Maxima Asientos --}}
-        <div class="grid grid-cols-1 gap-6 mb-4">
+        <div class="mb-4">
             <x-jet-label value="Capacidad Maxima de Asientos"/>
             <x-jet-input 
                type="number" 
@@ -64,6 +65,23 @@
         </div>
 
     </div>
+
+            @push('script')
+            <script>
+                Livewire.on('saved', transporte => {
+
+                    Swal.fire(
+                    'Creado exitosamente!',
+                    'Creaste una Agencia!',
+                    'success'
+                    )
+
+                    Livewire.emitTo('admin.usuario.edit-user','saved',transporte); 
+                })
+
+            
+            </script>
+        @endpush
 
     
 

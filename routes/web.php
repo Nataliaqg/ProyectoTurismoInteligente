@@ -17,7 +17,7 @@ use App\Http\Livewire\Ciudads;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('inicio');
 
 Route::middleware([ //protegido para entrar al dashboard
     'auth:sanctum',
