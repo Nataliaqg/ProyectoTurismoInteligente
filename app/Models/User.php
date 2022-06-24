@@ -10,6 +10,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use App\Models\Servicio;
 
 class User extends Authenticatable
 {
@@ -70,5 +71,9 @@ class User extends Authenticatable
     public function bitacora()
     {
         return $this->hasMany(Bitacora::class, 'idUsuario');
+    }
+
+    public function servicios(){
+        return $this->hasMany('App\Models\Servicio');
     }
 }

@@ -8,7 +8,7 @@
         <div>
             <x-jet-label value="Ciudad de Origen" />
             <select class="w-full form-control" wire:model="ciudadOrigen_id">
-                <option value="" selected disabled>Seleccione una ciudad de Origen del viaje</option>
+                <option value="" selected disabled>Seleccione una ciudad de Origen del viaje:</option>
 
                 @foreach ($ciudads as $ciudad)
                     <option value="{{ $ciudad->id }}">{{ $ciudad->nombre }}</option>
@@ -77,7 +77,7 @@
         <x-jet-label value="Precio" />
         <x-jet-input wire:model="precio" 
         type="number"           
-        step=".01" />
+        step=".01" /> BS
         <x-jet-input-error for="precio" />
     </div>
     
@@ -89,7 +89,6 @@
         <x-jet-button>
             <a href="{{ route('admin.viaje.show') }}">viajes</a>
         </x-jet-button>
-      
     </div>
 
 </div>
