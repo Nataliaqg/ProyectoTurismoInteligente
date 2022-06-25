@@ -20,4 +20,9 @@ class Restaurante extends Model
     {
         return $this->morphMany(Image::class, 'imageable');
     }
+
+    
+    public function mesas(){ //Recupera info de las mesas
+        return $this->hasMany('App\Models\mesa');
+    }
 }

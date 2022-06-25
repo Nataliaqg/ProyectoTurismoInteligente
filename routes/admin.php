@@ -21,6 +21,7 @@ use App\Http\Livewire\Admin\Lugar\CreateLugarturistico;
 use App\Http\Livewire\Admin\Lugar\EditLugarturistico;
 use App\Http\Livewire\Admin\Lugar\ShowLugarTuristico;
 use App\Http\Livewire\Admin\LwBitacora;
+use App\Http\Livewire\Admin\Restaurante\CreateMesa;
 use App\Http\Livewire\Admin\Restaurante\CreateRestaurante;
 use App\Http\Livewire\Admin\Restaurante\EditRestaurante;
 use App\Http\Livewire\Admin\Restaurante\ShowRestaurante;
@@ -57,7 +58,7 @@ Route::get('lugarturisticos/create', CreateLugarturistico::class)->name('admin.l
 Route::get('restaurantes', ShowRestaurante::class)->name('admin.restaurante.show');
 Route::get('restaurantes/create', CreateRestaurante::class)->name('admin.restaurante.create');
 Route::get('restaurantes/{restaurante}/edit', EditRestaurante::class)->name('admin.restaurante.edit');
-
+Route::get('restaurantes/{restaurante}/mesas', CreateMesa::class)->name('admin.restaurante.mesa');
 
 //Ruta hotele
 Route::get('hoteles', ShowHotel::class)->name('admin.hotel.show');
