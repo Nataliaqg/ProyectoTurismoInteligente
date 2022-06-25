@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin\Transporte;
 
 use App\Models\Agencia;
+use App\Models\TipoAgencia;
 use App\Models\Transporte;
 use Livewire\Component;
 
@@ -10,10 +11,11 @@ class EditTransporte extends Component
 {
 
     
-    public $transporte,$agencias;
+    public $transporte,$agencias,$tipoAgencias;
 
-    public $agencias_id;
-    public $tipoTransporte,$descripcion,$capacidadMaximaAsientos;
+    public $agencias_id,$tipoAgencia_id;
+    
+    public $descripcion,$capacidadMaximaAsientos;
 
     public $nombre,$tipo;
 
@@ -21,7 +23,8 @@ class EditTransporte extends Component
 
     protected $rules =[
         'transporte.agencias_id' => 'required',
-        'transporte.tipoTransporte' => 'required',
+        'transporte.tipoAgencia_id' => 'required',
+        'transporte.modelo' => 'required',
         'transporte.descripcion' => 'required',
         'transporte.capacidadMaximaAsientos' => 'required'
     ];
@@ -31,6 +34,7 @@ class EditTransporte extends Component
     public function mount(Transporte $transporte){
         $this->transporte = $transporte;
         $this->agencias = Agencia::all();
+        $this->tipoAgencias = TipoAgencia::all();
         //$this->agencias_id = $transporte->agencia->id;
 
     }

@@ -20,16 +20,31 @@
             </div>
         </div>
 
+        <div class="grid grid-cols-1 py-2">
+            <div>
+                <x-jet-label value="Agencias" />
+                <select class="w-full form-control" wire:model="transporte.tipoAgencia_id">
+                    <option value="" selected disabled>Seleccione el tipo de Agencia</option>
+
+                    @foreach ($tipoAgencias as $tipoAgencia)
+                        <option value="{{$tipoAgencia->id}}">{{$tipoAgencia->tipoAgencia}}</option>
+                    @endforeach
+
+                </select>
+                <x-jet-input-error for="transporte.tipoAgencia_id"/>
+            </div>
+        </div>
+
       
-            {{-- Tipo --}}
+            {{-- Modelo --}}
         <div class="mb-4">
-            <x-jet-label value="Tipo de Transporte" />
+            <x-jet-label value="Modelo" />
             <x-jet-input 
                 type="text" 
                 class="w-full" 
-                wire:model="transporte.tipoTransporte"
-                placeholder="Ingrese el tipo de Transporte"/>
-                <x-jet-input-error for="transporte.tipoTransporte"/>
+                wire:model="transporte.modelo"
+                placeholder="Ingrese el Modelo o nombre del Transporte"/>
+                <x-jet-input-error for="transporte.modelo"/>
         </div>
 
               {{-- Descripcion --}}

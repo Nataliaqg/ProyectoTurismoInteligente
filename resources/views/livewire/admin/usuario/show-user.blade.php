@@ -26,7 +26,7 @@
                  <x-jet-input type="text"
                     class="w-full"
                     wire:model="search"
-                    placeholder="Ingrese el nombre del Usuario que quiere buscar"/>
+                    placeholder="Ingrese el nombre, edad, email, telefono o edad  del Usuario que desea buscar"/>
 
                 </div>
 

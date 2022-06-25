@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Ciudads;
 
@@ -15,9 +16,7 @@ use App\Http\Livewire\Ciudads;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('inicio');
+Route::get('/', WelcomeController::class)->name('inicio');
 
 Route::middleware([ //protegido para entrar al dashboard
     'auth:sanctum',

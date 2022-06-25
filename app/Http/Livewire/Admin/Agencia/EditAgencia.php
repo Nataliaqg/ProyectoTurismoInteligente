@@ -4,19 +4,20 @@ namespace App\Http\Livewire\Admin\Agencia;
 
 use App\Models\Agencia;
 use App\Models\Bitacora;
+use App\Models\TipoAgencia;
 use Livewire\Component;
 
 class EditAgencia extends Component
 {
-    public $agencia;
+    public $agencia,$tipoAgencias;
 
-    public $nombre,$tipo;
+    public $nombre,$tipoAgencia_id;
 
     public $listeners =['save'];
 
     protected $rules =[
         'agencia.nombre' => 'required',
-        'agencia.tipo' => 'required'
+        'agencia.tipoAgencia_id' => 'required'
     ];
 
 
@@ -24,6 +25,7 @@ class EditAgencia extends Component
 
     public function mount(Agencia $agencia){
         $this->agencia = $agencia;
+        $this->tipoAgencias = TipoAgencia::all();
     }
 
     public function save(){
