@@ -18,62 +18,63 @@ class AgenciaSeeder extends Seeder
 
         Agencia::create([
             'nombre' => 'Aerocon',
-            'tipo'   => 'Aviones'
+            'tipoAgencia_id' => '1'
         ]);
 
         Agencia::create([
             'nombre' => 'Amaszonas',
-            'tipo'   => 'Aviones'
+            'tipoAgencia_id' => '1'
         ]);
 
         Agencia::create([
             'nombre' => 'BOA',
-            'tipo'   => 'Aviones'
+            'tipoAgencia_id' => '1'
         ]);
 
         Agencia::create([
             'nombre' => 'Ecojet',
-            'tipo'   => 'Aviones'
+            'tipoAgencia_id' => '1'
         ]);
 
         Agencia::create([
             'nombre' => 'TAM Bolivia',
-            'tipo'   => 'Aviones'
+            'tipoAgencia_id' => '1'
         ]);
 
+        //flotas 
         Agencia::create([
             'nombre' => 'BOLIVAR',
-            'tipo'   => 'Buses'
+            'tipoAgencia_id' => '2'
         ]);
 
         Agencia::create([
             'nombre' => 'TRANS COPACABANA I MEM',
-            'tipo'   => 'Buses'
+            'tipoAgencia_id' => '2'
         ]);
 
         Agencia::create([
             'nombre' => 'NUEVO CONTINENTE',
-            'tipo'   => 'Buses'
+            'tipoAgencia_id' => '2'
         ]);
         
         Agencia::create([
             'nombre' => 'PANASUR',
-            'tipo'   => 'Buses'
+            'tipoAgencia_id' => '2'
         ]);
 
         Agencia::create([
             'nombre' => 'BOLPAR',
-            'tipo'   => 'Buses'
+            'tipoAgencia_id' => '2'
         ]);
 
         Agencia::create([
             'nombre' => 'TRANS COPACABANA',
-            'tipo'   => 'Buses'
+            'tipoAgencia_id' => '2'
         ]);
 
         Agencia::create([
             'nombre' => 'LA PREFERIDA BUS',
-            'tipo'   => 'Buses'
+            'tipoAgencia_id' => '2'
         ]);
 
     }

@@ -63,7 +63,7 @@
 
                         {{-- TITULO DEL FORMULARIO --}}
                     <h1
-                        class="mb-4 text-xl font-semibold text-center text-gray-900 dark:text-gray-200"
+                        class="mb-4 text-3xl font-semibold text-center text-gray-900 dark:text-gray-200"
                         >
                         {{ __('Iniciar Sesión') }}
                     </h1>
@@ -75,7 +75,7 @@
                         <label class="block text-sm text-black" for="email">Correo</label>
                         <input 
                         class="w-full px-5 py-1 text-gray-700 bg-white rounded focus:outline-none focus:bg-white form-input" 
-                        type="email" id="email"  placeholder="Escriba su correo" name="email" required 
+                        type="email" id="email"  placeholder="Escriba su Correo" name="email" required 
                         value="{{ old('email') }}"
                         >
 

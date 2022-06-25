@@ -82,7 +82,7 @@
             Crear Lugar Turistico
         </x-jet-button>
         <x-jet-button>
-            <a href="{{ route('admin.lugarturistico.show') }}">Luagares Turisticos</a>
+            <a href="{{ route('admin.lugarturistico.show') }}">Lugares Turisticos</a>
         </x-jet-button>
     </div>
 

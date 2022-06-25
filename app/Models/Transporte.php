@@ -11,13 +11,19 @@ class Transporte extends Model
 
     use HasFactory;
 
-    protected $fillable = ['id','tipoTransporte','descripcion','capacidadMaximaAsientos'];
+    protected $fillable = ['id','modelo','descripcion','capacidadMaximaAsientos','tipoAgencia_id'];
 
     //Relacion uno a muchos inversa
 
     public function agencia(){
         return $this->belongsTo(Agencia::class);
     }
+    //Relacion uno a muchos inversa
+    public function tipoAgencia(){
+        return $this->belongsTo(TipoAgencia::class);
+    }
+
+
     public function viajes(){
         return $this->hasMany(Viaje::class);
     }

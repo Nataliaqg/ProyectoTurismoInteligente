@@ -18,6 +18,11 @@ public function images(){
     return $this->morphMany(Image::class,'imageable');
 }
 
+//Relacion uno a muchos 
+
+public function habitaciones(){
+    return $this->hasMany(Habitacion::class);
+}
 
 }
 

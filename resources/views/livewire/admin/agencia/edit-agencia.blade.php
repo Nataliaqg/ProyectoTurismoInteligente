@@ -18,15 +18,19 @@
                 <x-jet-input-error for="agencia.nombre"/>
         </div>
 
-            {{-- Tipo --}}
-        <div class="mb-4">
-            <x-jet-label value="Tipo" />
-            <x-jet-input 
-                type="text" 
-                class="w-full" 
-                wire:model="agencia.tipo"
-                placeholder="Ingrese el tipo de Agencia"/>
-                <x-jet-input-error for="agencia.tipo"/>
+        <div class="grid grid-cols-1 py-2">
+            <div>
+                <x-jet-label value="Tipo de Agencias" />
+                <select class="w-full form-control" wire:model="agencia.tipoAgencia_id">
+                    <option value="" selected disabled>Seleccione el Tipo de Agencia</option>
+
+                    @foreach ($tipoAgencias as $tipoAgencia)
+                        <option value="{{$tipoAgencia->id}}">{{$tipoAgencia->tipoAgencia}}</option>
+                    @endforeach
+
+                </select>
+                <x-jet-input-error for="agencia.tipoAgencia_id"/>
+            </div>
         </div>
 
         <div class="flex justify-end mt-4">
@@ -44,12 +48,18 @@
             </x-jet-button>
         </div>
 
+        <x-jet-button>
+            <a  href="{{ route('admin.agencias.show') }}">Agencias</a>
+        </x-jet-button>
+
     </div>
+
+
 
 
     @push('script')
     <script>
-        Livewire.on('save', agencia => {
+        Livewire.on('saved', agencia => {
 
             Swal.fire(
             'Actualizado exitosamente!',
@@ -57,7 +67,7 @@
             'success'
             )
 
-            Livewire.emitTo('admin.agencia.edit-agencia','save',agencia); 
+            Livewire.emitTo('admin.agencia.edit-agencia','saved',agencia); 
         })
 
     

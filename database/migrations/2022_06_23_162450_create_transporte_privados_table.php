@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAgenciasTable extends Migration
+class CreateTransportePrivadosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateAgenciasTable extends Migration
      */
     public function up()
     {
-        Schema::create('agencias', function (Blueprint $table) {
+        Schema::create('transporte_privados', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-
-            $table->unsignedBigInteger('tipoAgencia_id')->nullable();
-            $table->foreign('tipoAgencia_id')->references('id')->on('tipo_agencias');
-            
+            $table->enum('tipoVehiculo',['AUTO','MINUBUS']);
+            $table->integer('precio');
+            $table->integer('capacidadPersonas');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateAgenciasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agencias');
+        Schema::dropIfExists('transporte_privados');
     }
 }

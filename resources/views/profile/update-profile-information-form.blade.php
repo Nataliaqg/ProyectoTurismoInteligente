@@ -65,6 +65,27 @@
             <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
             <x-jet-input-error for="email" class="mt-2" />
         </div>
+
+         {{-- CARNET DE IDENTIDAD --}}
+         <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="carnetIdentidad" value="{{ __('Carnet de Identidad') }}" />
+            <x-jet-input id="carnetIdentidad" type="number" class="mt-1 block w-full" wire:model.defer="state.carnetIdentidad" />
+            <x-jet-input-error for="carnetIdentidad" class="mt-2" />
+        </div>
+
+         {{-- TELEFONO --}}
+         <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="telefono" value="{{ __('Telefono') }}" />
+            <x-jet-input id="telefono" type="number" class="mt-1 block w-full" wire:model.defer="state.telefono" />
+            <x-jet-input-error for="telefono" class="mt-2" />
+        </div>
+
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="edad" value="{{ __('Edad') }}" />
+            <x-jet-input id="edad" type="number" class="mt-1 block w-full" wire:model.defer="state.edad" />
+            <x-jet-input-error for="edad" class="mt-2" />
+        </div>
+
     </x-slot>
 
     <x-slot name="actions">

@@ -8,7 +8,7 @@
         <div class="grid grid-cols-1 py-2">
             <div>
                 <x-jet-label value="Agencias" />
-                <select class="w-full form-control" wire:model="agencias_id">
+                <select class="w-full form-control" wire:model="transporte.agencias_id">
                     <option value="" selected disabled>Seleccione una Agencia</option>
 
                     @foreach ($agencias as $agencia)
@@ -16,19 +16,35 @@
                     @endforeach
 
                 </select>
+                <x-jet-input-error for="transporte.agencias_id"/>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 py-2">
+            <div>
+                <x-jet-label value="Agencias" />
+                <select class="w-full form-control" wire:model="transporte.tipoAgencia_id">
+                    <option value="" selected disabled>Seleccione el tipo de Agencia</option>
+
+                    @foreach ($tipoAgencias as $tipoAgencia)
+                        <option value="{{$tipoAgencia->id}}">{{$tipoAgencia->tipoAgencia}}</option>
+                    @endforeach
+
+                </select>
+                <x-jet-input-error for="transporte.tipoAgencia_id"/>
             </div>
         </div>
 
       
-            {{-- Tipo --}}
+            {{-- Modelo --}}
         <div class="mb-4">
-            <x-jet-label value="Tipo de Transporte" />
+            <x-jet-label value="Modelo" />
             <x-jet-input 
                 type="text" 
                 class="w-full" 
-                wire:model="tipoTransporte"
-                placeholder="Ingrese el tipo de Transporte"/>
-                <x-jet-input-error for="tipoTransporte"/>
+                wire:model="transporte.modelo"
+                placeholder="Ingrese el Modelo o nombre del Transporte"/>
+                <x-jet-input-error for="transporte.modelo"/>
         </div>
 
               {{-- Descripcion --}}
@@ -37,19 +53,19 @@
              <x-jet-input 
                 type="text" 
                 class="w-full" 
-                wire:model="descripcion"
+                wire:model="transporte.descripcion"
                 placeholder="Ingrese la descripcion del Transporte"/>
-                <x-jet-input-error for="descripcion"/>
+                <x-jet-input-error for="transporte.descripcion"/>
          </div>
 
              {{-- Capacidad Maxima Asientos --}}
-        <div class="grid grid-cols-1 gap-6 mb-4">
+        <div class="mb-4">
             <x-jet-label value="Capacidad Maxima de Asientos"/>
             <x-jet-input 
                type="number" 
                class="w-full" 
-               wire:model="capacidadMaximaAsientos"/>
-               <x-jet-input-error for="capacidadMaximaAsientos"/>
+               wire:model="transporte.capacidadMaximaAsientos"/>
+               <x-jet-input-error for="transporte.capacidadMaximaAsientos"/>
          </div>
     
 
@@ -58,9 +74,9 @@
                 wire:loading.attr="disabled"
                 wire:target="save"
                 {{-- wire:click="save" --}}
-                wire:click="$emit('save', {{$transportes->id}})"
+                wire:click="$emit('save', {{$transporte->id}})"
                 class="ml-auto">
-                Crear Transporte
+                Actualizar Transporte
             </x-jet-button>
         </div>
 
@@ -69,7 +85,7 @@
 
         @push('script')
             <script>
-                Livewire.on('save', transportes => {
+                Livewire.on('saved', transporte => {
 
                     Swal.fire(
                     'Actualizado exitosamente!',
@@ -77,7 +93,7 @@
                     'success'
                     )
 
-                    Livewire.emitTo('admin.transporte.edit-transporte','save',transportes); 
+                    Livewire.emitTo('admin.transporte.edit-transporte','saved',transporte); 
                 })
 
             

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin\Transporte;
 
 use App\Models\Agencia;
+use App\Models\TipoAgencia;
 use App\Models\Transporte;
 use Livewire\Component;
 
@@ -10,44 +11,53 @@ class EditTransporte extends Component
 {
 
     
-    public $transportes;
-    public $agencias;
-    public $agencias_id="";
-    public $tipoTransporte,$descripcion,$capacidadMaximaAsientos;
+    public $transporte,$agencias,$tipoAgencias;
+
+    public $agencias_id,$tipoAgencia_id;
+    
+    public $descripcion,$capacidadMaximaAsientos;
 
     public $nombre,$tipo;
 
     public $listeners =['save'];
 
     protected $rules =[
-        'transportes.agencias_id' => 'required',
-        'transportes.tipoTransporte' => 'required',
-        'transportes.descripcion' => 'required',
-        'transportes.capacidadMaximaAsientos' => 'required'
+        'transporte.agencias_id' => 'required',
+        'transporte.tipoAgencia_id' => 'required',
+        'transporte.modelo' => 'required',
+        'transporte.descripcion' => 'required',
+        'transporte.capacidadMaximaAsientos' => 'required'
     ];
 
-    public function mount(){
+
+    //Capturar datos que se envian desde la URL
+    public function mount(Transporte $transporte){
+        $this->transporte = $transporte;
         $this->agencias = Agencia::all();
+        $this->tipoAgencias = TipoAgencia::all();
+        //$this->agencias_id = $transporte->agencia->id;
+
     }
 
     //propiedades computadas 
-    public function getAgenciaProperty(){
+   /*  public function getAgenciaProperty(){
         return Agencia::find($this->agencia_id);
 
-    }
+    } */
 
-    public function save(){
+    public function save(Transporte $transporte){
         $rules = $this->rules;
         $this->validate($rules);
 
-        $transporte = new Transporte();
-        $transporte->tipoTransporte = $this->tipoTransporte;
-        $transporte->descripcion = $this->descripcion;
-        $transporte->capacidadMaximaAsientos = $this->capacidadMaximaAsientos;
-        $transporte->agencias_id =$this->agencias_id;
+        //$transporte = new Transporte();
+        /* $this->$transporte->tipoTransporte = $this->tipoTransporte;
+        $this->$transporte->descripcion = $this->descripcion;
+        $this->$transporte->capacidadMaximaAsientos = $this->capacidadMaximaAsientos;
+        $this->$transporte->agencias_id =$this->agencias_id; */
 
-        $transporte->save();
-        return redirect()->route('admin.transporte.show');
+        $this->transporte->save();
+        $this->emit('saved');
+        return redirect()->route('admin.transportes.show');
     }
 
 

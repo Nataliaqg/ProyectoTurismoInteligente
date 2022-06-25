@@ -30,8 +30,9 @@ class ShowTransporte extends Component
 
     public function render()
     {
-        $transportes = Transporte::where('tipoTransporte','like', '%'. $this->search . '%')
-                    ->paginate(6);
+        $transportes = Transporte::where('modelo','LIKE', '%'. $this->search . '%')
+        ->orWhere('descripcion', 'LIKE', '%' . $this->search . '%')
+        ->paginate(6);
 
         return view('livewire.admin.transporte.show-transporte', compact('transportes'))->layout('layouts.admin');
     }
