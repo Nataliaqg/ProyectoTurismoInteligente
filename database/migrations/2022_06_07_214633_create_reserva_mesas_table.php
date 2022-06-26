@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAgenciasTable extends Migration
+class CreateReservaMesasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateAgenciasTable extends Migration
      */
     public function up()
     {
-        Schema::create('agencias', function (Blueprint $table) {
+        Schema::create('reserva_mesas', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-
-            $table->unsignedBigInteger('tipoAgencia_id')->nullable();
-            $table->foreign('tipoAgencia_id')->references('id')->on('tipo_agencias');
-            
+            $table->date('fecha');
+            $table->time('hora');
+            $table->unsignedSmallInteger('cantidad_mesas');
             $table->timestamps();
+            $table->unsignedBigInteger('mesa_id');
+            $table->foreign('mesa_id')->references('id')->on('mesas');
         });
     }
 
@@ -31,6 +31,6 @@ class CreateAgenciasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agencias');
+        Schema::dropIfExists('reserva_mesas');
     }
 }

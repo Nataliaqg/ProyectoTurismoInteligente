@@ -60,6 +60,9 @@
                                 <span class="sr-only">Editar</span>
                             </th>
                             <th scope="col" class="relative px-6 py-3">
+                                <span class="sr-only">Mesas</span>
+                            </th>
+                            <th scope="col" class="relative px-6 py-3">
                                 <span class="sr-only">eliminar</span>
                             </th>
 
@@ -127,6 +130,10 @@
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <a href="{{ route('admin.restaurante.edit', $restaurante) }}"
                                         class="text-indigo-600 hover:text-indigo-900">Editar</a>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <a href="{{ route('admin.restaurante.mesa', $restaurante) }}"
+                                        class="text-indigo-600 hover:text-indigo-900">Agregar mesa</a>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <a class="pl-2 hover:text-red-600 cursor-pointer"

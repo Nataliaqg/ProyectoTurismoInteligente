@@ -33,7 +33,9 @@ class ShowAgencia extends Component
 
     public function render()
     {
-        $agencias = Agencia::where('nombre','like', '%'. $this->search . '%')
+       
+        $agencias = Agencia::where('nombre','LIKE', '%'. $this->search . '%')
+                    ->orWhere('tipoAgencia_id', 'LIKE', '%' . $this->search . '%')
                     ->paginate(6);
         return view('livewire.admin.agencia.show-agencia', compact('agencias'))->layout('layouts.admin');
     }

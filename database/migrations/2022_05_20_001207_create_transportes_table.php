@@ -16,13 +16,16 @@ class CreateTransportesTable extends Migration
         Schema::create('transportes', function (Blueprint $table) {
             $table->id();
 
-            $table->string('tipoTransporte');
+            //a borrar tipo transporte
+            $table->string('modelo');
             $table->string('descripcion');
             $table->unsignedSmallInteger('capacidadMaximaAsientos');
 
             $table->unsignedBigInteger('agencias_id');
             $table->foreign('agencias_id')->references('id')->on('agencias')->onDelete('cascade')->onUpdate('cascade');
 
+            $table->unsignedBigInteger('tipoAgencia_id')->nullable();
+            $table->foreign('tipoAgencia_id')->references('id')->on('tipo_agencias');
 
             $table->timestamps();
         });

@@ -81,7 +81,12 @@
 
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                 <div class="text-sm text-gray-900">
-                                    {{$agencia->tipo}}
+                                    {{-- {{$agencia->tipoAgencia_id = 1}} --}}
+                                    @if ($agencia->tipoAgencia_id == 1)
+                                        Avion
+                                    @else
+                                        Flota
+                                    @endif
                                 </div>
                             </td>
 

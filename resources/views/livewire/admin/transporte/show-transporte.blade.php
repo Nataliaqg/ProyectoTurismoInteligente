@@ -17,7 +17,7 @@
         <x-table-responsive>
 
 
-            {{-- Buscador de Agencias --}}
+            {{-- Buscador de Transportes --}}
 
             <div class="py-6 px-4">
                 <x-jet-input
@@ -46,6 +46,11 @@
 
                         <th scope="col"
                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Modelo
+                        </th>
+
+                        <th scope="col"
+                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             DESCRIPCION
                         </th>
 
@@ -70,7 +75,8 @@
                     @foreach ($transportes as $transporte)
 
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap"> {{--NOMBRE--}}
+                            {{--NOMBRE--}}
+                            <td class="px-6 py-4 whitespace-nowrap"> 
                                 <div class="flex items-center">   
                                     <div class="ml-4">
                                         <div class="text-sm font-medium text-gray-900">
@@ -80,11 +86,29 @@
                                 </div>
                             </td>
 
-                            <td class="px-6 py-4 whitespace-nowrap"> {{--ABREVIATURA--}}
+
+
+
+                              {{-- Tipo de agencia a la que pertenece --}}
+                              <td class="px-6 py-4 whitespace-nowrap"> 
                                 <div class="text-sm text-gray-900">
-                                    {{ $transporte->tipoTransporte}}
+                                    @if ($transporte->tipoAgencia_id == 1)
+                                        Avion
+                                    @else
+                                        Flota
+                                    @endif
                                 </div>
                             </td>
+
+                            {{-- Modelo --}}
+                            <td class="px-6 py-4 whitespace-nowrap"> 
+                                <div class="text-sm text-gray-900">
+                                    {{ $transporte->modelo}}
+                                </div>
+                            </td>
+
+                           
+
 
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                 <div class="text-sm text-gray-900">

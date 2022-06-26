@@ -6,6 +6,7 @@
 
     <div class="bg-white shadow-xl rounded-lg p-6">
      
+
             {{-- Nombre --}}
         <div class="mb-4">
             <x-jet-label value="Nombre"/>
@@ -17,7 +18,7 @@
                 <x-jet-input-error for="nombre"/>
         </div>
 
-            {{-- Tipo --}}
+            {{-- Tipo
         <div class="mb-4">
             <x-jet-label value="Tipo" />
             <x-jet-input 
@@ -26,7 +27,23 @@
                 wire:model="tipo"
                 placeholder="Ingrese el tipo de Agencia"/>
                 <x-jet-input-error for="tipo"/>
+        </div> --}}
+
+        <div class="grid grid-cols-1 py-2">
+            <div>
+                <x-jet-label value="Tipo de Agencias" />
+                <select class="w-full form-control" wire:model="tipoAgencia_id">
+                    <option value="" selected disabled>Seleccione el Tipo de Agencia</option>
+
+                    @foreach ($tipoAgencias as $tipoAgencia)
+                        <option value="{{$tipoAgencia->id}}">{{$tipoAgencia->tipoAgencia}}</option>
+                    @endforeach
+
+                </select>
+                <x-jet-input-error for="tipoAgencia_id"/>
+            </div>
         </div>
+
 
         <div class="flex">
             <x-jet-button
