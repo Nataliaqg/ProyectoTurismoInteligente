@@ -27,8 +27,6 @@ class ShowAgencia extends Component
         $agencia->delete();
         $bitacora = new Bitacora();
         $bitacora->crear('Agencia eliminada ' .$agencia->nombre); 
-        
-
    }
 
     public function render()
