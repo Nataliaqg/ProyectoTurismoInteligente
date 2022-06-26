@@ -8,12 +8,12 @@ use Livewire\Component;
 
 class EditTransPriv extends Component
 {
-    public $transportePrivado, $tipoTransPrivados, $tipoTransPrivado_id, $tipoTransPrivado_nombre;
+    public $transportePrivado, $tipoTransPrivados, $tipoTransPrivado_id;
 
     protected $rules =[
         'transportePrivado.precio'=>'required',
         'transportePrivado.capacidadPersonas'=>'required',
-        'transportePrivado.tipoTransPrivado_id'=>'nullable'
+        'transportePrivado.tipoTransPrivado_id'=>'required'
     ];
 
 

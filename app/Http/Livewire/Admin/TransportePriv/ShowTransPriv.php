@@ -13,7 +13,7 @@ class ShowTransPriv extends Component
 
     public $search,$transportePrivado,$tipoTransPrivados;
 
-    protected $listeners = ['delete2'=>'delete'];
+    protected $listeners = ['delete'];
 
     public function updatingSearch()
     {

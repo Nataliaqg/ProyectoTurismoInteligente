@@ -102,6 +102,6 @@ Route::get('users/export/ODS',[UserExportController::class,'exportAllUsersODS'])
 Route::get('users/export/TSV',[UserExportController::class,'exportAllUsersTSV'])->name('users.exportTSV');
 
 //Transporte privado
-Route::get('transporteprivado',ShowTransPriv::class)->name('admin.transporteprivado.show');
-Route::get('transporteprivado/create',CreateTransPriv::class)->name('admin.transporteprivado.create');
-Route::get('transporteprivado/{transporteprivado}/edit',EditTransPriv::class)->name('admin.transporteprivado.edit');
+Route::get('transporteprivados',ShowTransPriv::class)->name('admin.transporteprivado.show');
+Route::get('transporteprivados/create',CreateTransPriv::class)->name('admin.transporteprivado.create');
+Route::get('transporteprivados/{transportePrivado}/edit',EditTransPriv::class)->name('admin.transporteprivado.edit');

@@ -8,29 +8,32 @@ use Livewire\Component;
 
 class CreateTransPriv extends Component
 {
+    public $transportePrivados;
     public $tipoTransPrivados,$tipoTransPrivado_id;
     public $precio,$capacidadPersonas;
 
     protected $rules = [
-        'tipoTransPrivado_id' => 'required',
         'precio' => 'required',
-        'capacidadPersonas'=>'required'
+        'capacidadPersonas'=>'required',
+        'tipoTransPrivado_id' => 'required'
     ];
 
     public function mount()
     {
+        $this->transportePrivados=TransportePrivado::all();
         $this->tipoTransPrivados = TipoTransPrivado::all();
     }
 
-    public function getTipoTransPrivadoProperty(){
+   /* public function getTipoTransPrivadoProperty(){
         return TipoTransPrivado::find($this->tipoTransPrivado_id);
-    }
+    }*/
 
     public function save(){
         $rules = $this->rules;
         $this->validate($rules);
 
         $transportePrivado = new TransportePrivado();
+        
         $transportePrivado->tipoTransPrivado_id= $this->tipoTransPrivado_id;
         $transportePrivado->precio=$this->precio;
         $transportePrivado->capacidadPersonas=$this->capacidadPersonas;

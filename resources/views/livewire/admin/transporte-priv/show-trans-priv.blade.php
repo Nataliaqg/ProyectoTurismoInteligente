@@ -16,6 +16,7 @@
 
     <div class="container py-12">
         <x-table-responsive>
+
             {{-- Buscador de Transporte --}}
 
             <div class="py-6 px-4">
@@ -99,7 +100,7 @@
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
 
                                 <a class="text-red-500 hover:text-red-900 cursor-pointer"
-                                    wire:click="$emit('deleteTransportePrivado', {{$transportePrivado->id}})">
+                                    wire:click="$emit('deleteTransportePriv', {{$transportePrivado->id}})">
                                        Eliminar
                                 </a>
                             </td>
@@ -133,7 +134,7 @@
     <!-- eliminar... -->
 @push('script')
 <script>
-    Livewire.on('deleteTransportePrivado', transportePrivadoId => {
+    Livewire.on('deleteTransportePriv', transportePrivado => {
 
         Swal.fire({
                     title: 'Estas Seguro?',
@@ -146,7 +147,7 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
 
-                        Livewire.emitTo('admin.transportepriv.show-trans-priv', 'delete2', transportePrivadoId)
+                        Livewire.emitTo('admin.transporte-priv.show-trans-priv', 'delete', transportePrivado)
 
                         Swal.fire(
                             'Borrado!',
