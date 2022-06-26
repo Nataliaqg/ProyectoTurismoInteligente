@@ -31,6 +31,7 @@ class EditViaje extends Component
     public function mount(Viaje $viaje)
     {
         $this->viaje = $viaje;
+        
         $transporte=Transporte::find($viaje->transporte_id);
         $this->transporte_tipoTransporte=$transporte->tipoTransporte;
         $this->transportes = Transporte::all();
@@ -44,7 +45,7 @@ class EditViaje extends Component
         $this->ciudads=Ciudad::all(); //ver
     }
 
-    public  function refreshHotel(){
+    public  function refreshViaje(){
         $this->viaje=$this->viaje->fresh();
     } 
 

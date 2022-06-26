@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTransportePrivadosTable extends Migration
+class CreateTipoTransPrivadosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateTransportePrivadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('transporte_privados', function (Blueprint $table) {
+        Schema::create('tipo_trans_privados', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('tipoTransPrivado_id');
-            $table->integer('precio');
-            $table->integer('capacidadPersonas');
-            $table->foreign('tipoTransPrivado_id')->references('id')->on('tipo_trans_privados');
+            $table->string('nombre');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateTransportePrivadosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transporte_privados');
+        Schema::dropIfExists('tipo_trans_privados');
     }
 }

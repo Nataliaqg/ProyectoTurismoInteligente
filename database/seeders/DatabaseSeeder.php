@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CiudadSeeder::class);
         $this->call(AgenciaSeeder::class);
         $this->call(TransporteSeeder::class);
+        $this->call(TipoTransPrivadoSeeder::class);
     }
 
 }
