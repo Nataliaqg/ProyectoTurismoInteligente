@@ -66,16 +66,28 @@
 
                         <tr>
 
-                            <td class="px-6 py-4 whitespace-nowrap"> 
-                                <div class="flex items-center">   
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 h-10 w-10">
+                                        @if ($transportePrivado->images->count())
+                                        <img class="h-10 w-10 rounded-full object-cover"
+                                                src="{{ Storage::url($transportePrivado->images->first()->url) }}" alt="">
+                                        @else
+                                            <img class="h-10 w-10 rounded-full object-cover"
+                                            src="https://preview.free3d.com/img/2020/08/2399393143402268166/bhzgyiii-900.jpg"
+                                            alt="">
+                                        @endif
+                                        
+                                    </div>
                                     <div class="ml-4">
                                         <div class="text-sm font-medium text-gray-900">
-                                            {{$transportePrivado->tipoTransPrivado_id}}
+                                            {{$transportePrivado->tipoTransPrivado->nombre}}
                                         </div>
                                     </div>
                                 </div>
                             </td>
 
+                           
                             <td class="px-6 py-4 whitespace-nowrap"> 
                                 <div class="text-sm text-gray-900">
                                     {{ $transportePrivado->precio}}

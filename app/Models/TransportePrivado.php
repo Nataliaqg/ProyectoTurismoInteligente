@@ -18,6 +18,12 @@ class TransportePrivado extends Model
 
     //relacion uno a muchos
     public function tipoTransPrivado(){
-        return $this->belongsTo('App\Models\TipoTransPrivado');
+        return $this->belongsTo(TipoTransPrivado::class,'tipoTransPrivado_id');
     }
+
+     //relacion uno a muchos polimorfica
+     public function images()
+     {
+         return $this->morphMany(Image::class, 'imageable');
+     }
 }

@@ -5,6 +5,8 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\HotelController;
 use App\Http\Controllers\Admin\Lugar\LugarController;
 use App\Http\Controllers\Admin\RestauranteController;
+use App\Http\Controllers\Admin\TransPriv\TransportePrivadoController;
+use App\Http\Controllers\Admin\Viaje\ViajeController;
 use App\Http\Controllers\UserExportController;
 use App\Http\Livewire\Admin\Agencia\CreateAgencia;
 use App\Http\Livewire\Admin\Agencia\EditAgencia;
@@ -75,6 +77,8 @@ Route::get('hoteles/{hotel}/edit',EditHotel::class)->name('admin.hotel.edit');
 Route::post('lugarturisticos/{lugarturistico}/files',[LugarController::class,'files'])->name('admin.lugar.files');
 Route::post('restaurantes/{restaurante}/files',[RestauranteController::class,'files'])->name('admin.restaurante.files');
 Route::post('hoteles/{hotel}/files',[HotelController::class,'files'])->name('admin.hotel.files');
+Route::post('transporteprivados/{transportePrivado}/files',[TransportePrivadoController::class,'files'])->name('admin.transporteprivado.files');
+Route::post('viajes/{viaje}/files',[ViajeController::class,'files'])->name('admin.viaje.files');
 //Ruta Viaje
 Route::get('viaje',ShowViaje::class)->name('admin.viaje.show');
 Route::get('viaje/create',CreateViaje::class)->name('admin.viaje.create');

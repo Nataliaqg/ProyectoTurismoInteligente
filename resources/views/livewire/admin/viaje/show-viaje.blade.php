@@ -12,7 +12,7 @@
     </div>
     </x-slot>
 
-    <div class=" container first-line:py-12">
+    <div class=" container first-line:py-12 mt-10">
         <!--el slot definido en componetes/table-resposive-->
         <x-table-responsive>
             <!--el buscador-->
@@ -68,6 +68,17 @@
                             <tr>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            @if ($viaje->images->count())
+                                            <img class="h-10 w-10 rounded-full object-cover"
+                                                    src="{{ Storage::url($viaje->images->first()->url) }}" alt="">
+                                            @else
+                                                <img class="h-10 w-10 rounded-full object-cover"
+                                                src="https://thumbs.dreamstime.com/b/pares-de-boletos-azules-en-blanco-de-la-pel%C3%ADcula-o-de-la-rifa-aislados-en-el-ccb-blanco-78484952.jpg"
+                                                alt="">
+                                            @endif
+                                            
+                                        </div>
                                         <div class="ml-4">
                                             <div class="text-sm font-medium text-gray-900">
                                                 {{ $viaje->fecha }}
@@ -88,7 +99,7 @@
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="text-sm text-gray-900">
-                                        {{ $viaje->transporte->tipoTransporte }}
+                                        {{ $viaje->transporte->agencia->tipoAgencia->tipoAgencia }}
                                     </div>
                                 </td>
 

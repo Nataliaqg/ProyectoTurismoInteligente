@@ -14,7 +14,7 @@ class Viaje extends Model
     protected $guarded=['id','created_at','updated_at'];
 
     public function transporte(){
-        return $this->belongsTo('App\Models\Transporte');
+        return $this->belongsTo(Transporte::class,'transporte_id');
     }
 
     public function ciudadOrigen(){
@@ -23,6 +23,12 @@ class Viaje extends Model
     
     public function ciudadDestino(){
         return $this->belongsTo('App\Models\Ciudad','ciudadDestino_id');
+    }
+
+    //relacion uno a muchos polimorfica
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'imageable');
     }
 
 }

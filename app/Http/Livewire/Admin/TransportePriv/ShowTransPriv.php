@@ -6,6 +6,7 @@ use App\Models\TipoTransPrivado;
 use Livewire\Component;
 use App\Models\TransportePrivado;
 use Livewire\WithPagination;
+use App\Models\Bitacora;
 
 class ShowTransPriv extends Component
 {
@@ -23,6 +24,8 @@ class ShowTransPriv extends Component
     public function delete($transportePrivado){
         $idtransportePrivado= TransportePrivado::find($transportePrivado);
         $idtransportePrivado->delete();
+        $bitacora = new Bitacora();
+        $bitacora->crear('Transporte Privado Eliminado');
     }
 
     public function mount (TransportePrivado $transportePrivado){

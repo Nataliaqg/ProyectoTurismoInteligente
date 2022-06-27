@@ -7,6 +7,8 @@ use App\Models\Viaje;
 use App\Models\Transporte;
 use App\Models\Ciudad;
 use App\Models\Bitacora;
+use App\Models\Image;
+use Illuminate\Support\Facades\Storage;
 
 class EditViaje extends Component
 {
@@ -59,6 +61,12 @@ class EditViaje extends Component
         $this->emit('saved');
     }
 
+    public function deleteImage(Image $image)
+    {
+        Storage::delete([$image->url]);
+        $image->delete();
+        $this->viaje=$this->viaje->fresh();
+    }
 
     public function render()
     {

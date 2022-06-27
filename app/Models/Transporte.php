@@ -16,7 +16,7 @@ class Transporte extends Model
     //Relacion uno a muchos inversa
 
     public function agencia(){
-        return $this->belongsTo(Agencia::class);
+        return $this->belongsTo(Agencia::class,'agencias_id');
     }
     //Relacion uno a muchos inversa
     public function tipoAgencia(){

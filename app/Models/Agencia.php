@@ -20,7 +20,7 @@ class Agencia extends Model
 
     //Relacion uno a muchos inversa
     public function tipoAgencia(){
-        return $this->belongsTo(TipoAgencia::class);
+        return $this->belongsTo(TipoAgencia::class,'tipoAgencia_id');
     }
 
 }

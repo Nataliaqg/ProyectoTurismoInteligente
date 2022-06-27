@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Admin\TransportePriv;
 use App\Models\TipoTransPrivado;
 use App\Models\TransportePrivado;
 use Livewire\Component;
+use App\Models\Bitacora;
 
 class CreateTransPriv extends Component
 {
@@ -39,12 +40,13 @@ class CreateTransPriv extends Component
         $transportePrivado->capacidadPersonas=$this->capacidadPersonas;
 
         $transportePrivado->save();
-
+        $bitacora = new Bitacora();
+        $bitacora->crear('Transporte Privado Creado'); 
         $this->emit('saved');
     }
 
     public function render()
     {
-        return view('livewire.admin.transporte-priv.create-trans-priv');
+        return view('livewire.admin.transporte-priv.create-trans-priv')->layout('layouts.admin');
     }
 }
