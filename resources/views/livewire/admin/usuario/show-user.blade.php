@@ -183,8 +183,8 @@
                         @endif
 
                         
-                         {{-- Paginacion de Usuarios --}}
-                    @if ($users->hasPages())
+                        {{-- Paginacion de Usuarios --}}
+                        @if ($users->hasPages())
                     
                         <div class="px-6 py-4">
                             {{ $users->links() }}
@@ -197,5 +197,35 @@
 
 
         </div>
+
+
+        @push('script')
+            <script>
+                Livewire.on('deleteUser', user => {
+
+                    Swal.fire({
+                        title: '¿Estás seguro?',
+                        text: "Los datos se borraran permanentemente!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Si, eliminar!'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            Livewire.emitTo('admin.usuario.show-user','delete',user); 
+                            Swal.fire(
+                                'Borrado!',
+                                'El registro ha sido eliminado.',
+                                'success'
+                            )
+                        }
+                    })
+
+                })
+
+            
+            </script>
+        @endpush
 
 </div>

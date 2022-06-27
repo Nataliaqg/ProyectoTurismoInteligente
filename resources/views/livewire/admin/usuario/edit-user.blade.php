@@ -1,6 +1,6 @@
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-gray-700">
     <h1 class="text-3xl text-center font-semibold mb-8">
-        Complete esta informacion para crear una Usuario
+        Complete esta informacion para Editar una Usuario
     </h1>
 
 

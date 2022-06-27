@@ -28,6 +28,9 @@ use App\Http\Livewire\Admin\Restaurante\ShowRestaurante;
 use App\Http\Livewire\Admin\Transporte\CreateTransporte;
 use App\Http\Livewire\Admin\Transporte\EditTransporte;
 use App\Http\Livewire\Admin\Transporte\ShowTransporte;
+use App\Http\Livewire\Admin\TransportePriv\CreateTransPriv;
+use App\Http\Livewire\Admin\TransportePriv\EditTransPriv;
+use App\Http\Livewire\Admin\TransportePriv\ShowTransPriv;
 use App\Http\Livewire\Admin\Usuario\CreateUser;
 use App\Http\Livewire\Admin\Usuario\EditUser;
 use App\Http\Livewire\Admin\Usuario\ShowUser;
@@ -97,3 +100,8 @@ Route::get('users/export/html',[UserExportController::class,'exportAllUsersHTML'
 Route::get('users/export/pdf',[UserExportController::class,'exportAllUsersPDF'])->name('users.exportPDF');
 Route::get('users/export/ODS',[UserExportController::class,'exportAllUsersODS'])->name('users.exportODS');
 Route::get('users/export/TSV',[UserExportController::class,'exportAllUsersTSV'])->name('users.exportTSV');
+
+//Transporte privado
+Route::get('transporteprivados',ShowTransPriv::class)->name('admin.transporteprivado.show');
+Route::get('transporteprivados/create',CreateTransPriv::class)->name('admin.transporteprivado.create');
+Route::get('transporteprivados/{transportePrivado}/edit',EditTransPriv::class)->name('admin.transporteprivado.edit');

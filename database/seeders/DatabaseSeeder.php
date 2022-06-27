@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TipoAgenciaSeeder::class);
         $this->call(AgenciaSeeder::class);
         $this->call(TransporteSeeder::class);
+        $this->call(TipoTransPrivadoSeeder::class);
         $this->call(HoteleSeeder::class);
         $this->call(RestauranteSeeder::class);
         $this->call(LugarTuristicoSeeder::class);
