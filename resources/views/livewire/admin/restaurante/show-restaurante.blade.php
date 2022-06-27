@@ -11,7 +11,7 @@
 
     </x-slot>
 
-    <div class=" container first-line:py-12">
+    <div class=" container first-line:py-12 ">
         <!--el slot definido en componetes/table-resposive-->
         <x-table-responsive>
             <!--el buscador-->
@@ -26,31 +26,31 @@
                     <thead class="bg-gray-50">
                         <tr>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Nombre
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 descripcion
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 direccion
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 telefono
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-normal">
                                 hora Apertura
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-normal">
                                 hora cierre
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 ciudad
                             </th>
 
@@ -69,7 +69,7 @@
                         </tr>
                     </thead>
 
-                    <tbody class="bg-white divide-y divide-gray-200">
+                    <tbody class="bg-white divide-y divide-gray-200 ">
 
                         @foreach ($restaurantes as $restaurante)
                             <tr>
@@ -96,26 +96,26 @@
                                 </td>
 
 
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">
+                                <td class=" px-6 py-4 whitespace-normal">
+                                    <div class=" text-xs text-gray-900">
                                         {{ $restaurante->descripcion }}
                                     </div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">
+                                <td class="px-6 py-4 whitespace-normal">
+                                    <div class=" text-xs text-gray-900">
                                         {{ $restaurante->direccion }}
                                     </div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
+                                <td class="px-6 py-4 whitespace-normal">
                                     <div class="text-sm text-gray-900">
                                         {{ $restaurante->telefono }}
                                     </div>
                                 </td>
 
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
                                     {{ $restaurante->horaApertura }}
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
                                     {{ $restaurante->horaCierre }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
@@ -125,17 +125,15 @@
                                     </div>
                                 </td>
 
-
-
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <td class="px-4 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <a href="{{ route('admin.restaurante.edit', $restaurante) }}"
                                         class="text-indigo-600 hover:text-indigo-900">Editar</a>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <td class="px-4 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <a href="{{ route('admin.restaurante.mesa', $restaurante) }}"
-                                        class="text-indigo-600 hover:text-indigo-900">Agregar mesa</a>
+                                        class="text-indigo-600 hover:text-indigo-900">Mesa</a>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <td class="px-4 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <a class="pl-2 hover:text-red-600 cursor-pointer"
                                         wire:click="$emit('deleteRestaurante', {{ $restaurante->id }})">
                                         Eliminar

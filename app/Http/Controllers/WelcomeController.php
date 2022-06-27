@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Hotel;
+use App\Models\LugarTuristico;
+use App\Models\Restaurante;
 use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
@@ -13,7 +16,9 @@ class WelcomeController extends Controller
     {
 
         $hoteles = Hotel::all();
+        $restaurantes = Restaurante::all();
+        $lugarturisticos = LugarTuristico::all();
 
-        return view('welcome', compact('hoteles'));
+        return view('welcome', compact('hoteles','restaurantes','lugarturisticos'));
     }
 }

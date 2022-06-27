@@ -26,39 +26,39 @@
                     <thead class="bg-gray-50">
                         <tr>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Nombre
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 descripcion
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 direccion
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 telefono
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Categoria
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 habitaciones
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 ciudad
                             </th>
 
 
-                            <th scope="col" class="relative px-6 py-3">
+                            <th scope="col" class="relative px-4 py-3">
                                 <span class="sr-only">Editar</span>
                             </th>
-                            <th scope="col" class="relative px-6 py-3">
+                            <th scope="col" class="relative px-4 py-3">
                                 <span class="sr-only">eliminar</span>
                             </th>
 
@@ -92,33 +92,33 @@
                                 </td>
 
 
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">
+                                <td class="px-4 py-4 whitespace-normal">
+                                    <div class="text-xs text-gray-900">
                                         {{ $hotel->descripcion }}
                                     </div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">
+                                <td class="px-4 py-4 whitespace-normal">
+                                    <div class="text-xs text-gray-900">
                                         {{ $hotel->direccion }}
                                     </div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
+                                <td class="px-4 py-4 whitespace-normal">
                                     <div class="text-sm text-gray-900">
                                         {{ $hotel->telefono }}
                                     </div>
                                 </td>
 
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">
+                                <td class="px-4 py-4 whitespace-normal">
+                                    <div class="text-sm text-gray-900 text-center">
                                         {{ $hotel->categoria }}
                                     </div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
+                                <td class="px-4 py-4 whitespace-normal text-center">
                                     <div class="text-sm text-gray-900">
                                         {{ $hotel->capacidadMaximaHabitacion }}
                                     </div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
+                                <td class="px-4 py-4 whitespace-nowrap">
                                     <div class="text-sm text-gray-900">
                                         
                                       {{$hotel->ciudad->nombre}}
@@ -127,11 +127,11 @@
 
 
 
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <td class="px-4 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <a href="{{ route('admin.hotel.edit', $hotel) }}"
                                         class="text-indigo-600 hover:text-indigo-900">Edit</a>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <td class="px-4 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <a class="pl-2 hover:text-red-600 cursor-pointer"
                                         wire:click="$emit('deleteHotel', {{ $hotel->id }})">
                                         Eliminar

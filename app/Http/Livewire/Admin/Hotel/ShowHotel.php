@@ -37,7 +37,7 @@ class ShowHotel extends Component
 
     public function render()
     {
-        $hoteles = Hotel::where('nombre','like','%'.$this->search.'%')->paginate(10);
+        $hoteles = Hotel::where('nombre','like','%'.$this->search.'%')->paginate(5);
         return view('livewire.admin.hotel.show-hotel',compact('hoteles'))->layout('layouts.admin');
     }
 }

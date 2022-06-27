@@ -62,8 +62,11 @@ class CreateMesa extends Component
 
     //traer todas las mesas en mesas
     public function getMesas()
+
     {
-        $this->mesas = mesa::all();
+        $mesa_id = $this->restaurante;
+       
+        $this->mesas = mesa::where('restaurante_id',$mesa_id)->get();
     }
 
     public function save()

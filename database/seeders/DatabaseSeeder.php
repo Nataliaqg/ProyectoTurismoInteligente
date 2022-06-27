@@ -14,8 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Storage::deleteDirectory('lugarturisticos');
-        Storage::makeDirectory('lugarturisticos');
+        Storage::deleteDirectory('public/hoteles');
+        Storage::makeDirectory('public/hoteles');
+        Storage::deleteDirectory('public/lugarturisticos');
+        Storage::makeDirectory('public/lugarturisticos');
+        Storage::deleteDirectory('public/restaurantes');
+        Storage::makeDirectory('public/restaurantes');
         // \App\Models\User::factory(10)->create();
         $this->call(UserSeeder::class);
         $this->call(CiudadSeeder::class);
@@ -23,6 +27,8 @@ class DatabaseSeeder extends Seeder
         $this->call(AgenciaSeeder::class);
         $this->call(TransporteSeeder::class);
         $this->call(HoteleSeeder::class);
+        $this->call(RestauranteSeeder::class);
+        $this->call(LugarTuristicoSeeder::class);
     }
 
 }

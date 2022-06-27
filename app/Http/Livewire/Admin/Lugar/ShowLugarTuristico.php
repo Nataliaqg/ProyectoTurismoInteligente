@@ -41,7 +41,7 @@ class ShowLugarTuristico extends Component
 
     public function render()
     {
-        $lugarturisticos = LugarTuristico::where('nombre','like','%'.$this->search.'%')->paginate(10);
+        $lugarturisticos = LugarTuristico::where('nombre','like','%'.$this->search.'%')->paginate(5);
         return view('livewire.admin.lugar.show-lugar-turistico', compact('lugarturisticos'))->layout('layouts.admin');
     }
 }

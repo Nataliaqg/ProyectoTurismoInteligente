@@ -83,7 +83,7 @@
                                         </div>
 
                                         <div class="ml-4">
-                                            <div class="text-sm font-medium text-gray-900">
+                                            <div class="text-sm font-medium text-gray-900 ">
                                                 {{ $lugarturistico->nombre }}
                                             </div>
                                         </div>
@@ -91,13 +91,13 @@
                                 </td>
 
 
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">
+                                <td class="px-6 py-4 whitespace-normal">
+                                    <div class="text-xs text-center text-gray-900">
                                         {{ $lugarturistico->descripcion }}
                                     </div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">
+                                <td class="px-6 py-4 whitespace-normal">
+                                    <div class="text-xs text-gray-900">
                                         {{ $lugarturistico->direccion }}
                                     </div>
                                 </td>
@@ -107,10 +107,10 @@
                                     </div>
                                 </td>
 
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">
                                     {{ $lugarturistico->horaEntrada }}
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">
                                     {{ $lugarturistico->horaSalida }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
@@ -120,11 +120,11 @@
                                     </div>
                                 </td>
 
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <td class="px-4 py-4 whitespace-normal text-right text-sm font-medium">
                                     <a href="{{ route('admin.lugarturisticos.edit', $lugarturistico) }}"
                                         class="text-indigo-600 hover:text-indigo-900">Edit</a>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <td class="px-4 py-4 whitespace-normal text-right text-sm font-medium">
                                     <a class="pl-2 hover:text-red-600 cursor-pointer"
                                         wire:click="$emit('deleteLugarTuristico', {{ $lugarturistico->id }})">
                                         Eliminar

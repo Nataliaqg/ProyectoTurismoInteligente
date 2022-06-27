@@ -28,7 +28,7 @@ class ShowRestaurante extends Component
     public function render()
 
     {
-        $restaurantes =Restaurante::where('nombre','like','%'.$this->search.'%')->paginate(10); 
+        $restaurantes =Restaurante::where('nombre','like','%'.$this->search.'%')->paginate(5); 
         return view('livewire.admin.restaurante.show-restaurante',compact('restaurantes'))->layout('layouts.admin');
         
     }
