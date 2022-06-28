@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
@@ -17,6 +18,8 @@ use App\Http\Livewire\Ciudads;
 */
 
 Route::get('/', WelcomeController::class)->name('inicio'); //pagina principal del cliente
+Route::get('categories/{categoria}', [CategoryController::class, 'show'])->name('categories.show');
+
 
 Route::middleware([ //protegido para entrar al dashboard
     'auth:sanctum',

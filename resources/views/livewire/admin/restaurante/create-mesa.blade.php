@@ -143,6 +143,12 @@
         </x-slot>
 
         <x-slot name="footer">
+
+            <div class="justify-end items-center mt-4" >
+                <x-jet-button  wire:click="open" wire:loading.attr='disabled'>
+                   Cancelar
+                </x-jet-button>
+                
             <x-jet-danger-button wire:click="update" wire:loading.attr="disabled" wire:target="update">
                 Actualizar
             </x-jet-danger-button>

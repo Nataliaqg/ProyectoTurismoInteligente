@@ -11,9 +11,7 @@ class CreateMesa extends Component
     //mesas para almecenar todas la mesas 
     // mesa para almacenar una mesa antes de iditarla
     public $mesas, $mesa, $restaurante;
-    public $restaurante_id;
-
-    protected $listeners = ['delete'];
+       protected $listeners = ['delete'];
 
     public $createForm = [
         'cantidad_mesas' => null,
@@ -37,8 +35,6 @@ class CreateMesa extends Component
         
 
     ];
-
-    ///debo cambiar algo 
      protected $validationAttributes = [
         'createForm.cantidad_mesas' => 'capacidad',
         'createForm.capacidad_mesa' => 'cantidad',  
@@ -53,23 +49,9 @@ class CreateMesa extends Component
     public function mount()
     {
         $this->getMesas();
-    }
+    }   
 
-    public function getRestauranteProperty()
-    {
-        return Restaurante::find($this->restaurante_id);
-    }
-
-    //traer todas las mesas en mesas
-    public function getMesas()
-
-    {
-        $mesa_id = $this->restaurante;
-       
-        $this->mesas = mesa::where('restaurante_id',$mesa_id)->get();
-    }
-
-    public function save()
+      public function save()
     {
         $this->validate();
         $mesa = new Mesa();
@@ -86,6 +68,7 @@ class CreateMesa extends Component
     //debo cambiar  algo 
     public function edit(mesa $mesa)
     {
+        $this->resetValidation();
         $this->mesa = $mesa;
 
         $this->editForm['open'] = true;
@@ -104,7 +87,6 @@ class CreateMesa extends Component
 
         $this->mesa->update($this->editForm);
         $this->reset('editForm');
-
         $this->getMesas();
     }
 
@@ -112,6 +94,18 @@ class CreateMesa extends Component
     {
         $mesa->delete();
         $this->getMesas();
+    }
+
+    //traer todas las mesas en mesas
+    public function getMesas()
+    {
+        $mesa_id = $this->restaurante;
+       
+        $this->mesas = mesa::where('restaurante_id',$mesa_id)->get();
+    }
+     //Para cerrar modal
+     public function open(){
+        $this->reset('editForm');
     }
 
 
