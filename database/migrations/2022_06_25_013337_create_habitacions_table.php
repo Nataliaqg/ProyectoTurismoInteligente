@@ -16,13 +16,14 @@ class CreateHabitacionsTable extends Migration
         Schema::create('habitacions', function (Blueprint $table) {
             $table->id();
 
-            $table->string('name');
+            $table->string('tipo');
+            $table->unsignedSmallInteger('cantidad');
             $table->unsignedSmallInteger('capacidadPersonaAdulta');
             $table->unsignedSmallInteger('capacidadPersonaMenor');
             $table->float('precio');
 
             $table->unsignedBigInteger('hotel_id');
-            $table->foreign('hotel_id')->references('id')->on('hotels');
+            $table->foreign('hotel_id')->references('id')->on('hotels')->onDelete('cascade');
             $table->timestamps();
         });
     }

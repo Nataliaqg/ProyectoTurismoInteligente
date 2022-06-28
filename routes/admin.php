@@ -16,6 +16,7 @@ use App\Http\Livewire\Admin\Ciudad\CreateCiudad;
 use App\Http\Livewire\Admin\Ciudad\EditCiudad;
 use App\Http\Livewire\Admin\ContraBitacora;
 use App\Http\Livewire\Admin\Home;
+use App\Http\Livewire\Admin\Hotel\CreateHabitacion;
 use App\Http\Livewire\Admin\Hotel\CreateHotel;
 use App\Http\Livewire\Admin\Hotel\EditHotel;
 use App\Http\Livewire\Admin\Hotel\ShowHotel;
@@ -68,10 +69,11 @@ Route::get('restaurantes/create', CreateRestaurante::class)->name('admin.restaur
 Route::get('restaurantes/{restaurante}/edit', EditRestaurante::class)->name('admin.restaurante.edit');
 Route::get('restaurantes/{restaurante}/mesas', CreateMesa::class)->name('admin.restaurante.mesa');
 
-//Ruta hotele
+//Ruta hoteles
 Route::get('hoteles', ShowHotel::class)->name('admin.hotel.show');
 Route::get('hoteles/create',CreateHotel::class)->name('admin.hotel.create');
 Route::get('hoteles/{hotel}/edit',EditHotel::class)->name('admin.hotel.edit');
+Route::get('hoteles/{hotel}/habitaciones',CreateHabitacion::class)->name('admin.hotel.habitaciones');
 
 //ruta para las imagenes
 Route::post('lugarturisticos/{lugarturistico}/files',[LugarController::class,'files'])->name('admin.lugar.files');

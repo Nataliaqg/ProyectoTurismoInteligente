@@ -10,7 +10,7 @@ class Habitacion extends Model
     use HasFactory;
 
     
-   protected $fillable = ['id','name','capacidadPersonaAdulta','capacidadPersonaMenor','precio'];
+    protected $fillable = ['id','tipo','cantidad','capacidadPersonaAdulta','capacidadPersonaMenor','precio','hotel_id'];
 
    //Relacion uno a muchos inversa
 

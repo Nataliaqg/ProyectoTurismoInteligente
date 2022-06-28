@@ -69,7 +69,7 @@
 
                         @foreach ($hoteles as $hotel)
                             <tr>
-                                <td class="px-6 py-4 whitespace-nowrap">
+                                <td class="px-6 py-4 whitespace-normal">
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0 h-10 w-10">
                                             @if ($hotel->images->count())
@@ -92,40 +92,43 @@
                                 </td>
 
 
-                                <td class="px-4 py-4 whitespace-normal">
+                                <td class="px-6 py-4 whitespace-normal">
                                     <div class="text-xs text-gray-900">
                                         {{ $hotel->descripcion }}
                                     </div>
                                 </td>
-                                <td class="px-4 py-4 whitespace-normal">
+                                <td class="px-6 py-4 whitespace-normal">
                                     <div class="text-xs text-gray-900">
                                         {{ $hotel->direccion }}
                                     </div>
                                 </td>
-                                <td class="px-4 py-4 whitespace-normal">
+                                <td class="px-6 py-4 whitespace-normal">
                                     <div class="text-sm text-gray-900">
                                         {{ $hotel->telefono }}
                                     </div>
                                 </td>
 
-                                <td class="px-4 py-4 whitespace-normal">
+                                <td class="px-6 py-4 whitespace-normal">
                                     <div class="text-sm text-gray-900 text-center">
                                         {{ $hotel->categoria }}
                                     </div>
                                 </td>
-                                <td class="px-4 py-4 whitespace-normal text-center">
+                                <td class="px-6 py-4 whitespace-normal text-center">
                                     <div class="text-sm text-gray-900">
                                         {{ $hotel->capacidadMaximaHabitacion }}
                                     </div>
                                 </td>
-                                <td class="px-4 py-4 whitespace-nowrap">
+                                <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="text-sm text-gray-900">
                                         
                                       {{$hotel->ciudad->nombre}}
                                     </div>
                                 </td>
 
-
+                                <td class="px-4 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <a href="{{ route('admin.hotel.habitaciones', $hotel) }}"
+                                        class="text-indigo-600 hover:text-indigo-900">Habitaciones</a>
+                                </td>
 
                                 <td class="px-4 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <a href="{{ route('admin.hotel.edit', $hotel) }}"
