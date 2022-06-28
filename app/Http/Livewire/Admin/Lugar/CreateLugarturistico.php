@@ -3,18 +3,20 @@
 namespace App\Http\Livewire\Admin\Lugar;
 
 use App\Models\Bitacora;
+use App\Models\Categoria;
 use Livewire\Component;
 use App\Models\LugarTuristico;
 use App\Models\Ciudad;
 
 class CreateLugarturistico extends Component
 {
-    public $ciudads;
-    public $ciudad_id="";
+    public $ciudads,$categorias;
+    public $ciudad_id="",$categoria_id="";
     public $nombre, $descripcion, $precio, $direccion, $horaEntrada, $horaSalida;
    
     //validaciones
     protected $rules =[
+        'categoria_id'=>'required',
         'ciudad_id' => 'required',
         'nombre' =>'required',
         'descripcion' =>'required',
@@ -26,12 +28,17 @@ class CreateLugarturistico extends Component
 
     public function mount(){
         $this->ciudads = Ciudad::all();
+        $this->categorias= Categoria::all();
     }
     //propiedades computadas 
     public function getCiudadProperty(){
         return Ciudad::find($this->ciudad_id);
 
     }
+    public function getCategoriaProperty(){
+        return Categoria::find($this->categoria_id);
+    }
+
     public function save(){
         $rules = $this->rules;
         $this->validate($rules);
@@ -44,6 +51,7 @@ class CreateLugarturistico extends Component
         $lugarturistico->horaEntrada = $this->horaEntrada;
         $lugarturistico->horaSalida = $this->horaSalida;
         $lugarturistico->ciudad_id =$this->ciudad_id;
+        $lugarturistico->categoria_id=$this->categoria_id;
 
         $lugarturistico->save();
         $bitacora = new Bitacora();

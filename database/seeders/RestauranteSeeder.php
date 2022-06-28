@@ -22,7 +22,8 @@ class RestauranteSeeder extends Seeder
             'horaCierre' => '23:00',
             'telefono' => '5645634',
             'capacidadMaximaMesa' => '50',
-            'ciudad_id' => '9'
+            'ciudad_id' => '9',
+            'categoria_id' => '3'
         ]);
 
         Restaurante::create([
@@ -33,7 +34,8 @@ class RestauranteSeeder extends Seeder
             'horaCierre' => '23:00',
             'telefono' => '6463758',
             'capacidadMaximaMesa' => '30',
-            'ciudad_id' => '1'
+            'ciudad_id' => '1',
+            'categoria_id' => '3'
         ]);
 
         Restaurante::create([
@@ -44,7 +46,8 @@ class RestauranteSeeder extends Seeder
             'horaCierre' => '0:00',
             'telefono' => '4637547',
             'capacidadMaximaMesa' => '25',
-            'ciudad_id' => '9'
+            'ciudad_id' => '9',
+            'categoria_id' => '3'
         ]);
 
         Restaurante::create([
@@ -55,7 +58,8 @@ class RestauranteSeeder extends Seeder
             'horaCierre' => '23:00',
             'telefono' => '6467848',
             'capacidadMaximaMesa' => '35',
-            'ciudad_id' => '9'
+            'ciudad_id' => '9',
+            'categoria_id' => '3'
         ]);
 
         Restaurante::create([
@@ -66,7 +70,8 @@ class RestauranteSeeder extends Seeder
             'horaCierre' => '23:00',
             'telefono' => '2634674',
             'capacidadMaximaMesa' => '40',
-            'ciudad_id' => '9'
+            'ciudad_id' => '9',
+            'categoria_id' => '3'
         ]);
 
         Restaurante::create([
@@ -77,7 +82,8 @@ class RestauranteSeeder extends Seeder
             'horaCierre' => '0:00',
             'telefono' => '3463757',
             'capacidadMaximaMesa' => '30',
-            'ciudad_id' => '9'
+            'ciudad_id' => '9',
+            'categoria_id' => '3'
         ]);
 
         Restaurante::create([
@@ -88,7 +94,8 @@ class RestauranteSeeder extends Seeder
             'horaCierre' => '23:00',
             'telefono' => '8245726',
             'capacidadMaximaMesa' => '45',
-            'ciudad_id' => '1'
+            'ciudad_id' => '1',
+            'categoria_id' => '3'
         ]);
 
         Restaurante::create([
@@ -99,7 +106,8 @@ class RestauranteSeeder extends Seeder
             'horaCierre' => '0:00',
             'telefono' => '74574275',
             'capacidadMaximaMesa' => '70',
-            'ciudad_id' => '9'
+            'ciudad_id' => '9',
+            'categoria_id' => '3'
         ]);
     }
 }

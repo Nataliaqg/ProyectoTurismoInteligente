@@ -23,6 +23,8 @@ class CreateLugarTuristicosTable extends Migration
             $table->float('precio')->nullable(); //puede que sea de libre ingre
             $table->unsignedBigInteger('ciudad_id');
             $table->foreign('ciudad_id')->references('id')->on('ciudads');
+            $table->unsignedBigInteger('categoria_id');
+            $table->foreign('categoria_id')->references('id')->on('categorias');
             $table->timestamps();
         });
     }

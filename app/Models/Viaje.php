@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Transporte;
 use App\Models\Ciudad;
+use App\Models\Categoria;
 
 class Viaje extends Model
 {
@@ -15,6 +16,9 @@ class Viaje extends Model
 
     public function transporte(){
         return $this->belongsTo(Transporte::class,'transporte_id');
+    }
+    public function categoria(){
+        return $this->belongsTo('App\Models\Categoria','categoria_id');
     }
 
     public function ciudadOrigen(){

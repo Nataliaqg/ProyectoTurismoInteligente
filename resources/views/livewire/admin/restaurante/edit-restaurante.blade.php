@@ -32,6 +32,21 @@
         @endif
 
         <div class="bg-white shadow-xl rounded-lg p-6">
+            {{-- las categorias a elegir --}}
+            <div class="grid grid-cols-2 gap-6 mb-4">
+                <div>
+                    <x-jet-label value="categorias" />
+                    <select class="w-full form-control" wire:model="restaurante.categoria_id">
+                        <option value="" selected disabled>Seleccione una categoria</option>
+
+                        @foreach ($categorias as $categoria)
+                            <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
+                        @endforeach
+                    </select>
+                    <x-jet-input-error for="restaurante.categoria_id" />
+
+                </div>
+            </div>
             {{-- las ciudades a elegir --}}
             <div class="grid grid-cols-2 gap-6 mb-4">
                 <div>

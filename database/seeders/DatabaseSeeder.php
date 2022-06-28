@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         $this->call(UserSeeder::class);
         $this->call(CiudadSeeder::class);
+        $this->call(CategoriaSeeder::class);
         $this->call(TipoAgenciaSeeder::class);
         $this->call(AgenciaSeeder::class);
         $this->call(TransporteSeeder::class);

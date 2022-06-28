@@ -24,6 +24,8 @@ class CreateViajesTable extends Migration
             $table->foreign('ciudadOrigen_id')->references('id')->on('ciudads');
             $table->unsignedBigInteger('ciudadDestino_id');
             $table->foreign('ciudadDestino_id')->references('id')->on('ciudads');
+            $table->unsignedBigInteger('categoria_id');
+            $table->foreign('categoria_id')->references('id')->on('categorias');
             $table->timestamps();
         });
     }

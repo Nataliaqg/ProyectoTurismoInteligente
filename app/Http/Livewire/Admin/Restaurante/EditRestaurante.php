@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin\Restaurante;
 
 use App\Models\Bitacora;
+use App\Models\Categoria;
 use Livewire\Component;
 use App\Models\Ciudad;
 use App\Models\Image;
@@ -12,10 +13,11 @@ use Illuminate\Support\Facades\Storage;
 
 class EditRestaurante extends Component
 {
-    public $restaurante, $ciudads;
-    public $ciudad_id;
+    public $restaurante, $ciudads,$categorias;
+    public $ciudad_id,$categoria_id;
 
     protected $rules = [
+        'restaurante.categoria_id'=>'nullable',
         'restaurante.ciudad_id' => 'nullable',
         'restaurante.nombre' => 'required',
         'restaurante.descripcion' => 'required',
@@ -31,6 +33,7 @@ class EditRestaurante extends Component
     {
         $this->restaurante = $restaurante;
         $this->ciudads = Ciudad::all();
+        $this->categorias= Categoria::all();
     }
     public  function refreshRestaurante(){
         $this->restaurante=$this->restaurante->fresh();

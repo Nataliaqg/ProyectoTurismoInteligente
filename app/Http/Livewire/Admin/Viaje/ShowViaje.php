@@ -8,12 +8,13 @@ use App\Models\Ciudad;
 use App\Models\Transporte;
 use Livewire\WithPagination;
 use App\Models\Bitacora;
+use App\Models\Categoria;
 
 class ShowViaje extends Component
 {
     use WithPagination;
     public $search;
-    public $viaje, $ciudadOrigen,$ciudadDestino,$transportes;
+    public $viaje, $ciudadOrigen,$ciudadDestino,$transportes,$categorias;
 
     protected $listeners = ['delete'];
     
@@ -31,6 +32,7 @@ class ShowViaje extends Component
     public function mount (Viaje $viaje){
         $this->viaje= $viaje;
         $this->transportes=Transporte::all();
+        $this->categorias=Categoria::all();
     }
 
 

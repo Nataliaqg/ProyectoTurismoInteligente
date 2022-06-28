@@ -26,6 +26,10 @@
                     <thead class="bg-gray-50">
                         <tr>
                             <th scope="col"
+                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Categorias Serv
+                            </th>
+                            <th scope="col"
                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Nombre
                             </th>
@@ -84,13 +88,17 @@
 
                                         <div class="ml-4">
                                             <div class="text-sm font-medium text-gray-900 ">
-                                                {{ $lugarturistico->nombre }}
+                                                {{ $lugarturistico->categoria->nombre}}
                                             </div>
                                         </div>
                                     </div>
                                 </td>
 
-
+                                <td class="px-6 py-4 whitespace-normal">
+                                    <div class="text-xs text-center text-gray-900">
+                                        {{ $lugarturistico->nombre }}
+                                    </div>
+                                </td>
                                 <td class="px-6 py-4 whitespace-normal">
                                     <div class="text-xs text-center text-gray-900">
                                         {{ $lugarturistico->descripcion }}

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin\Lugar;
 
 use App\Models\Bitacora;
+use App\Models\Categoria;
 use Livewire\Component;
 use App\Models\Ciudad;
 use App\Models\Image;
@@ -11,10 +12,11 @@ use Illuminate\Support\Facades\Storage;
 
 class EditLugarturistico extends Component
 {
-    public $lugarturistico, $ciudads;
-    public $ciudad_id;
+    public $lugarturistico, $ciudads,$categorias;
+    public $ciudad_id,$categoria_id;
 
     protected $rules = [
+        'lugarturistico.categoria_id'=>'nullable',
         'lugarturistico.ciudad_id' => 'nullable',
         'lugarturistico.nombre' => 'required',
         'lugarturistico.descripcion' => 'required',
@@ -30,6 +32,7 @@ class EditLugarturistico extends Component
     {
         $this->lugarturistico = $lugarturistico;
         $this->ciudads = Ciudad::all();
+        $this->categorias= Categoria::all();
         //$this->ciudad_id = $lugarturistico->ciudad->id;
 
     }

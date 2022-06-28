@@ -7,12 +7,13 @@ use Livewire\Component;
 use App\Models\TransportePrivado;
 use Livewire\WithPagination;
 use App\Models\Bitacora;
+use App\Models\Categoria;
 
 class ShowTransPriv extends Component
 {
     use WithPagination;
 
-    public $search,$transportePrivado,$tipoTransPrivados;
+    public $search,$transportePrivado,$tipoTransPrivados,$categoria;
 
     protected $listeners = ['delete'];
 
@@ -31,6 +32,7 @@ class ShowTransPriv extends Component
     public function mount (TransportePrivado $transportePrivado){
         $this->transportePrivado= $transportePrivado;
         $this->tipoTransPrivados=TipoTransPrivado::all();
+        $this->categoria=Categoria::all();
     }
 
     public function render()

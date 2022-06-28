@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin\Hotel;
 
 use App\Models\Bitacora;
+use App\Models\Categoria;
 use App\Models\Ciudad;
 use App\Models\Hotel;
 use Livewire\Component;
@@ -12,7 +13,7 @@ class ShowHotel extends Component
 {
     use WithPagination;
     public $search;
-    public $hotel,$ciudads;
+    public $hotel,$ciudads,$categorias;
     protected $listeners = ['delete2'=>'delete'];
 
     //para que cuando busque valla a la paginacion correcta 
@@ -32,6 +33,7 @@ class ShowHotel extends Component
     {
         $this->hotel = $hotel;
         $this->ciudads = Ciudad::all();
+        $this->categorias= Categoria::all();
     }
    
 

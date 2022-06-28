@@ -2,7 +2,20 @@
     <h1 class="  text-3xl text-center font-semibold mb-8">
         Complete la informacion para crear un viaje
     </h1>
-    
+    {{-- Ciudad Origen --}}
+    <div class="grid grid-cols-2 gap-6 mb-4">
+        <div>
+            <x-jet-label value="Categoria" />
+            <select class="w-full form-control" wire:model="categoria_id">
+                <option value="" selected disabled>Seleccione una categoria:</option>
+
+                @foreach ($categorias as $categoria)
+                    <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
+                @endforeach
+            </select>
+            <x-jet-input-error for="categoria_id" />
+        </div>
+    </div>
     {{-- Ciudad Origen --}}
     <div class="grid grid-cols-2 gap-6 mb-4">
         <div>

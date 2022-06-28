@@ -7,13 +7,14 @@ use App\Models\Viaje;
 use App\Models\Ciudad;
 use App\Models\Transporte;
 use App\Models\Bitacora;
+use App\Models\Categoria;
 
 class CreateViaje extends Component
 {
     public $ciudadOrigen_id,$ciudadDestino_id;
     public $ciudads;  //VER
-    public $transportes;
-    public $transporte_id;
+    public $transportes,$categorias;
+    public $transporte_id,$categoria_id;
     public $fecha,$hora,$precio;
 
     protected $rules = [
@@ -23,12 +24,14 @@ class CreateViaje extends Component
         'transporte_id' => 'required',
         'ciudadOrigen_id' => 'required',
         'ciudadDestino_id' => 'required',
+        'categoria_id'=>'required'
     ];
 
     public function mount()
     {
         $this->transportes = Transporte::all();
         $this->ciudads=Ciudad::all();
+        $this->categorias=Categoria::all();
     }
 
     public function save(){
@@ -42,6 +45,7 @@ class CreateViaje extends Component
         $viaje->transporte_id= $this->transporte_id;
         $viaje->ciudadOrigen_id= $this->ciudadOrigen_id;
         $viaje->ciudadDestino_id= $this->ciudadDestino_id;
+        $viaje->categoria_id=$this->categoria_id;
 
         $viaje->save();
         $bitacora = new Bitacora();

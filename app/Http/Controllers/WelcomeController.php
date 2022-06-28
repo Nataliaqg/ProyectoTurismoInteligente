@@ -1,12 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
-
-use App\Models\Hotel;
-use App\Models\LugarTuristico;
-use App\Models\Restaurante;
 use Illuminate\Http\Request;
+use App\Models\Categoria;
 
 class WelcomeController extends Controller
 {
@@ -14,11 +10,8 @@ class WelcomeController extends Controller
 
     public function __invoke()
     {
+        $categorias=Categoria::all();
 
-        $hoteles = Hotel::all();
-        $restaurantes = Restaurante::all();
-        $lugarturisticos = LugarTuristico::all();
-
-        return view('welcome', compact('hoteles','restaurantes','lugarturisticos'));
+        return view('welcome', compact('categorias'));
     }
 }

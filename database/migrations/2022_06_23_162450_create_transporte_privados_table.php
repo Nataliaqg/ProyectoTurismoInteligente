@@ -19,6 +19,8 @@ class CreateTransportePrivadosTable extends Migration
             $table->integer('precio');
             $table->integer('capacidadPersonas');
             $table->foreign('tipoTransPrivado_id')->references('id')->on('tipo_trans_privados');
+            $table->unsignedBigInteger('categoria_id');
+            $table->foreign('categoria_id')->references('id')->on('categorias');
             $table->timestamps();
         });
     }

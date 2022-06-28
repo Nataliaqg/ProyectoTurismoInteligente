@@ -8,15 +8,18 @@ use Livewire\Component;
 use App\Models\Image;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Bitacora;
+use App\Models\Categoria;
 
 class EditTransPriv extends Component
 {
     public $transportePrivado, $tipoTransPrivados, $tipoTransPrivado_id;
+    public $categorias,$categoria_id;
 
     protected $rules =[
         'transportePrivado.precio'=>'required',
         'transportePrivado.capacidadPersonas'=>'required',
-        'transportePrivado.tipoTransPrivado_id'=>'required'
+        'transportePrivado.tipoTransPrivado_id'=>'required',
+        'transportePrivado.categoria_id'=>'nullable'
     ];
 
     protected $listeners = ['refreshTranportePrivado'];
@@ -27,6 +30,7 @@ class EditTransPriv extends Component
         //$tipoTransPrivado=TipoTransPrivado::find($transportePrivado->tipoTransPrivado_id);
        // $this->tipoTransPrivado_nombre=$tipoTransPrivado->nombre;
         $this->tipoTransPrivados=TipoTransPrivado::all();
+        $this->categorias=Categoria::all();
     }
 
     public  function refreshTransportePrivado(){

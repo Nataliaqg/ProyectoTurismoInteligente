@@ -27,6 +27,10 @@
                         <tr>
                             <th scope="col"
                                 class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Categoria Serv
+                            </th>
+                            <th scope="col"
+                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Nombre
                             </th>
                             <th scope="col"
@@ -89,13 +93,17 @@
 
                                         <div class="ml-4">
                                             <div class="text-sm font-medium text-gray-900">
-                                                {{ $restaurante->nombre }}
+                                                {{ $restaurante->categoria->nombre}}
                                             </div>
                                         </div>
                                     </div>
                                 </td>
 
-
+                                <td class=" px-6 py-4 whitespace-normal">
+                                    <div class=" text-xs text-gray-900">
+                                        {{ $restaurante->nombre }}
+                                    </div>
+                                </td>
                                 <td class=" px-6 py-4 whitespace-normal">
                                     <div class=" text-xs text-gray-900">
                                         {{ $restaurante->descripcion }}

@@ -16,7 +16,7 @@ use App\Http\Livewire\Ciudads;
 |
 */
 
-Route::get('/', WelcomeController::class)->name('inicio');
+Route::get('/', WelcomeController::class)->name('inicio'); //pagina principal del cliente
 
 Route::middleware([ //protegido para entrar al dashboard
     'auth:sanctum',

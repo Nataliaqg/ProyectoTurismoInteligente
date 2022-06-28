@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Ciudad;
+use App\Models\Categoria;
 
 class LugarTuristico extends Model
 {
@@ -13,6 +14,9 @@ class LugarTuristico extends Model
     public function ciudad()
     {
         return $this->belongsTo('App\Models\Ciudad');
+    }
+    public function categoria(){
+        return $this->belongsTo('App\Models\Categoria','categoria_id');
     }
     //relacion uno a muchos polimorfica
     public function images()

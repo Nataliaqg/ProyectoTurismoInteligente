@@ -46,7 +46,20 @@
 
 <div class="bg-white shadow-xl rounded-lg p-6">
   <div class="grid grid-cols-2 gap-6 mb-4">
+    {{-- Categoria --}}
+    <div class="grid grid-cols-2 gap-6 mb-4">
+        <div>
+            <x-jet-label value="Categoria" />
+            <select class="w-full form-control" wire:model="transportePrivado.categoria_id">
+                <option value="" selected disabled>Seleccione una categoria</option>
 
+                @foreach ($categorias as $categoria)
+                    <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
+                @endforeach
+            </select>
+            <x-jet-input-error for="transportePrivado.categoria_id" />
+        </div>
+    </div>
      {{-- Transporte --}}
      <div class="grid grid-cols-2 gap-6 mb-4">
         <div>

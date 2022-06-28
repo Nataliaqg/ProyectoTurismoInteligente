@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin\Hotel;
 
 use App\Models\Bitacora;
+use App\Models\Categoria;
 use App\Models\Ciudad;
 use App\Models\Hotel;
 use App\Models\Image;
@@ -11,12 +12,13 @@ use Livewire\Component;
 
 class EditHotel extends Component
 {
-    public $hotel, $ciudads;
-    public $ciudad_id;
-    public $ciudad_nombre;
+    public $hotel, $ciudads,$categorias;
+    public $ciudad_id,$categoria_id;
+    public $ciudad_nombre,$categoria_nombre;
 
     protected $rules = [
         'hotel.ciudad_id' => 'nullable',
+        'hotel.categoria_id'=>'nullable',
         'hotel.nombre' =>'required',
         'hotel.descripcion' => 'required',
         'hotel.direccion' => 'required',
@@ -28,10 +30,15 @@ class EditHotel extends Component
     public function mount(Hotel $hotel)
     {
         $this->hotel = $hotel;
+
         $ciudad=Ciudad::find($hotel->ciudad_id);
         $this->ciudad_nombre=$ciudad->nombre;
 
+        $categoria=Categoria::find($hotel->categoria_id);
+        $this->categoria_nombre=$categoria->nombre;
+
         $this->ciudads = Ciudad::all();
+        $this->categorias=Categoria::all();
     }
     public  function refreshHotel(){
         $this->hotel=$this->hotel->fresh();

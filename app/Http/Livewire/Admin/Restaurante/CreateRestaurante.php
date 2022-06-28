@@ -3,17 +3,19 @@
 namespace App\Http\Livewire\Admin\Restaurante;
 
 use App\Models\Bitacora;
+use App\Models\Categoria;
 use Livewire\Component;
 use App\Models\Restaurante;
 use App\Models\Ciudad;
 
 class CreateRestaurante extends Component
 {
-    public $ciudads;
-    public $ciudad_id = ""; //i don't know
+    public $ciudads,$categorias;
+    public $ciudad_id = "",$categoria_id; //i don't know
     public $nombre, $descripcion, $direccion, $horaCierre, $horaApertura, $telefono ,$numeromaxmesas;
 
     protected $rules = [
+        'categoria_id'=>'required',
         'ciudad_id' => 'required',
         'nombre' => 'required',
         'descripcion' => 'required',
@@ -27,12 +29,18 @@ class CreateRestaurante extends Component
     public function mount()
     {
         $this->ciudads = ciudad::all();
+        $this->categorias= Categoria::all();
     }
     //propiedades computadas
     public function getCiudadProperty()
     {
         return Ciudad::find($this->ciudad_id);
     }
+    public function getCategoriaProperty()
+    {
+        return Categoria::find($this->categoria_id);
+    }
+
     public function save()
     {
         $rules = $this->rules;
@@ -46,6 +54,7 @@ class CreateRestaurante extends Component
         $restaurante->horaApertura = $this->horaApertura;
         $restaurante->capacidadMaximaMesa = $this->numeromaxmesas;
         $restaurante->ciudad_id = $this->ciudad_id; //////////////////
+        $restaurante->categoria_id=$this->categoria_id;
         $restaurante->save();
         $bitacora = new Bitacora();
         $bitacora->crear('Restaurante Creado: ' .$restaurante->nombre);    

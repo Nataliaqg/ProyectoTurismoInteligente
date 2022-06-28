@@ -1,49 +1,33 @@
 <x-app-layout>
 
     <div class="container py-8">
-        <section>
+        @foreach ($categorias as $categoria)
+        <section class="mb-6">
             <h1 class="text-lg uppercase font-semibold text-gray-700">
-                {{-- {{$hoteles->first()->nombre}} --}}
-                HOTELES
+                {{$categoria->nombre}}
             </h1>
-            @livewire('admin.hotel.mostrar-hotel', ['hotel' => $hoteles->first()])
+            @livewire('cliente.categoria-servicios', ['categoria' => $categoria])
         </section>
-
-        <section>
-            <h1 class="text-lg uppercase font-semibold text-gray-700">
-                {{-- {{$hoteles->first()->nombre}} --}}
-                RESTAURANTES
-            </h1>
-            @livewire('admin.restaurante.mostrar-restaurante', ['restaurante' => $restaurantes->first()])
-
-        </section>
-
-        <section>
-            <h1 class="text-lg uppercase font-semibold text-gray-700">
-                LUGARES TURISTICOS
-            </h1>
-            @livewire('admin.lugar.mostrar-lugar-turistico', ['lugarturistico' => $lugarturisticos->first()])
-
-        </section>
+        @endforeach
     </div>
 
+    @push('script') {{--PARA EL DESFACE--}}
+    <script>
+    Livewire.on('glider',function(id){
 
-    @push('script')
-        <script>           
+        new Glider(document.querySelector('.glider-' + id), {
+        slidesToShow: 5.5,
+        slidesToScroll: 5,
+        draggable: true,
+        dots: '.dots',
+        arrows: {
+           prev: '.glider-prev',
+           next: '.glider-next'
+        }
+        });
 
-                new Glider(document.querySelector('.glider'), {
-                    slidesToShow: 5.5,
-                    slidesToScroll: 5,
-                    draggable: true,
-                    dots: '.dots',
-                    arrows: {
-                        prev: '.glider-prev',
-                        next: '.glider-next'
-                    }
-                });
-          
-        </script>
-        
+    });
+    </script>
     @endpush
 
 </x-app-layout>

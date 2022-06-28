@@ -22,7 +22,8 @@ class HoteleSeeder extends Seeder
             'categoria' => '5',
             'telefono' => '89772543',
             'capacidadMaximaHabitacion' => '48',
-            'ciudad_id' => '1'
+            'ciudad_id' => '1',
+            'categoria_id' => '2'
         ]);
 
         Hotel::create([
@@ -32,7 +33,8 @@ class HoteleSeeder extends Seeder
             'categoria' => '5',
             'telefono' => '89773343',
             'capacidadMaximaHabitacion' => '30',
-            'ciudad_id' => '2'
+            'ciudad_id' => '2',
+            'categoria_id' => '2'
         ]);
 
         Hotel::create([
@@ -42,7 +44,8 @@ class HoteleSeeder extends Seeder
             'categoria' => '5',
             'telefono' => '99753343',
             'capacidadMaximaHabitacion' => '30',
-            'ciudad_id' => '3'
+            'ciudad_id' => '3',
+            'categoria_id' => '2'
         ]);
 
         Hotel::create([
@@ -52,7 +55,8 @@ class HoteleSeeder extends Seeder
             'categoria' => '5',
             'telefono' => '94758043',
             'capacidadMaximaHabitacion' => '40',
-            'ciudad_id' => '4'
+            'ciudad_id' => '4',
+            'categoria_id' => '2'
         ]);
 
         Hotel::create([
@@ -62,7 +66,8 @@ class HoteleSeeder extends Seeder
             'categoria' => '5',
             'telefono' => '94587043',
             'capacidadMaximaHabitacion' => '32',
-            'ciudad_id' => '5'
+            'ciudad_id' => '5',
+            'categoria_id' => '2'
         ]);
 
         Hotel::create([
@@ -72,7 +77,8 @@ class HoteleSeeder extends Seeder
             'categoria' => '5',
             'telefono' => '9668043',
             'capacidadMaximaHabitacion' => '27',
-            'ciudad_id' => '6'
+            'ciudad_id' => '6',
+            'categoria_id' => '2'
         ]);
 
         Hotel::create([
@@ -82,7 +88,8 @@ class HoteleSeeder extends Seeder
             'categoria' => '3',
             'telefono' => '96544143',
             'capacidadMaximaHabitacion' => '20',
-            'ciudad_id' => '7'
+            'ciudad_id' => '7',
+            'categoria_id' => '2'
         ]);
 
         Hotel::create([
@@ -92,7 +99,8 @@ class HoteleSeeder extends Seeder
             'categoria' => '5',
             'telefono' => '76628043',
             'capacidadMaximaHabitacion' => '23',
-            'ciudad_id' => '8'
+            'ciudad_id' => '8',
+            'categoria_id' => '2'
         ]);
 
         Hotel::create([
@@ -102,7 +110,8 @@ class HoteleSeeder extends Seeder
             'categoria' => '5',
             'telefono' => '89231543',
             'capacidadMaximaHabitacion' => '53',
-            'ciudad_id' => '9'
+            'ciudad_id' => '9',
+            'categoria_id' => '2'
         ]);
 
         Hotel::create([
@@ -112,7 +121,8 @@ class HoteleSeeder extends Seeder
             'categoria' => '4',
             'telefono' => '89256543',
             'capacidadMaximaHabitacion' => '60',
-            'ciudad_id' => '9'
+            'ciudad_id' => '9',
+            'categoria_id' => '2'
         ]);
     }
 }

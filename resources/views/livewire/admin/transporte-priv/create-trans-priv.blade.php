@@ -2,7 +2,22 @@
     <h1 class="text-3xl text-center font-semibold mb-8">
         Complete esta informacion para crear un Transporte Privado
     </h1>
+    {{--Categoria--}}
+    <div class="bg-white shadow-xl rounded-lg p-6">
+        <div class="grid grid-cols-1 py-2">
+            <div>
+                <x-jet-label value="Categoria" />
+                <select class="w-full form-control" wire:model="categoria_id">
+                    <option value="" selected disabled>Seleccione una categoria</option>
 
+                    @foreach ($categorias as $categoria)
+                        <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
+                    @endforeach
+
+                </select>
+                <x-jet-input-error for="categoria_id"/>
+            </div>
+        </div>
     {{--TIPO VEHICULO--}}
     <div class="bg-white shadow-xl rounded-lg p-6">
         <div class="grid grid-cols-1 py-2">
