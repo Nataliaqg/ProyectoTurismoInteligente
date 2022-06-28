@@ -4,8 +4,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\Ciudads;
-
+use App\Http\Controllers\Cliente\LugarTuristicoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +20,10 @@ Route::get('/', WelcomeController::class)->name('inicio'); //pagina principal de
 Route::get('categories/{categoria}', [CategoryController::class, 'show'])->name('categories.show');
 
 
+Route::get('lugaresTuristicos/{lugarTuristico}',[LugarTuristicoController::class,'show'])->name('lugaresTuristicos.show');
+
+
+//----------------------------------------------------------------------------------
 Route::middleware([ //protegido para entrar al dashboard
     'auth:sanctum',
     config('jetstream.auth_session'),

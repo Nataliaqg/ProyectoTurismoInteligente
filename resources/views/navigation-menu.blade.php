@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -62,7 +62,7 @@
                         {{ __('Hoteles') }}
                     </x-jet-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex text-center">
                     <x-jet-nav-link href="{{route('admin.transporteprivado.show')}}" :active="request()->routeIs('admin.transporteprivado.show')">
                         {{ __('Transp Privado') }}
                     </x-jet-nav-link>

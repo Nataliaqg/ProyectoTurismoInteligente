@@ -11,12 +11,12 @@
                             src="https://images.pexels.com/photos/4883800/pexels-photo-4883800.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                             alt="">
                           @else
-                          <img class="h-48 w-56 object-cover object-center" src="{{ Storage::url($lugarTuristico->images->first()->url) }}" alt="">
+                          <img class="h-48 w-full object-cover object-center" src="{{ Storage::url($lugarTuristico->images->first()->url) }}" alt="">
                         @endif
                     </figure>
                     <div class="py-4 px-6">
                         <h1 class="text-lg font-semibold">
-                            <a href="">
+                            <a href="{{route('lugaresTuristicos.show',$lugarTuristico)}}"> {{--ruta de cada uno--}}
                                 {{Str::limit($lugarTuristico->nombre,25)}}
                             </a>
                         </h1>
@@ -31,10 +31,10 @@
                     <figure>
                         @if ($viaje->images->first()== null)
                             <img class="h-48 w-56 object-cover object-center"
-                            src="https://images.pexels.com/photos/4883800/pexels-photo-4883800.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                            src="https://thumbs.dreamstime.com/b/pares-de-boletos-azules-en-blanco-de-la-pel%C3%ADcula-o-de-la-rifa-aislados-en-el-ccb-blanco-78484952.jpg"
                             alt="">
                           @else
-                          <img class="h-48 w-56 object-cover object-center" src="{{ Storage::url($viaje->images->first()->url) }}" alt="">
+                          <img class="h-48 w-full object-cover object-center" src="{{ Storage::url($viaje->images->first()->url) }}" alt="">
                         @endif
                     </figure>
                     <div class="py-4 px-6">
@@ -54,10 +54,10 @@
                 <figure>
                     @if ($restaurante->images->first()== null)
                         <img class="h-48 w-56 object-cover object-center"
-                        src="https://images.pexels.com/photos/4883800/pexels-photo-4883800.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        src="https://www.enter.co/wp-content/uploads/2017/02/menu-restaurant-vintage-tableFINAL.jpg"
                         alt="">
                       @else
-                      <img class="h-48 w-56 object-cover object-center" src="{{ Storage::url($restaurante->images->first()->url) }}" alt="">
+                      <img class="h-48 w-full object-cover object-center" src="{{ Storage::url($restaurante->images->first()->url) }}" alt="">
                     @endif
                 </figure>
                 <div class="py-4 px-6">
@@ -77,10 +77,10 @@
                 <figure>
                     @if ($hotel->images->first()== null)
                         <img class="h-48 w-56 object-cover object-center"
-                        src="https://images.pexels.com/photos/4883800/pexels-photo-4883800.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        src="https://www.detectahotel.com/himg/62/c0/84/ice-85676218-68620422_3XL-430714.jpg"
                         alt="">
                       @else
-                      <img class="h-48 w-56 object-cover object-center" src="{{ Storage::url($hotel->images->first()->url) }}" alt="">
+                      <img class="h-48 w-full object-cover object-center" src="{{ Storage::url($hotel->images->first()->url) }}" alt="">
                     @endif
                 </figure>
                 <div class="py-4 px-6">
@@ -100,10 +100,10 @@
                     <figure>
                         @if ($transportePrivado->images->first()== null)
                             <img class="h-48 w-56 object-cover object-center"
-                            src="https://images.pexels.com/photos/4883800/pexels-photo-4883800.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                            src="https://preview.free3d.com/img/2020/08/2399393143402268166/bhzgyiii-900.jpg"
                             alt="">
                           @else
-                          <img class="h-48 w-56 object-cover object-center" src="{{ Storage::url($transportePrivado->images->first()->url) }}" alt="">
+                          <img class="h-48 w-full object-cover object-center" src="{{ Storage::url($transportePrivado->images->first()->url) }}" alt="">
                         @endif
                     </figure>
                     <div class="py-4 px-6">
