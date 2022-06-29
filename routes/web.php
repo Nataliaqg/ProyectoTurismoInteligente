@@ -5,6 +5,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Cliente\LugarTuristicoController;
+use App\Http\Controllers\Cliente\TransportePrivadoController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +23,7 @@ Route::get('categories/{categoria}', [CategoryController::class, 'show'])->name(
 
 
 Route::get('lugaresTuristicos/{lugarTuristico}',[LugarTuristicoController::class,'show'])->name('lugaresTuristicos.show');
-
+Route::get('transportePrivados/{transportePrivado}',[TransportePrivadoController::class,'show'])->name('transportePrivados.show');
 
 //----------------------------------------------------------------------------------
 Route::middleware([ //protegido para entrar al dashboard

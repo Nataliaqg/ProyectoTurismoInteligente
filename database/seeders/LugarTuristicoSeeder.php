@@ -22,6 +22,7 @@ class LugarTuristicoSeeder extends Seeder
             'horaEntrada' => '08:00',
             'horaSalida' => '16:00',
             'precio' => '10',
+            'cantidad'=>'0',
             'ciudad_id' => '9',
             'categoria_id' => '1'
         ]);
@@ -33,6 +34,7 @@ class LugarTuristicoSeeder extends Seeder
             'horaEntrada' => '08:00',
             'horaSalida' => '18:00',
             'precio' => '10',
+            'cantidad'=>'0',
             'ciudad_id' => '9',
             'categoria_id' => '1'
         ]);
@@ -44,6 +46,7 @@ class LugarTuristicoSeeder extends Seeder
             'horaEntrada' => '09:00',
             'horaSalida' => '22:00',
             'precio' => '10',
+            'cantidad'=>'0',
             'ciudad_id' => '9',
             'categoria_id' => '1'
         ]);
@@ -55,6 +58,7 @@ class LugarTuristicoSeeder extends Seeder
             'horaEntrada' => '10:00',
             'horaSalida' => '20:00',
             'precio' => '10',
+            'cantidad'=>'0',
             'ciudad_id' => '9',
             'categoria_id' => '1'
         ]);
@@ -66,6 +70,7 @@ class LugarTuristicoSeeder extends Seeder
             'horaEntrada' => '06:00',
             'horaSalida' => '23:00',
             'precio' => '10',
+            'cantidad'=>'0',
             'ciudad_id' => '3',
             'categoria_id' => '1'
         ]);
@@ -77,6 +82,7 @@ class LugarTuristicoSeeder extends Seeder
             'horaEntrada' => '08:00',
             'horaSalida' => '19:00',
             'precio' => '10',
+            'cantidad'=>'0',
             'ciudad_id' => '4',
             'categoria_id' => '1'
         ]);
@@ -88,6 +94,7 @@ class LugarTuristicoSeeder extends Seeder
             'horaEntrada' => '06:00',
             'horaSalida' => '23:00',
             'precio' => '10',
+            'cantidad'=>'0',
             'ciudad_id' => '1',
             'categoria_id' => '1'
         ]);
@@ -99,6 +106,7 @@ class LugarTuristicoSeeder extends Seeder
             'horaEntrada' => '06:00',
             'horaSalida' => '22:00',
             'precio' => '10',
+            'cantidad'=>'0',
             'ciudad_id' => '8',
             'categoria_id' => '1'
         ]);
