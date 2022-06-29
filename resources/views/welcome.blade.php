@@ -7,7 +7,7 @@
             <h1 class="text-lg uppercase font-semibold text-gray-700">
                 {{$categoria->nombre}}
             </h1>
-            <a href="{{route('categories.show', $categoria)}}" class="text-orange-500 hover:text-orange-400 hover:underline ml-2 font-semibold">Ver más</a>
+            <a href="{{route('categories.show', $categoria)}}" class="text-blue-500 hover:text-blue-400 hover:underline ml-2 font-semibold">Ver más</a>
 
             
         </div>

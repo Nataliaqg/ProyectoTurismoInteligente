@@ -14,25 +14,69 @@
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-        {{-- el filtro de ciudad --}}
+        {{-- el filtros --}}
+
         <aside>
-            <h2 class="font-semibold text-center mb-2">CIUDAD</h2>
+            {{-- el filtro de ciudad AGENCIA --}}
+            <h2 class="font-semibold text-center mb-2">Transporte</h2>
             <ul class="divide-y divide-gray-200">
-                @foreach ($ciudades as $ciudads)
+                @foreach ($tipoAgencias as $agency)
                     <li class="py-2 text-sm">
-                        <a class="cursor-pointer hover:text-blue-500 {{ $ciudad == $ciudads->id ? 'text-blue-600 font-bold' : '' }} "
-                            wire:click="$set('ciudad','{{ $ciudads->id }}')">{{ $ciudads->nombre }}
+                        <a class="cursor-pointer hover:text-blue-500 {{ $agenciatipo == $agency->id ? 'text-blue-600 font-bold' : '' }} "
+                            wire:click="$set('agenciatipo','{{ $agency->id }}')">{{ $agency->tipoAgencia }}
                         </a>
                     </li>
                 @endforeach
             </ul>
+            {{-- el filtro de tipo transporte --}}
+            <h2 class="font-semibold text-center mb-2">Agencias</h2>
+            <ul class="divide-y divide-gray-200">
+                @foreach ($agencias as $agency)
+                    <li class="py-2 text-sm">
+                        <a class="cursor-pointer hover:text-blue-500 {{ $agencia == $agency->id ? 'text-blue-600 font-bold' : '' }} "
+                            wire:click="$set('agencia','{{ $agency->id }}')">{{ $agency->nombre }}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+
+
+            {{-- el filtro de ciudad de ida --}}
+            <div class='flex justify-between py-4'>
+                <div>
+
+                    <h2 class="font-semibold text-left mb-2">CIUDAD ORIGEN</h2>
+                    <ul class="divide-y divide-gray-200">
+                        @foreach ($ciudades as $ciudads)
+                            <li class="py-2 text-sm">
+                                <a class="cursor-pointer hover:text-blue-500 {{ $ciudadorigen == $ciudads->id ? 'text-blue-600 font-bold' : '' }} "
+                                    wire:click="$set('ciudadorigen','{{ $ciudads->id }}')">{{ $ciudads->nombre }}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+                <div>
+                    {{-- el filtro de ciudad de vuelta --}}
+
+                    <h2 class="font-semibold text-left mb-2">CIUDAD LLEGADA</h2>
+                    <ul class="divide-y divide-gray-200">
+                        @foreach ($ciudades as $ciudads)
+                            <li class="py-2 text-sm">
+                                <a class="cursor-pointer hover:text-blue-500 {{ $ciudadllegada == $ciudads->id ? 'text-blue-600 font-bold' : '' }} "
+                                    wire:click="$set('ciudadllegada','{{ $ciudads->id }}')">{{ $ciudads->nombre }}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+
             <x-jet-button class="mt-4" wire:click="limpiar">
                 Eliminar filtros
             </x-jet-button>
         </aside>
-
         <div class="col-span-4">
-
             @if ($view == 'grid')
                 {{-- cuadriculado --}}
                 <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -51,11 +95,12 @@
                                 </figure>
                                 <div class="py-4 px-6">
                                     <h1 class="text-lg font-semibold">
-                                        <a href="">
-                                            {{ Str::limit($servicio->nombre, 25) }}
-                                        </a>
+                                        Origen : {{ $servicio->ciudadOrigen->nombre }}
                                     </h1>
-                                    <p class="font-bold text-trueGray-700">Ciudad: {{ $servicio->ciudad->nombre }}</p>
+                                    <h1 class="text-lg font-semibold">
+                                        Destino : {{ $servicio->ciudadDestino->nombre }}
+                                    </h1>
+                                    <p class="font-bold text-trueGray-700"> Fecha : {{ $servicio->fecha }}</p>
                                 </div>
                             </article>
                         </li>
@@ -81,22 +126,29 @@
 
                                 <div class="flex-1 py-4 px-6 flex flex-col">
                                     <div class="flex justify-between">
-                                        <div class= "px-2">
-                                            <h1 class="text-lg font-semibold text-gray-700"> {{ $servicio->nombre }}
+                                        <div class="px-2">
+                                            <h1 class="text-lg font-semibold text-gray-700"> Fecha :
+                                                {{ $servicio->fecha }}
                                             </h1>
-                                            <p class="font-bold text-trueGray-700 py-2">Ciudad:
-                                                {{ $servicio->ciudad->nombre }}</p>
-                                                <h1 class="text-medium font-thin text-gray-700"> {{ $servicio->descripcion }}
+                                            <h1 class="text-lg font-semibold text-gray-700"> Hora :
+                                                {{ $servicio->hora }}
+                                            </h1>
+                                            <h1 class="text-lg font-semibold text-gray-700"> origen :
+                                                {{ $servicio->ciudadOrigen->nombre }}
+                                            </h1>
+                                            <h1 class="text-lg font-semibold text-gray-700"> Destino :
+                                                {{ $servicio->ciudadDestino->nombre }}
+                                            </h1>
+
                                         </div>
                                         <div class='mt-auto px-6 mb-4'>
                                             <x-jet-danger-button>
                                                 Mas Informacion
                                             </x-jet-danger-button>
                                         </div>
-                                     
                                     </div>
 
-                                  
+
                                 </div>
                             </article>
                         </li>
@@ -110,6 +162,8 @@
             </div>
 
         </div>
+
+
 
 
 
