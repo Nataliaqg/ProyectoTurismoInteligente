@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="container py-8">
         <div class="grid grid-cols-2 gap-6">
-            <div>
+            <div> {{--DIV DEL SLIDER--}}
                 <div class="flexslider">
                     <ul class="slides">
                      @foreach ($lugarTuristico->images as $image) 

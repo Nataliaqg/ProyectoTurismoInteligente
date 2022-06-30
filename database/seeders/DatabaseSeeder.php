@@ -32,6 +32,8 @@ class DatabaseSeeder extends Seeder
         $this->call(RestauranteSeeder::class);
         $this->call(LugarTuristicoSeeder::class);
         $this->call(HabitacionSeeder::class);
+        $this->call(ViajeSeeder::class);
+        $this->call(TransportePrivadoSeeder::class);
     }
 
 }

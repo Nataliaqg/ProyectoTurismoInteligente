@@ -84,7 +84,7 @@
                         <option value="" selected disabled>Seleccione un transporte</option>
         
                         @foreach ($transportes as $transporte)
-                            <option value="{{ $transporte->id }}">{{ $transporte->tipoTransporte }}</option>
+                            <option value="{{ $transporte->id }}">{{ $transporte->agencia->tipoAgencia->tipoAgencia}}</option>
                         @endforeach
                     </select>
                     <x-jet-input-error for="transporte_id" />

@@ -6,6 +6,7 @@ use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Cliente\LugarTuristicoController;
 use App\Http\Controllers\Cliente\TransportePrivadoController;
+use App\Http\Controllers\Cliente\ViajeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,10 +22,10 @@ use App\Http\Controllers\Cliente\TransportePrivadoController;
 Route::get('/', WelcomeController::class)->name('inicio'); //pagina principal del cliente
 Route::get('categories/{categoria}', [CategoryController::class, 'show'])->name('categories.show');
 
-
+//RUTAS SERVICIOS INDIVIDUALES
 Route::get('lugaresTuristicos/{lugarTuristico}',[LugarTuristicoController::class,'show'])->name('lugaresTuristicos.show');
 Route::get('transportePrivados/{transportePrivado}',[TransportePrivadoController::class,'show'])->name('transportePrivados.show');
-
+Route::get('viajes/{viaje}',[ViajeController::class,'show'])->name('viajes.show');
 //----------------------------------------------------------------------------------
 Route::middleware([ //protegido para entrar al dashboard
     'auth:sanctum',

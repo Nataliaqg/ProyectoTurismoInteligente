@@ -56,7 +56,7 @@
      {{-- Transporte --}}
      <div class="grid grid-cols-2 gap-6 mb-4">
         <div>
-            <x-jet-label value="transportes" />
+            <x-jet-label value="Nombre Agencia" />
             <select class="w-full form-control" wire:model="transporte_id">
                 <option value="" selected disabled>Seleccione un transporte</option>
 

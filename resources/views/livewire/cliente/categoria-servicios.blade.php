@@ -39,7 +39,7 @@
                     </figure>
                     <div class="py-4 px-6">
                         <h1 class="text-lg font-semibold">
-                            <a href="">
+                            <a href="{{route('viajes.show',$viaje)}}">
                                 <p>Ciudad Destino: {{$viaje->ciudadDestino->nombre}}</p>
                             </a>
                         </h1>
@@ -108,7 +108,7 @@
                     </figure>
                     <div class="py-4 px-6">
                         <h1 class="text-lg font-semibold">
-                            <a href="">
+                            <a href="{{route('transportePrivados.show',$transportePrivado)}}">
                                 {{Str::limit($transportePrivado->precio,25)}}BS
                             </a>
                         </h1>
