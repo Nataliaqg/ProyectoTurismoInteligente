@@ -39,7 +39,7 @@
                     </figure>
                     <div class="py-4 px-6">
                         <h1 class="text-lg font-semibold">
-                            <a href="{{route('viajes.show',$viaje)}}">
+                            <a href="">
                                 <p>Ciudad Destino: {{$viaje->ciudadDestino->nombre}}</p>
                             </a>
                         </h1>
@@ -71,6 +71,8 @@
               </article>
               </li>
             @endforeach
+
+            {{-- Hoteles --}}
             @foreach ($hotels as $hotel)
               <li class="bg-white rounded-lg shadow {{$loop->last ? '' : 'mr-4'}}">
               <article>
@@ -85,7 +87,7 @@
                 </figure>
                 <div class="py-4 px-6">
                     <h1 class="text-lg font-semibold">
-                        <a href="">
+                      <a href="{{route('hotel.show',$hotel)}}">
                             {{Str::limit($hotel->nombre,25)}}
                         </a>
                     </h1>
@@ -94,6 +96,7 @@
               </article>
               </li>
             @endforeach
+            
             @foreach ($transportePrivados as $transportePrivado)
                 <li class="bg-white rounded-lg shadow {{$loop->last ? '' : 'mr-4'}}">
                   <article>
@@ -108,7 +111,7 @@
                     </figure>
                     <div class="py-4 px-6">
                         <h1 class="text-lg font-semibold">
-                            <a href="{{route('transportePrivados.show',$transportePrivado)}}">
+                            <a href="">
                                 {{Str::limit($transportePrivado->precio,25)}}BS
                             </a>
                         </h1>

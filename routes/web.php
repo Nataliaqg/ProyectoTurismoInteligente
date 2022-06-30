@@ -29,6 +29,7 @@ Route::get('lugaresTuristicos/{lugarTuristico}',[LugarTuristicoController::class
 Route::get('transportePrivados/{transportePrivado}',[TransportePrivadoController::class,'show'])->name('transportePrivados.show');
 Route::get('viajes/{viaje}',[ViajeController::class,'show'])->name('viajes.show');
 Route::get('restaurantes/{restaurante}',[RestauranteController::class,'show'])->name('restaurantes.show');
+Route::get('hotel/{hotel}',[HotelController::class,'show'])->name('hotel.show');
 //----------------------------------------------------------------------------------
 Route::middleware([ //protegido para entrar al dashboard
     'auth:sanctum',
