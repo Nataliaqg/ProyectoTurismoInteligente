@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Cliente\HotelController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Cliente\LugarTuristicoController;
+use App\Http\Controllers\Cliente\RestauranteController;
 use App\Http\Controllers\Cliente\TransportePrivadoController;
 use App\Http\Controllers\Cliente\ViajeController;
 
@@ -26,6 +28,7 @@ Route::get('categories/{categoria}', [CategoryController::class, 'show'])->name(
 Route::get('lugaresTuristicos/{lugarTuristico}',[LugarTuristicoController::class,'show'])->name('lugaresTuristicos.show');
 Route::get('transportePrivados/{transportePrivado}',[TransportePrivadoController::class,'show'])->name('transportePrivados.show');
 Route::get('viajes/{viaje}',[ViajeController::class,'show'])->name('viajes.show');
+Route::get('restaurantes/{restaurante}',[RestauranteController::class,'show'])->name('restaurantes.show');
 //----------------------------------------------------------------------------------
 Route::middleware([ //protegido para entrar al dashboard
     'auth:sanctum',

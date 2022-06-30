@@ -89,9 +89,9 @@
                                                 <h1 class="text-medium font-thin text-gray-700"> {{ $servicio->descripcion }}
                                         </div>
                                         <div class='mt-auto px-6 mb-4'>
-                                            <x-danger-enlace
+                                            <x-jet-danger-button>
                                                 Mas Informacion
-                                            </x-danger-enlace>
+                                            </x-jet-danger-button>
                                         </div>
                                      
                                     </div>
