@@ -30,15 +30,15 @@
                                 Categoria Serv
                             </th>
                             <th scope="col"
-                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Nombre
                             </th>
                             <th scope="col"
-                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 descripcion
                             </th>
                             <th scope="col"
-                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 direccion
                             </th>
                             <th scope="col"
@@ -46,7 +46,7 @@
                                 telefono
                             </th>
                             <th scope="col"
-                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Categoria
                             </th>
                             <th scope="col"
@@ -87,7 +87,7 @@
                                             
                                         </div>
 
-                                        <div class="ml-4">
+                                        <div class="ml-4 px-6 py-4 whitespace-normal">
                                             <div class="text-sm font-medium text-gray-900">
                                                 {{ $hotel->categoria_id}}
                                             </div>
@@ -97,12 +97,12 @@
 
 
                                 <td class="px-6 py-4 whitespace-normal">
-                                <td class="px-4 py-4 whitespace-normal">
+                                {{-- <td class="px-4 py-4 whitespace-normal"> --}}
                                     <div class="text-xs text-gray-900">
                                         {{ $hotel->nombre }}
                                     </div>
                                 </td>
-                                <td class="px-4 py-4 whitespace-normal">
+                                <td class="px-6 py-4 whitespace-normal">
                                     <div class="text-xs text-gray-900">
                                         {{ $hotel->descripcion }}
                                     </div>

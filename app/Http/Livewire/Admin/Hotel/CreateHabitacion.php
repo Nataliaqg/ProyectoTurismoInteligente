@@ -118,7 +118,9 @@ class CreateHabitacion extends Component
 
     //Obtener los registro de habitacion en la funcion para mostrarlos debajo del formulario
     public function getHabitaciones(){
-        $this->habitaciones = Habitacion::all();  //traer todas las habitaciones de la bd
+        //$this->habitaciones = Habitacion::all();  //traer todas las habitaciones de la bd
+        $IdHotel = $this->hotel->id;
+        $this->habitaciones = Habitacion::where('hotel_id',$IdHotel)->get();
     }
 
     public function delete($habitacionId){
