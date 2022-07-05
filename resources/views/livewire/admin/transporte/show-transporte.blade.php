@@ -90,13 +90,19 @@
 
 
                               {{-- Tipo de agencia a la que pertenece --}}
-                              <td class="px-6 py-4 whitespace-nowrap"> 
+                             {{--  <td class="px-6 py-4 whitespace-nowrap"> 
                                 <div class="text-sm text-gray-900">
                                     @if ($transporte->tipoAgencia_id == 1)
                                         Avion
                                     @else
                                         Flota
                                     @endif
+                                </div>
+                            </td> --}}
+
+                            <td class="px-6 py-4 whitespace-nowrap"> 
+                                <div class="text-sm text-gray-900">
+                                    {{ $transporte->agencia->tipoAgencia->tipoAgencia}}
                                 </div>
                             </td>
 

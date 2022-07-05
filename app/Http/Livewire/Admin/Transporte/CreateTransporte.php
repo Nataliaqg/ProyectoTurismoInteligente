@@ -12,8 +12,8 @@ class CreateTransporte extends Component
 
     
     public $transportes;
-    public $agencias,$tipoAgencias;
-    public $agencias_id="",$tipoAgencia_id="";
+    public $agencias;//$tipoAgencias;
+    public $agencias_id="";//$tipoAgencia_id="";
     public $tipoTransporte,$modelo,$descripcion,$capacidadMaximaAsientos;
 
     public $nombre,$tipo;
@@ -21,7 +21,7 @@ class CreateTransporte extends Component
     protected $rules =[
         'modelo' => 'required',
         'agencias_id' => 'required',
-        'tipoAgencia_id' => 'required',
+        //'tipoAgencia_id' => 'required',
         //'tipoTransporte' => 'required',
         'descripcion' => 'required',
         'capacidadMaximaAsientos' => 'required'
@@ -29,7 +29,7 @@ class CreateTransporte extends Component
 
     public function mount(){
         $this->agencias = Agencia::all();
-        $this->tipoAgencias = TipoAgencia::all();
+        //$this->tipoAgencias = TipoAgencia::all();  no relacionarlo
     }
 
     //propiedades computadas 
@@ -47,7 +47,7 @@ class CreateTransporte extends Component
         $transporte->descripcion = $this->descripcion;
         $transporte->capacidadMaximaAsientos = $this->capacidadMaximaAsientos;
         $transporte->agencias_id =$this->agencias_id;
-        $transporte->tipoAgencia_id = $this->tipoAgencia_id;
+       // $transporte->tipoAgencia_id = $this->tipoAgencia_id;
 
         $transporte->save();
         $this->emit('saved');

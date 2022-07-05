@@ -24,8 +24,6 @@ class CreateTransportesTable extends Migration
             $table->unsignedBigInteger('agencias_id');
             $table->foreign('agencias_id')->references('id')->on('agencias')->onDelete('cascade')->onUpdate('cascade');
 
-            $table->unsignedBigInteger('tipoAgencia_id')->nullable();
-            $table->foreign('tipoAgencia_id')->references('id')->on('tipo_agencias');
 
             $table->timestamps();
         });

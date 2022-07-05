@@ -59,5 +59,26 @@ class HabitacionSeeder extends Seeder
             'precio' => '700',
             'hotel_id' => '1'
         ]);
+
+
+        Habitacion::create([
+            'tipo' => 'Grupales',
+            'cantidad' => '7',
+            'capacidadPersonaAdulta' => '6',
+            'capacidadPersonaMenor' => '2',
+            'precio' => '800',
+            'hotel_id' => '2'
+        ]);
+
+
+
+        Habitacion::create([
+            'tipo' => 'Amplia',
+            'cantidad' => '7',
+            'capacidadPersonaAdulta' => '6',
+            'capacidadPersonaMenor' => '6',
+            'precio' => '500',
+            'hotel_id' => '2'
+        ]);
     }
 }

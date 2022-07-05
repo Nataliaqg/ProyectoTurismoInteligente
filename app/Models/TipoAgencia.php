@@ -16,7 +16,5 @@ class TipoAgencia extends Model
         return $this->hasMany(Agencia::class);
     }
 
-    public function transportes(){
-        return $this->hasMany(Transporte::class);
-    }
+  
 }

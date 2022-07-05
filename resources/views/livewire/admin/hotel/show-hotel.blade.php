@@ -30,27 +30,27 @@
                                 Categoria Serv
                             </th>
                             <th scope="col"
-                                class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Nombre
                             </th>
                             <th scope="col"
-                                class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-4 py-3  text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 descripcion
                             </th>
                             <th scope="col"
-                                class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-4 py-3  text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 direccion
                             </th>
                             <th scope="col"
-                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-4 py-3  text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 telefono
                             </th>
                             <th scope="col"
-                                class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-4 py-3  text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Categoria
                             </th>
                             <th scope="col"
-                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-2 py-3  text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 habitaciones
                             </th>
                             <th scope="col"
@@ -59,10 +59,10 @@
                             </th>
 
 
-                            <th scope="col" class="relative px-4 py-3">
+                            <th scope="col" class="relative px-6 py-3">
                                 <span class="sr-only">Editar</span>
                             </th>
-                            <th scope="col" class="relative px-4 py-3">
+                            <th scope="col" class="relative px-6 py-3">
                                 <span class="sr-only">eliminar</span>
                             </th>
 
@@ -73,7 +73,7 @@
 
                         @foreach ($hoteles as $hotel)
                             <tr>
-                                <td class="px-6 py-4 whitespace-normal">
+                                <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0 h-10 w-10">
                                             @if ($hotel->images->count())
@@ -87,7 +87,7 @@
                                             
                                         </div>
 
-                                        <div class="ml-4 px-6 py-4 whitespace-normal">
+                                        <div class="ml-4 ">
                                             <div class="text-sm font-medium text-gray-900">
                                                 {{ $hotel->categoria_id}}
                                             </div>
@@ -118,12 +118,12 @@
                                     </div>
                                 </td>
 
-                                <td class="px-6 py-4 whitespace-normal">
-                                    <div class="text-sm text-gray-900 text-center">
+                                <td class="px-2 py-4 whitespace-normal">
+                                    <div class="text-sm text-gray-900  text-center">
                                         {{ $hotel->categoria }}
                                     </div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-normal text-center">
+                                <td class="px-2 py-4 whitespace-normal text-center">
                                     <div class="text-sm text-gray-900">
                                         {{ $hotel->capacidadMaximaHabitacion }}
                                     </div>

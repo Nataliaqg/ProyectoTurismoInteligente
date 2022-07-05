@@ -21,7 +21,7 @@
         </div>
 
 
-        <div class="grid grid-cols-1 py-2">
+        {{-- <div class="grid grid-cols-1 py-2">
             <div>
                 <x-jet-label value="Agencias" />
                 <select class="w-full form-control" wire:model="tipoAgencia_id">
@@ -35,7 +35,7 @@
                 <x-jet-input-error for="tipoAgencia_id"/>
             </div>
         </div>
-
+ --}}
 
         
             {{-- Modelo --}}

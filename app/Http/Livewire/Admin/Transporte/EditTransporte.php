@@ -11,9 +11,9 @@ class EditTransporte extends Component
 {
 
     
-    public $transporte,$agencias,$tipoAgencias;
+    public $transporte,$agencias;//$tipoAgencias;
 
-    public $agencias_id,$tipoAgencia_id;
+    public $agencias_id;//$tipoAgencia_id;
     
     public $descripcion,$capacidadMaximaAsientos;
 
@@ -23,7 +23,7 @@ class EditTransporte extends Component
 
     protected $rules =[
         'transporte.agencias_id' => 'required',
-        'transporte.tipoAgencia_id' => 'required',
+        //'transporte.tipoAgencia_id' => 'required',
         'transporte.modelo' => 'required',
         'transporte.descripcion' => 'required',
         'transporte.capacidadMaximaAsientos' => 'required'
@@ -34,7 +34,7 @@ class EditTransporte extends Component
     public function mount(Transporte $transporte){
         $this->transporte = $transporte;
         $this->agencias = Agencia::all();
-        $this->tipoAgencias = TipoAgencia::all();
+        //$this->tipoAgencias = TipoAgencia::all();
         //$this->agencias_id = $transporte->agencia->id;
 
     }
