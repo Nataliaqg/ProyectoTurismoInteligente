@@ -90,7 +90,18 @@
                                         </div>
                                         <div class='mt-auto px-6 mb-4'>
                                             <x-jet-danger-button>
-                                                Mas Informacion
+                                                 @if ($categoria->id ==1)
+                                                     <a href="{{route('lugaresTuristicos.show',$servicio)}}">Mas Informacion</a>
+                                            
+                                                 @endif
+                                                 @if ($categoria->id ==2)
+                                                     <a href="{{route('hotel.show',$servicio)}}"> Mas Infromacion</a>
+                                                
+                                                 @endif
+                                                 @if ($categoria->id == 3)
+                                                 <a href="{{route('restaurantes.show',$servicio)}}">Mas Informacion</a>                                                     
+                                                 @endif
+                                               
                                             </x-jet-danger-button>
                                         </div>
                                      

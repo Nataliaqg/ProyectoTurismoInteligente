@@ -112,6 +112,7 @@ class CreateMesa extends Component
 
     public function render()
     {
-        return view('livewire.admin.restaurante.create-mesa')->layout('layouts.admin');
+        $restauranteuni = Restaurante::where('id', $this->restaurante);
+        return view('livewire.admin.restaurante.create-mesa',compact('restauranteuni'))->layout('layouts.admin');
     }
 }

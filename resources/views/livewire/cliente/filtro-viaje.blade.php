@@ -142,8 +142,9 @@
 
                                         </div>
                                         <div class='mt-auto px-6 mb-4'>
-                                            <x-jet-danger-button>
-                                                Mas Informacion
+                                            <x-jet-danger-button  >
+                                                <a href=" {{route('viajes.show',$servicio)}}">  Mas Informacion</a>
+
                                             </x-jet-danger-button>
                                         </div>
                                     </div>
