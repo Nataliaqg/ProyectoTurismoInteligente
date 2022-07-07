@@ -15,6 +15,7 @@ use App\Http\Livewire\Admin\Ciudad\ShowCiudad;
 use App\Http\Livewire\Admin\Ciudad\CreateCiudad;
 use App\Http\Livewire\Admin\Ciudad\EditCiudad;
 use App\Http\Livewire\Admin\ContraBitacora;
+use App\Http\Livewire\Admin\Empresa\EditEmpresa;
 use App\Http\Livewire\Admin\Home;
 use App\Http\Livewire\Admin\Hotel\CreateHabitacion;
 use App\Http\Livewire\Admin\Hotel\CreateHotel;
@@ -111,3 +112,7 @@ Route::get('users/export/TSV',[UserExportController::class,'exportAllUsersTSV'])
 Route::get('transporteprivados',ShowTransPriv::class)->name('admin.transporteprivado.show');
 Route::get('transporteprivados/create',CreateTransPriv::class)->name('admin.transporteprivado.create');
 Route::get('transporteprivados/{transportePrivado}/edit',EditTransPriv::class)->name('admin.transporteprivado.edit');
+
+//Informacion de la Empresa
+Route::get('/Empresa',EditEmpresa::class)->name('admin.empresa');
+

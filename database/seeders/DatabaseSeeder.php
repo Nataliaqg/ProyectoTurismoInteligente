@@ -35,6 +35,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ViajeSeeder::class);
         $this->call(TransportePrivadoSeeder::class);
         $this->call(MesaSeeder::class);
+        $this->call(EmpresaSeeder::class);
     }
 
 }
