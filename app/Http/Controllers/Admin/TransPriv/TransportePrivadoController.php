@@ -15,6 +15,7 @@ class TransportePrivadoController extends Controller
             'file' => 'required|image|max:2048'
         ]);
         //$url =   Storage::put('public/transporteprivados', $request->file('file'));
+        //$url =  "https://bnzv-clinica-salud-s3.s3.us-east-1.amazonaws.com/" .  Storage::put('turismo', $request->file('file'));
         $url =  "https://bnzv-clinica-salud-s3.s3.us-east-1.amazonaws.com/" . Storage::disk('s3')->put('documentos', $request->file('file'));
         $transportePrivado->images()->create(
             [
