@@ -72,6 +72,6 @@ class UserSeeder extends Seeder
             'edad' => '21'
         ]);
         
-        User::factory(100)->create();
+        //User::factory(100)->create();
     }
 }
