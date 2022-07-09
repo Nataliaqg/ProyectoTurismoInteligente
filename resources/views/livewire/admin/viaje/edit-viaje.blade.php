@@ -4,11 +4,8 @@
             Actualize la informacion del Viaje
         </h1>  
 
-        <div class="mb-4" wire:ignore>
-            <form action="{{ route('admin.viaje.files', $viaje) }}" 
-                method="POST" 
-                class="dropzone"
-                id="my-awesome-dropzone"></form>
+        <div>
+            <input wire:model="imagen" type="file" name="image" id="" multiple>
         </div>
         
         @if ($viaje->images->count())
@@ -20,7 +17,7 @@
                 @foreach ($viaje->images as $image)
 
                     <li class="relative" wire:key="image-{{ $image->id }}">
-                        <img class="w-32 h-20 object-cover" src="{{ Storage::url($image->url) }}" alt="">
+                        <img class="w-32 h-20 object-cover" src="{{ $image->url }}" alt="">
                         <x-jet-danger-button class="absolute right-2 top-2"
                             wire:click="deleteImage({{ $image->id }})" wire:loading.attr="disabled"
                             wire:target="deleteImage({{ $image->id }})">

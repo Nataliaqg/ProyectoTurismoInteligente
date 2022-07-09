@@ -10,11 +10,14 @@ use App\Models\Image;
 use App\Models\Restaurante;
 use CreateCiudadsTable;
 use Illuminate\Support\Facades\Storage;
+use Livewire\WithFileUploads;
 
 class EditRestaurante extends Component
 {
+    use WithFileUploads;
     public $restaurante, $ciudads,$categorias;
     public $ciudad_id,$categoria_id;
+    public $imagen;
 
     protected $rules = [
         'restaurante.categoria_id'=>'nullable',
@@ -43,6 +46,15 @@ class EditRestaurante extends Component
     {
         $rules = $this->rules;
         $this->validate($rules);
+
+        foreach ($this->imagen as $im) {
+            $url =  "https://bnzv-clinica-salud-s3.s3.us-east-1.amazonaws.com/" . $im->store("documentos", "s3");
+            $this->restaurante->images()->create(
+                [
+                    'url' => $url
+                ]
+            );
+        }
         $this->restaurante->save();
         $bitacora = new Bitacora();
         $bitacora->crear('Restaurante: ' .$this->restaurante->nombre .' Actualizada');   

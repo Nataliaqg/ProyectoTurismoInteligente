@@ -77,7 +77,7 @@
                                         <div class="flex-shrink-0 h-10 w-10">
                                             @if ($lugarturistico->images->count())
                                             <img class="h-10 w-10 rounded-full object-cover"
-                                                    src="{{ Storage::url($lugarturistico->images->first()->url) }}" alt="">
+                                                    src="{{ $lugarturistico->images->first()->url }}" alt="">
                                             @else
                                                 <img class="h-10 w-10 rounded-full object-cover"
                                                 src="https://images.pexels.com/photos/4883800/pexels-photo-4883800.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"

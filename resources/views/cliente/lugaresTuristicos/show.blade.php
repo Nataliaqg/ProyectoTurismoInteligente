@@ -5,8 +5,8 @@
                 <div class="flexslider">
                     <ul class="slides">
                      @foreach ($lugarTuristico->images as $image) 
-                      <li data-thumb="{{Storage::url($image->url)}}">
-                        <img src="{{Storage::url($image->url)}}" />
+                      <li data-thumb="{{$image->url}}">
+                        <img src="{{$image->url}}" />
                       </li>
                      @endforeach
                     </ul>

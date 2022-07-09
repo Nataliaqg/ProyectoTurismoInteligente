@@ -45,7 +45,7 @@
                                             alt="">
                                     @else
                                         <img class="h-48 w-full object-cover object-center"
-                                            src="{{ Storage::url($servicio->images->first()->url) }}" alt="">
+                                        src="{{ $servicio->images->first()->url }}" alt="">
                                     @endif
                                 </figure>
                                 <div class="py-4 px-6">
@@ -74,7 +74,8 @@
                                             alt="">
                                     @else
                                         <img class="h-48 w-56 object-cover object-center"
-                                            src="{{ Storage::url($servicio->images->first()->url) }}" alt="">
+                                            src="{{ $servicio->images->first()->url }}" alt="">
+                                            
                                     @endif
                                 </figure>
 

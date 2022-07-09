@@ -6,7 +6,7 @@
                     <ul class="slides">
                         @foreach ($transportePrivado->images as $image)
                             <li data-thumb="{{ $image->url }}">
-                                <img src="{{ $image->url }}" />
+                                <img src="{{ $image->url }}" >
                             </li>
                         @endforeach
                     </ul>

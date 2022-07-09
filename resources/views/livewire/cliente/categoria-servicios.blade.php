@@ -12,7 +12,7 @@
                                         alt="">
                                 @else
                                     <img class="h-48 w-full object-cover object-center"
-                                        src="{{ Storage::url($lugarTuristico->images->first()->url) }}" alt="">
+                                        src="{{ $lugarTuristico->images->first()->url }}" alt="">
                                 @endif
                             </figure>
                             <div class="py-4 px-6">
@@ -38,7 +38,7 @@
                                         alt="">
                                 @else
                                     <img class="h-48 w-full object-cover object-center"
-                                        src="{{ Storage::url($viaje->images->first()->url) }}" alt="">
+                                        src="{{$viaje->images->first()->url }}" alt="">
                                 @endif
                             </figure>
                             <div class="py-4 px-6">
@@ -62,7 +62,7 @@
                                         alt="">
                                 @else
                                     <img class="h-48 w-full object-cover object-center"
-                                        src="{{ Storage::url($restaurante->images->first()->url) }}" alt="">
+                                        src="{{ $restaurante->images->first()->url }}" alt="">
                                 @endif
                             </figure>
                             <div class="py-4 px-6">
@@ -88,7 +88,7 @@
                                         alt="">
                                 @else
                                     <img class="h-48 w-full object-cover object-center"
-                                        src="{{ Storage::url($hotel->images->first()->url) }}" alt="">
+                                        src="{{ $hotel->images->first()->url }}" alt="">
                                 @endif
                             </figure>
                             <div class="py-4 px-6">

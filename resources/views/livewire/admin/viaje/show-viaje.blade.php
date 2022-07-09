@@ -1,15 +1,15 @@
 <div>
     <x-slot name="header">
-    <div class="flex items-center">
-        <h2 class="font-semibold text-xl text-gray-600 leading-tight">
-            Lista de Viajes
-        </h2>
-  
-        <a type="button" href="{{ route('admin.viaje.create') }}"
+        <div class="flex items-center">
+            <h2 class="font-semibold text-xl text-gray-600 leading-tight">
+                Lista de Viajes
+            </h2>
+
+            <a type="button" href="{{ route('admin.viaje.create') }}"
                 class=" absolute top-15 right-5 p-sm inline-block px-6 py-2 border-2 border-green-500 text-green-500 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">
                 Agregar un nuevo Viaje
-        </a>
-    </div>
+            </a>
+        </div>
     </x-slot>
 
     <div class=" container first-line:py-12 mt-10">
@@ -18,7 +18,7 @@
             <!--el buscador-->
             <div class="px-6 py-4">
                 <x-jet-input type="date" wire:model="search" class="w-full"
-                    placeholder="Ingrese la fecha del viaje a buscar" /> 
+                    placeholder="Ingrese la fecha del viaje a buscar" />
             </div>
 
             @if ($viajes->count())
@@ -54,7 +54,7 @@
                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Ciudad de destino
                             </th>
-                            
+
 
                             <th scope="col" class="relative px-6 py-3">
                                 <span class="sr-only">Editar</span>
@@ -74,14 +74,15 @@
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0 h-10 w-10">
                                             @if ($viaje->images->count())
-                                            <img class="h-10 w-10 rounded-full object-cover"
-                                                    src="{{ Storage::url($viaje->images->first()->url) }}" alt="">
+                                                <img class="h-10 w-10 rounded-full object-cover"
+                                                    src="{{ $transportePrivado->images->first()->url }}"
+                                                    alt="">
                                             @else
                                                 <img class="h-10 w-10 rounded-full object-cover"
-                                                src="https://thumbs.dreamstime.com/b/pares-de-boletos-azules-en-blanco-de-la-pel%C3%ADcula-o-de-la-rifa-aislados-en-el-ccb-blanco-78484952.jpg"
-                                                alt="">
+                                                    src="https://thumbs.dreamstime.com/b/pares-de-boletos-azules-en-blanco-de-la-pel%C3%ADcula-o-de-la-rifa-aislados-en-el-ccb-blanco-78484952.jpg"
+                                                    alt="">
                                             @endif
-                                            
+
                                         </div>
                                         <div class="ml-4">
                                             <div class="text-sm font-medium text-gray-900">
@@ -127,14 +128,14 @@
                                     <a href="{{ route('admin.viaje.edit', $viaje) }}"
                                         class="text-indigo-600 hover:text-indigo-900">Edit</a>
                                 </td>
-                                
+
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <a class="pl-2 hover:text-red-600 cursor-pointer"
                                         wire:click="$emit('deleteViaje', {{ $viaje->id }})">
                                         Eliminar
                                     </a>
                                 </td>
-                            </tr>     
+                            </tr>
                         @endforeach
                         <!-- More people... -->
                     </tbody>
@@ -145,39 +146,38 @@
                 </div>
             @endif
 
-           
+
         </x-table-responsive>
 
     </div>
-<!-- eliminar... -->
-@push('script')
-<script>
-    Livewire.on('deleteViaje', viaje => {
+    <!-- eliminar... -->
+    @push('script')
+        <script>
+            Livewire.on('deleteViaje', viaje => {
 
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
 
-                Livewire.emitTo('admin.viaje.show-viaje', 'delete', viaje)
+                        Livewire.emitTo('admin.viaje.show-viaje', 'delete', viaje)
 
-                Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                )
-            }
-        })
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                    }
+                })
 
-    });
-</script>
-@endpush
+            });
+        </script>
+    @endpush
 
 </div>
-

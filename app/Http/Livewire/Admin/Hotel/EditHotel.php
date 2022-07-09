@@ -9,12 +9,15 @@ use App\Models\Hotel;
 use App\Models\Image;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class EditHotel extends Component
 {
+    use WithFileUploads;
     public $hotel, $ciudads,$categorias;
     public $ciudad_id,$categoria_id;
     public $ciudad_nombre,$categoria_nombre;
+    public $imagen;
 
     protected $rules = [
         'hotel.ciudad_id' => 'nullable',
@@ -47,6 +50,16 @@ class EditHotel extends Component
     {
         $rules = $this->rules;
         $this->validate($rules);
+
+        foreach ($this->imagen as $im) {
+            $url =  "https://bnzv-clinica-salud-s3.s3.us-east-1.amazonaws.com/" . $im->store("documentos", "s3");
+            $this->hotel->images()->create(
+                [
+                    'url' => $url
+                ]
+            );
+        }
+
         $this->hotel->save();
         $bitacora = new Bitacora();
         $bitacora->crear('Hotel: ' .$this->hotel->nombre .' Actualizada');    

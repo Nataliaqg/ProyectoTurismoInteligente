@@ -10,15 +10,18 @@ use App\Models\Bitacora;
 use App\Models\Categoria;
 use App\Models\Image;
 use Illuminate\Support\Facades\Storage;
+use Livewire\WithFileUploads;
 
 class EditViaje extends Component
 {
+    use WithFileUploads;
     public $viaje;
     public $transportes,$categorias;
     public $transporte_id,$categoria_id;
     public $transporte_tipoTransporte,$categoria_nombre;
     public $ciudads;
     public $ciudadOrigen_id,$ciudadDestino_id;
+    public $imagen;
 
     protected $rules = [
         'viaje.fecha' =>'required',
@@ -61,6 +64,15 @@ class EditViaje extends Component
     {
         $rules = $this->rules;
         $this->validate($rules);
+
+        foreach ($this->imagen as $im) {
+            $url =  "https://bnzv-clinica-salud-s3.s3.us-east-1.amazonaws.com/" . $im->store("documentos", "s3");
+            $this->viaje->images()->create(
+                [
+                    'url' => $url
+                ]
+            );
+        }
         $this->viaje->save();
         $bitacora = new Bitacora();
         $bitacora->crear('Hotel Editado'); 

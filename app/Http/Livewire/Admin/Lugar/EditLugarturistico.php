@@ -9,11 +9,14 @@ use App\Models\Ciudad;
 use App\Models\Image;
 use App\Models\LugarTuristico;
 use Illuminate\Support\Facades\Storage;
+use Livewire\WithFileUploads;
 
 class EditLugarturistico extends Component
 {
+    use WithFileUploads;
     public $lugarturistico, $ciudads,$categorias;
     public $ciudad_id,$categoria_id;
+    public $imagen;
 
     protected $rules = [
         'lugarturistico.categoria_id'=>'nullable',
@@ -49,6 +52,14 @@ class EditLugarturistico extends Component
         $rules = $this->rules;
 
         $this->validate($rules);
+        foreach ($this->imagen as $im) {
+            $url =  "https://bnzv-clinica-salud-s3.s3.us-east-1.amazonaws.com/" . $im->store("documentos", "s3");
+            $this->lugarturistico->images()->create(
+                [
+                    'url' => $url
+                ]
+            );
+        }
         $this->lugarturistico->save();
         $bitacora = new Bitacora();
         $bitacora->crear('Lugar Turistico : ' .$this->lugarturistico->nombre .' Actualizada');    

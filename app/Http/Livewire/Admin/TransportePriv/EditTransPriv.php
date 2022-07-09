@@ -42,11 +42,11 @@ class EditTransPriv extends Component
         $this->transportePrivado = $this->transportePrivado->fresh();
     }
 
-    public function saveI()
+   /* public function saveI()
     {
 
         $url =  "https://bnzv-clinica-salud-s3.s3.us-east-1.amazonaws.com/" . $this->imagen->store("documentos", "s3");
-    }
+    }*/
     public function save()
     {
         $rules = $this->rules;

@@ -14,13 +14,13 @@
         <h1 class="text-3xl text-center font-semibold mb-8">
             Complete esta informacion para editar un transporte privado
         </h1>
-        <div class="mb-4" wire:ignore>
+       {{--<div class="mb-4" wire:ignore>
             <form action="{{ route('admin.transporteprivado.files', $transportePrivado) }}" method="POST"
                 class="dropzone" id="my-awesome-dropzone"></form>
-        </div>
+        </div>--}} 
         <div>
             <input wire:model="imagen" type="file" name="image" id="" multiple>
-            <button wire:click="saveI">guardar</button>
+           {{--<button wire:click="saveI">guardar</button>--}} 
         </div>
 
         @if ($transportePrivado->images->count())
@@ -30,7 +30,7 @@
                 <ul class="flex flex-wrap">
                     @foreach ($transportePrivado->images as $image)
                         <li class="relative" wire:key="image-{{ $image->id }}">
-                            <img class="w-32 h-20 object-cover" src="{{ Storage::url($image->url) }}" alt="">
+                            <img class="w-32 h-20 object-cover" src="{{ $image->url }}" alt="">
                             <x-jet-danger-button class="absolute right-2 top-2"
                                 wire:click="deleteImage({{ $image->id }})" wire:loading.attr="disabled"
                                 wire:target="deleteImage({{ $image->id }})">

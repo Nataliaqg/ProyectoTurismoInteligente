@@ -77,19 +77,20 @@
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0 h-10 w-10">
                                             @if ($hotel->images->count())
-                                            <img class="h-10 w-10 rounded-full object-cover"
-                                                    src="{{ Storage::url($hotel->images->first()->url) }}" alt="">
+                                                <img class="h-10 w-10 rounded-full object-cover"
+                                                    src="{{ $transportePrivado->images->first()->url }}"
+                                                    alt="">
                                             @else
                                                 <img class="h-10 w-10 rounded-full object-cover"
-                                                src="https://images.pexels.com/photos/4883800/pexels-photo-4883800.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                                alt="">
+                                                    src="https://images.pexels.com/photos/4883800/pexels-photo-4883800.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    alt="">
                                             @endif
-                                            
+
                                         </div>
 
                                         <div class="ml-4 ">
                                             <div class="text-sm font-medium text-gray-900">
-                                                {{ $hotel->categoria_id}}
+                                                {{ $hotel->categoria_id }}
                                             </div>
                                         </div>
                                     </div>
@@ -97,7 +98,7 @@
 
 
                                 <td class="px-6 py-4 whitespace-normal">
-                                {{-- <td class="px-4 py-4 whitespace-normal"> --}}
+                                    {{-- <td class="px-4 py-4 whitespace-normal"> --}}
                                     <div class="text-xs text-gray-900">
                                         {{ $hotel->nombre }}
                                     </div>
@@ -130,8 +131,8 @@
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="text-sm text-gray-900">
-                                        
-                                      {{$hotel->ciudad->nombre}}
+
+                                        {{ $hotel->ciudad->nombre }}
                                     </div>
                                 </td>
 
