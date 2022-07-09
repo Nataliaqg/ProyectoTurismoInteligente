@@ -16,7 +16,10 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>--}}
                 
-
+                    <x-jet-nav-link href="{{route('admin.empresa')}}" :active="request()->routeIs('admin.empresa')">
+                        {{ __('Empresa') }} 
+                    </x-jet-nav-link> 
+                
                     <x-jet-nav-link href="{{route('admin.ciudad.show')}}" :active="request()->routeIs('admin.ciudad.show')">
                         {{ __('Ciudad') }}
                     </x-jet-nav-link>

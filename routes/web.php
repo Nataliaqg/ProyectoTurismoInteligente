@@ -9,6 +9,7 @@ use App\Http\Controllers\Cliente\LugarTuristicoController;
 use App\Http\Controllers\Cliente\RestauranteController;
 use App\Http\Controllers\Cliente\TransportePrivadoController;
 use App\Http\Controllers\Cliente\ViajeController;
+use App\Http\Livewire\Cliente\EmpresaVista;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +47,9 @@ Route::middleware([ //protegido para entrar al dashboard
 
 
 }); //cierra grupo de rutas que necesitan autentificacion
+
+Route::get('/Informacion',EmpresaVista::class)->name('InformacionEmpresa');
+
 
 
 
