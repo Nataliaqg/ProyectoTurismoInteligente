@@ -4,7 +4,8 @@
             actualize la informacion del Hotel
         </h1>
         <div>
-            <input wire:model="imagen" type="file" name="image" id="" multiple>
+            
+            <input  wire:model="imagen" type="file" name="image" id="" multiple>
         </div>
 
         @if ($hotel->images->count())
