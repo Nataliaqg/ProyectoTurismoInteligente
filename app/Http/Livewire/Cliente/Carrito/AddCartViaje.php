@@ -16,8 +16,10 @@ class AddCartViaje extends Component
     public $options=[];
 
     public function mount(){
-        $this->quantity=$this->viaje->transporte->capacidadMaximaAsientos; //su tope es la cantidad max de asientos dependiendo su transporte
-        
+        //$this->quantity=$this->viaje->transporte->capacidadMaximaAsientos; //su tope es la cantidad max de asientos dependiendo su transporte
+        $this->categoria_id= $this->viaje->categoria->id;
+        $this->quantity=qty_available($this->viaje->id,$this->categoria_id); //almacena cant disponible actualizada
+
         if($this->viaje->imagen != null){ //si tiene imagen que mostrar
             $this->options['image']= $this->viaje->images->first()->url;
         }else{
@@ -44,6 +46,10 @@ class AddCartViaje extends Component
                    'weight' => 550,
                    'options'=> $this->options
                    ]);
+
+        $this->quantity=qty_available($this->viaje->id,$this->categoria_id);
+
+        $this->reset('qty'); //resetea el valor 
         
         $this->emitTo('dropdown-cart','render'); //renderiza cuando vamos agregando
     }

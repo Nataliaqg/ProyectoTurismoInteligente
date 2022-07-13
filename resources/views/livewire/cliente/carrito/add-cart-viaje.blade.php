@@ -27,6 +27,7 @@
         <div class="flex-1 "> {{--boton de agregar al paquete--}}
             <x-jet-button class="ml-3 w-full 
                 justify-center"
+                x-bind:disabled="$wire.qty > $wire.quantity"
                 wire:click="addViaje" 
                 wire:loading.attr="disabled"
                 wire:target="addViaje">

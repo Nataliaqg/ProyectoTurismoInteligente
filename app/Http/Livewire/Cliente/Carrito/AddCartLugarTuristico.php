@@ -10,11 +10,16 @@ use Illuminate\Support\Facades\Storage;
 class AddCartLugarTuristico extends Component
 {
     public $lugarTuristico,$precio,$categoria_id;
+    public $quantity=15;
     public $qty=1; //variable que indica la cantidad que requiere el cliente
     public $options=[];
 
     public function mount(){ //trae info del campo precio del lugar turistico
         $this->precio=$this->lugarTuristico->precio;
+
+        $this->categoria_id=$this->lugarTuristico->categoria->id;
+        $this->quantity=qty_available($this->lugarTuristico->id,$this->categoria_id);
+
         if($this->lugarTuristico->imagen != null){ //si tiene imagen que mostrar
             $this->options['image']= $this->lugarTuristico->images->first()->url;
        }else{
@@ -40,7 +45,11 @@ class AddCartLugarTuristico extends Component
                    'ciudad'=> $this->lugarTuristico->ciudad->nombre, 
                    'options'=> $this->options
                    ]);
-        
+
+        $this->quantity=qty_available($this->lugarTuristico->id,$this->categoria_id);
+
+        $this->reset('qty'); //resetea el valor
+
         $this->emitTo('dropdown-cart','render'); //renderiza cuando vamos agregando
     }
 

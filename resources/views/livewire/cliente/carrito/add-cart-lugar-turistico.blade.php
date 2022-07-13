@@ -2,7 +2,7 @@
     
     @if($precio > 0)
      <p class="text-red-500 mb-4">
-        <span class="font-semibold text-lg">Puede adquirir hasta: {{$precio}} entradas</span>
+        <span class="font-semibold text-lg">Puede adquirir hasta: {{$quantity}} entradas</span>
      </p>
     @else 
     <p class="text-red-500 mb-4">
@@ -23,7 +23,7 @@
             <span class="mx-2 text-slate-600">{{$qty}}</span>
             <x-jet-secondary-button {{--boton de mas--}}
               disabled
-              x-bind:disabled="$wire.qty >=15 || $wire.precio == 0" {{--Se desactiva si el precio es 0, solo acepta 15 entradas--}}
+              x-bind:disabled="$wire.qty >= $wire.quantity || $wire.precio == 0" {{--Se desactiva si el precio es 0, solo acepta 15 entradas--}}
               wire:loading.attr="disabled"
               wire:target="increment"
               wire:click="increment"> 
@@ -33,6 +33,7 @@
         <div class="flex-1"> {{--boton de agregar al paquete--}}
             <x-jet-button class="ml-3 w-full 
                 justify-center"
+                x-bind:disabled="$wire.qty > $wire.quantity"
                 wire:click="addLugarTuristico"
                 wire:loading.attr="disabled"
                 wire:target="addLugarTuristico">
