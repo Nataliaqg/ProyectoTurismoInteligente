@@ -64,7 +64,7 @@ class EditViaje extends Component
     {
         $rules = $this->rules;
         $this->validate($rules);
-
+        if($this->imagen != null){
         foreach ($this->imagen as $im) {
             $url =  "https://bnzv-clinica-salud-s3.s3.us-east-1.amazonaws.com/" . $im->store("documentos", "s3");
             $this->viaje->images()->create(
@@ -73,6 +73,7 @@ class EditViaje extends Component
                 ]
             );
         }
+    }
         $this->viaje->save();
         $bitacora = new Bitacora();
         $bitacora->crear('Hotel Editado'); 

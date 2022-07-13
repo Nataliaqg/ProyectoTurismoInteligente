@@ -50,6 +50,9 @@ Route::middleware([ //protegido para entrar al dashboard
 
 Route::get('/Informacion',EmpresaVista::class)->name('InformacionEmpresa');
 
+Route::get('prueba',function(){ //prueba para eliminar items del carrito
+  \Cart::destroy();
+});
 
 
 

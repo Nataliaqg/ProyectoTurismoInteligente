@@ -55,7 +55,8 @@
                     </div>
                 </div>
 
-                @livewire('cliente.carrito.add-cart-item',['lugarTuristico' => $lugarTuristico])
+                {{--LLAMA A SU COMPONENTE DE CARRITO--}}
+                @livewire('cliente.carrito.add-cart-lugar-turistico',['lugarTuristico' => $lugarTuristico])
 
             </div>
         </div>

@@ -53,6 +53,7 @@ class EditTransPriv extends Component
 
         $this->validate($rules);
         //guardar imagen
+        if($this->imagen != null){
         foreach ($this->imagen as $im) {
             $url =  "https://bnzv-clinica-salud-s3.s3.us-east-1.amazonaws.com/" . $im->store("documentos", "s3");
             $this->transportePrivado->images()->create(
@@ -61,7 +62,7 @@ class EditTransPriv extends Component
                 ]
             );
         }
-
+        }
         //---------------------------
         $this->transportePrivado->save();
         $bitacora = new Bitacora();

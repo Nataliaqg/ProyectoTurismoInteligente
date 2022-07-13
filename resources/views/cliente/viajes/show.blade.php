@@ -51,9 +51,14 @@
                     @endif
                     Tipo de transporte: {{$viaje->transporte->agencia->tipoAgencia->tipoAgencia}}
                 </p>
-                <p class="text-trueGray-700 text-lg mt-3"><i class="fas fa-users text-teal-600"></i>
-                    Agencia: {{$viaje->transporte->agencia->nombre}}
-                </p>
+                <div>
+                    <p class="text-trueGray-700 text-lg mt-3"><i class="fas fa-users text-teal-600"></i>
+                        Agencia: {{$viaje->transporte->agencia->nombre}}
+                    </p>
+                    <p class="text-trueGray-700 text-lg mt-3"><i class="fas fa-users text-teal-600"></i>
+                        Capacidad max de asientos: {{$viaje->transporte->capacidadMaximaAsientos}}
+                    </p>
+                </div>
                 @if ($viaje->transporte->agencia->tipoAgencia_id ==2)
                 <div class="bg-white rounded-lg shadow-lg mb-6 mt-3 ">
                     <div class="p-4 flex items-center">
@@ -67,6 +72,10 @@
                     </div>
                 </div>
                 @endif
+
+                {{--LLAMA A SU COMPONENTE DE CARRITO--}}
+                @livewire('cliente.carrito.add-cart-viaje',['viaje' => $viaje])
+
             </div>
         </div>
     </div>

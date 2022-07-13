@@ -75,7 +75,7 @@
                                         <div class="flex-shrink-0 h-10 w-10">
                                             @if ($viaje->images->count())
                                                 <img class="h-10 w-10 rounded-full object-cover"
-                                                    src="{{ $transportePrivado->images->first()->url }}"
+                                                    src="{{ $viaje->images->first()->url }}"
                                                     alt="">
                                             @else
                                                 <img class="h-10 w-10 rounded-full object-cover"

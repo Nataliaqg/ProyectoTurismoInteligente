@@ -71,9 +71,14 @@
     </div>
 
     {{-- Fecha --}}
+    <?php
+    date_default_timezone_set('UTC');
+    date_default_timezone_set('America/La_Paz');  
+    $fechaActual = date('Y-m-d');
+    ?>
     <div class="mb-4">
         <x-jet-label value="Fecha" />
-        <x-jet-input type="date" class="w-full" wire:model="fecha" placeholder="Ingrese la fecha del viaje" />
+        <x-jet-input type="date" min="{{$fechaActual}}" class="w-full" wire:model="fecha" placeholder="Ingrese la fecha del viaje" />
         <x-jet-input-error for="fecha" />
     </div>
 

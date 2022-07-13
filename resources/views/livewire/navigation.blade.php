@@ -1,4 +1,4 @@
-<header class="bg-gray-600  "  x-data="dropdown()">
+<header class="bg-gray-600"  x-data="dropdown()" >
 {{-- <header class="bg-gray-600 sticky top-0 z-50" x-data="dropdown()"> --}}
     <div class="container flex items-center h-16">
        

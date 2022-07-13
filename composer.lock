@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2d4d92f8bef3414986b917a757567dff",
+    "content-hash": "b3a7f2242e32198a8a1d564de8aedf69",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -436,6 +436,77 @@
                 }
             ],
             "time": "2021-08-15T20:50:18+00:00"
+        },
+        {
+            "name": "bumbummen99/shoppingcart",
+            "version": "4.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bumbummen99/LaravelShoppingcart.git",
+                "reference": "1c50fb564826b6ee748d2d9afad7447b6884166e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bumbummen99/LaravelShoppingcart/zipball/1c50fb564826b6ee748d2d9afad7447b6884166e",
+                "reference": "1c50fb564826b6ee748d2d9afad7447b6884166e",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/events": "5.4.*||5.5.*||5.6.*||5.7.*||5.8.*||^6.0||^7.0||^8.0||^9.0",
+                "illuminate/session": "5.4.*||5.5.*||5.6.*||5.7.*||5.8.*||^6.0||^7.0||^8.0||^9.0",
+                "illuminate/support": "5.4.*||5.5.*||5.6.*||5.7.*||5.8.*||^6.0||^7.0||^8.0||^9.0",
+                "nesbot/carbon": "~1.20||^1.26.3||^2.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "orchestra/testbench": "^3.4|^4.0|^5.0|^6.0",
+                "phpunit/phpunit": "~5.0||~6.0||~7.0||~8.0||~9.0"
+            },
+            "suggest": {
+                "gloudemans/notify": "Simple flash notifications for Laravel"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider"
+                    ],
+                    "aliases": {
+                        "Cart": "Gloudemans\\Shoppingcart\\Facades\\Cart"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Gloudemans\\Shoppingcart\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rob Gloudemans",
+                    "email": "info@robgloudemans.nl",
+                    "homepage": "http://robgloudemans.nl/"
+                },
+                {
+                    "name": "Patrick Henninger",
+                    "email": "privat@skyraptor.eu",
+                    "homepage": "https://skyraptor.eu/"
+                }
+            ],
+            "description": "Laravel Shoppingcart",
+            "keywords": [
+                "laravel",
+                "shoppingcart"
+            ],
+            "support": {
+                "issues": "https://github.com/bumbummen99/LaravelShoppingcart/issues",
+                "source": "https://github.com/bumbummen99/LaravelShoppingcart/tree/4.2.0"
+            },
+            "time": "2022-05-15T15:32:38+00:00"
         },
         {
             "name": "dasprid/enum",
@@ -3711,16 +3782,16 @@
         },
         {
             "name": "phpoffice/phpspreadsheet",
-            "version": "1.23.0",
+            "version": "1.24.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPOffice/PhpSpreadsheet.git",
-                "reference": "21e4cf62699eebf007db28775f7d1554e612ed9e"
+                "reference": "ebe8745c92a7cac4514d040758393b5399633b83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/21e4cf62699eebf007db28775f7d1554e612ed9e",
-                "reference": "21e4cf62699eebf007db28775f7d1554e612ed9e",
+                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/ebe8745c92a7cac4514d040758393b5399633b83",
+                "reference": "ebe8745c92a7cac4514d040758393b5399633b83",
                 "shasum": ""
             },
             "require": {
@@ -3748,15 +3819,15 @@
             },
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "dev-master",
-                "dompdf/dompdf": "^1.0",
+                "dompdf/dompdf": "^1.0 || ^2.0",
                 "friendsofphp/php-cs-fixer": "^3.2",
                 "jpgraph/jpgraph": "^4.0",
-                "mpdf/mpdf": "8.0.17",
+                "mpdf/mpdf": "8.1.1",
                 "phpcompatibility/php-compatibility": "^9.3",
                 "phpstan/phpstan": "^1.1",
                 "phpstan/phpstan-phpunit": "^1.0",
                 "phpunit/phpunit": "^8.5 || ^9.0",
-                "squizlabs/php_codesniffer": "^3.6",
+                "squizlabs/php_codesniffer": "^3.7",
                 "tecnickcom/tcpdf": "^6.4"
             },
             "suggest": {
@@ -3809,9 +3880,9 @@
             ],
             "support": {
                 "issues": "https://github.com/PHPOffice/PhpSpreadsheet/issues",
-                "source": "https://github.com/PHPOffice/PhpSpreadsheet/tree/1.23.0"
+                "source": "https://github.com/PHPOffice/PhpSpreadsheet/tree/1.24.0"
             },
-            "time": "2022-04-24T13:53:10+00:00"
+            "time": "2022-07-09T13:49:09+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -9986,5 +10057,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.1.0"
 }
