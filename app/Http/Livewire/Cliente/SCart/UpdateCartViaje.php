@@ -10,9 +10,9 @@ class UpdateCartViaje extends Component
     public $rowId, $qty, $quantity, $categoria_id;
 
     public function mount(){
-        $item= Cart::get($this->rowId);
-        $this->categoria_id= $item->options['categoria_id']; //estoy trayendo la cantidad que ya habia seleccionado
-        $this->qty= $item->qty;
+        $item= Cart::get($this->rowId); //obtiene el id del item viaje 
+        $this->categoria_id= $item->options['categoria_id']; 
+        $this->qty= $item->qty; //traemos la cant que ya habiamos seleccionado
 
         $this->quantity=qty_available($item->id,$this->categoria_id); //almacena cant disponible actualizada
     }
