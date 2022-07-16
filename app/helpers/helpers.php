@@ -5,10 +5,13 @@ use App\Models\LugarTuristico;
 use App\Models\Viaje;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
+//siempre va a existir un id de ese servicio con su id de categoria
 function quantity($servicio_id,$categoria_id){ //PARA CALCULAR EL "STOCK" DEL SERVICIO EN ESPECIFICO
 
     if($categoria_id==1){ //si es un lugar turistico
-        $quantity=15; //su stock max es 15
+        $lugarTuristico_id=$servicio_id;
+        $lugarTuristico= LugarTuristico::find($lugarTuristico_id);
+        $quantity=$lugarTuristico->cantidad;
     }else{ //si es un viaje
         $viaje_id=$servicio_id;
         $viaje=Viaje::find($viaje_id); //encuentra que viaje en específico

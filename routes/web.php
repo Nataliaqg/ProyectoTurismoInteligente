@@ -10,7 +10,7 @@ use App\Http\Controllers\Cliente\RestauranteController;
 use App\Http\Controllers\Cliente\TransportePrivadoController;
 use App\Http\Controllers\Cliente\ViajeController;
 use App\Http\Livewire\Cliente\EmpresaVista;
-
+use App\Http\Livewire\Cliente\SCart\ShoppingCart;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,12 +47,15 @@ Route::middleware([ //protegido para entrar al dashboard
 
 
 }); //cierra grupo de rutas que necesitan autentificacion
+//---------------------------------------------------------------------------------
 
 Route::get('/Informacion',EmpresaVista::class)->name('InformacionEmpresa');
 
 Route::get('prueba',function(){ //prueba para eliminar items del carrito
   \Cart::destroy();
 });
+
+Route::get('shopping-cart',ShoppingCart::class)->name('shopping-cart');
 
 
 

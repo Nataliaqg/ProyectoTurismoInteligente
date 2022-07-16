@@ -2,7 +2,7 @@
     <h1 class="  text-3xl text-center font-semibold mb-8">
         Complete la informacion para crear un viaje
     </h1>
-    {{-- Ciudad Origen --}}
+    {{-- Categoria --}}
     <div class="grid grid-cols-2 gap-6 mb-4">
         <div>
             <x-jet-label value="Categoria" />

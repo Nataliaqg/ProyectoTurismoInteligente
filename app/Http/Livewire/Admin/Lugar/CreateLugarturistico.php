@@ -12,7 +12,7 @@ class CreateLugarturistico extends Component
 {
     public $ciudads,$categorias;
     public $ciudad_id="",$categoria_id="";
-    public $nombre, $descripcion, $precio, $direccion, $horaEntrada, $horaSalida;
+    public $nombre, $descripcion, $precio, $cantidad,$direccion, $horaEntrada, $horaSalida;
    
     //validaciones
     protected $rules =[
@@ -22,6 +22,7 @@ class CreateLugarturistico extends Component
         'descripcion' =>'required',
         'direccion' =>'required',
         'precio' =>'required', 
+        'cantidad'=>'required',
         'horaEntrada' =>'nullable',       
     ];
 
@@ -47,6 +48,7 @@ class CreateLugarturistico extends Component
         $lugarturistico->nombre = $this->nombre;
         $lugarturistico->descripcion = $this->descripcion;
         $lugarturistico->precio = $this->precio;
+        $lugarturistico->cantidad=$this->cantidad;
         $lugarturistico->direccion = $this->direccion;
         $lugarturistico->horaEntrada = $this->horaEntrada;
         $lugarturistico->horaSalida = $this->horaSalida;

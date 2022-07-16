@@ -24,6 +24,7 @@
                 </x-jet-label>
                 <x-jet-input type="number" wire:model="createForm.cantidad_mesas" class="w-full" />
                 <x-jet-input-error for="createForm.cantidad_mesas" />
+
                  <x-jet-label>
                     precio
                 </x-jet-label>
@@ -140,6 +141,7 @@
             </x-jet-label>
             <x-jet-input wire:model="editForm.precio" type="number" class="w-full" />
             <x-jet-input-error for="editForm.precio" />
+
         </x-slot>
 
         <x-slot name="footer">

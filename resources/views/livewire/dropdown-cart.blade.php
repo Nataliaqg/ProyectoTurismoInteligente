@@ -51,7 +51,7 @@
                 <div class="p-2">
                     <p class="text-lg text-red-500 mt-1 mb-3"><span class="font-bold">Total:</span> {{Cart::subtotal()}} BS</p>
 
-                    <x-button-enlace class="w-full">
+                    <x-button-enlace href="{{route('shopping-cart')}}" class="w-full">
                         Ver mi paquete
                     </x-button-enlace>
 

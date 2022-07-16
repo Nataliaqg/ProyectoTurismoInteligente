@@ -102,6 +102,12 @@
                     <x-jet-input wire:model="lugarturistico.precio" type="number" step=".01" />
                     <x-jet-input-error for="lugarturistico.precio" />
                 </div>
+                {{--CANTIDAD--}}
+                <div>
+                    <x-jet-label value="Cantidad Entradas" />
+                    <x-jet-input wire:model="lugarturistico.cantidad" type="number" step=".01" />
+                    <x-jet-input-error for="lugarturistico.cantidad" />
+                </div>
                 {{-- entrada --}}
                 <div class="mb-4">
                     <x-jet-label value="Hora de Entrada" />

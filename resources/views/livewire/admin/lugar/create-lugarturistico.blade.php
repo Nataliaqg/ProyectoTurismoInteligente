@@ -74,6 +74,14 @@
             step=".01" />
             <x-jet-input-error for="precio" />
         </div>
+         {{-- Cantidad --}}
+         <div>
+            <x-jet-label value="Cantidad de entradas" />
+            <x-jet-input wire:model="cantidad" 
+            type="number"           
+            step=".01" />
+            <x-jet-input-error for="cantidad" />
+        </div>
         {{-- entrada --}}
         <div class="mb-4">
             <x-jet-label value="Hora de Entrada" />

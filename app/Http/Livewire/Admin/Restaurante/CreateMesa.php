@@ -32,8 +32,6 @@ class CreateMesa extends Component
         'createForm.cantidad_mesas' => 'required',
         'createForm.capacidad_mesa' => 'required',
         'createForm.precio' => 'required',
-        
-
     ];
      protected $validationAttributes = [
         'createForm.cantidad_mesas' => 'capacidad',
@@ -42,7 +40,6 @@ class CreateMesa extends Component
         'editForm.cantidad_mesas' => 'capacidad',
         'editForm.capacidad_mesa' => 'cantidad',
         'editForm.precio' => 'precio',   
-    
     ];
 
     // que se inicialize el metodo get

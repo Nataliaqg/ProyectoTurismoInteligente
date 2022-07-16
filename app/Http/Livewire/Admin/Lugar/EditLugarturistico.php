@@ -25,6 +25,7 @@ class EditLugarturistico extends Component
         'lugarturistico.descripcion' => 'required',
         'lugarturistico.direccion' => 'required',
         'lugarturistico.precio' => 'required',
+        'lugarturistico.cantidad'=>'required',
         'lugarturistico.horaEntrada' => 'nullable',
         'lugarturistico.horaSalida' => 'nullable',
 

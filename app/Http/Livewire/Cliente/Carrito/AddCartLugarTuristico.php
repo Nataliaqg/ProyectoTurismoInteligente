@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 class AddCartLugarTuristico extends Component
 {
     public $lugarTuristico,$precio,$categoria_id;
-    public $quantity=15;
+    public $quantity;
     public $qty=1; //variable que indica la cantidad que requiere el cliente
     public $options=[];
 
@@ -42,7 +42,7 @@ class AddCartLugarTuristico extends Component
                    'qty' => $this->qty,
                    'price' => $this->lugarTuristico->precio,
                    'weight' => 550,
-                   'ciudad'=> $this->lugarTuristico->ciudad->nombre, 
+                  // 'ciudad'=> $this->lugarTuristico->ciudad->nombre, 
                    'options'=> $this->options
                    ]);
 

@@ -27,7 +27,7 @@ class ShowLugarTuristico extends Component
     
     public function delete($lugarturistico){
       
-         $idnombre = LugarTuristico::find($lugarturistico);        
+        $idnombre = LugarTuristico::find($lugarturistico);        
         $idnombre->delete();     
         $bitacora = new Bitacora();
         $bitacora->crear('Lugar Turistico Eliminado');    
