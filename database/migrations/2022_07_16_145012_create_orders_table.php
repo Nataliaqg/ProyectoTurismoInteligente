@@ -20,6 +20,14 @@ class CreateOrdersTable extends Migration
             $table->unsignedBigInteger('user_id'); //el usuario que la generó
             $table->foreign('user_id')->references('id')->on('users');
 
+            $table->string('contact'); //formulario resumen
+
+            $table->string('carnet');
+
+            $table->integer('phone'); 
+            
+            $table->string('email');
+
             $table->enum('status',[Order::PENDIENTE,Order::RECIBIDO,Order::ANULADO])->default(Order::PENDIENTE);
 
             $table->float('total');

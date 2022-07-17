@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Cliente\LugarTuristicoController;
+use App\Http\Controllers\Cliente\Order\OrderController;
 use App\Http\Controllers\Cliente\RestauranteController;
 use App\Http\Controllers\Cliente\TransportePrivadoController;
 use App\Http\Controllers\Cliente\ViajeController;
@@ -61,6 +62,4 @@ Route::get('shopping-cart',ShoppingCart::class)->name('shopping-cart');
 
 //ruta para las ordenes
 Route::get('orders/create',CreateOrden::class)->middleware('auth')->name('orders.create');
-
-
-
+Route::get('orders/{order}/payment',[OrderController::class,'payment'])->name('orders.payment');
