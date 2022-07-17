@@ -24,7 +24,7 @@ use App\Http\Livewire\Cliente\Orden\CreateOrden;
 */
 
 Route::get('/', WelcomeController::class)->name('inicio'); //pagina principal del cliente
-Route::get('categories/{categoria}', [CategoryController::class, 'show'])->name('categories.show');
+Route::get('categories/{categoria}', [CategoryController::class, 'show'])->name('categories.show');//pagina individual para cada servicio
 
 //RUTAS SERVICIOS INDIVIDUALES
 Route::get('lugaresTuristicos/{lugarTuristico}',[LugarTuristicoController::class,'show'])->name('lugaresTuristicos.show');

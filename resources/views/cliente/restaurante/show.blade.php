@@ -1,5 +1,6 @@
 <x-app-layout>
     <div class="container py-8">
+    
         <div class="grid grid-cols-2 gap-6">
             <div> {{--DIV SLIDER--}}
                 <div class="flexslider">
@@ -77,7 +78,10 @@
                         </div>
 
                     @endforeach
-                     {{-- @livewire('cliente.carrito.add-cart-item',['habitacion' => $habitacion]) --}}
+             
+      {{--LLAMA A SU COMPONENTE DE CARRITO--}}
+                @livewire('cliente.carrito.add-cart-restaurante',['restaurante' => $restaurante])
+       
                 </div>
 
         </div>

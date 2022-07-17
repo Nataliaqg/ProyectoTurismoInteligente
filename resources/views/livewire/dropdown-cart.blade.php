@@ -34,6 +34,13 @@
                                   <p>Precio: {{$item->price}} BS</p>
                                   <div>
                                 @endif
+                                @if ($item->options['categoria_id']==3) {{--RESTAURANTE--}}
+                                <h1 class="font-bold">RESTAURANTE: {{$item->name}}</h1>
+                                <p>MESAS : {{$item->qty}}</p>
+                                <p>Precio: {{$item->price}} BS</p>
+                                <p>capacidad: {{$item->options['mesa_capacidad']}} </p>
+                                <div>
+                              @endif
                             @endisset
                             </div>
                         </article>
