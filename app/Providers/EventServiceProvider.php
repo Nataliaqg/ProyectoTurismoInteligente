@@ -6,6 +6,8 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
+use Illuminate\Auth\Events\Login;
+use Illuminate\Auth\Events\Logout;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -18,11 +20,13 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
-        'Illuminate\Auth\Events\Login' => [
+        'Illuminate\Auth\Events\Login' => [ //evento para el login
             'App\Listeners\SuccessfulLogin',
+            'App\Listeners\MergeTheCart'
         ],
-        'Illuminate\Auth\Events\Logout' => [
+        'Illuminate\Auth\Events\Logout' => [ //evento pra logout
             'App\Listeners\LogSuccessfulLogout',
+            'App\Listeners\MergeTheCartLogout'
         ],
     ];
 

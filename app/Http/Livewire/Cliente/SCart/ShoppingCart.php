@@ -15,6 +15,12 @@ class ShoppingCart extends Component
         $this->emitTo('dropdown-cart','render');
     }
 
+    public function delete($rowID){ //elimina items en especifico
+        Cart::remove($rowID);
+
+        $this->emitTo('dropdown-cart','render');
+    }
+
     public function render()
     {
         return view('livewire.cliente.s-cart.shopping-cart');

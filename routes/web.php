@@ -11,6 +11,7 @@ use App\Http\Controllers\Cliente\TransportePrivadoController;
 use App\Http\Controllers\Cliente\ViajeController;
 use App\Http\Livewire\Cliente\EmpresaVista;
 use App\Http\Livewire\Cliente\SCart\ShoppingCart;
+use App\Http\Livewire\Cliente\Orden\CreateOrden;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,15 +49,18 @@ Route::middleware([ //protegido para entrar al dashboard
 
 }); //cierra grupo de rutas que necesitan autentificacion
 //---------------------------------------------------------------------------------
-
+//ruta informacion de la empresa
 Route::get('/Informacion',EmpresaVista::class)->name('InformacionEmpresa');
-
-Route::get('prueba',function(){ //prueba para eliminar items del carrito
+//prueba para eliminar items del carrito
+Route::get('prueba',function(){ 
   \Cart::destroy();
 });
 
+//ruta del detalle de items en el carrito
 Route::get('shopping-cart',ShoppingCart::class)->name('shopping-cart');
 
+//ruta para las ordenes
+Route::get('orders/create',CreateOrden::class)->middleware('auth')->name('orders.create');
 
 
 

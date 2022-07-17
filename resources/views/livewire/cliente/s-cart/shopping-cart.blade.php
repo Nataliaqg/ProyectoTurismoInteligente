@@ -36,7 +36,10 @@
                         {{--PARA EL PRECIO--}}
                         <td class="text-center"> 
                             <span>{{$item->price}} BS</span>
-                            <a class="ml-6 cursor-pointer hover:text-red-600">
+                            <a class="ml-6 cursor-pointer hover:text-red-600"
+                                wire:click="delete('{{$item->rowId}}')"
+                                wire:loading.class="text-red-600 opacity-25"
+                                wire:target="delete('{{$item->rowId}}')">
                                 <i class="fas fa-trash"></i>
                             </a>
                         </td>
@@ -90,7 +93,7 @@
                     </p>
                 </div>
                 <div>
-                    <x-button-enlace>
+                    <x-button-enlace href="{{route('orders.create')}}">
                         Continuar
                     </x-button-enlace>
                 </div>
