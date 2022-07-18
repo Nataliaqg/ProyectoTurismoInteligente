@@ -28,7 +28,7 @@ class CreateOrdersTable extends Migration
             
             $table->string('email');
 
-            $table->enum('status',[Order::PENDIENTE,Order::RECIBIDO,Order::ANULADO])->default(Order::PENDIENTE);
+            $table->enum('status',[Order::PENDIENTE,Order::RECIBIDO,Order::CONFIRMADO,Order::ANULADO])->default(Order::PENDIENTE);
 
             $table->float('total');
 
