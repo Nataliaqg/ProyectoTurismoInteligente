@@ -1,5 +1,9 @@
 <x-app-layout>
-    <div class="container py-8">
+ <div class="container py-8">
+    <div class="grid grid-cols-2 gap-6"> {{--defino dos columnas--}}
+
+
+       <div class="col-span-1">{{--lo que entra a la izquierda--}}
         <div class="bg-white rounded-lg shadow-lg px-6 py-4 mb-6">
             <p class="text-gray-700 uppercase"><span class="font-semibold">Número de paquete: </span>{{$order->id}}</p>
         </div>
@@ -71,15 +75,57 @@
                 </tbody>
             </table>
         </div>
+       </div>
 
-        {{--AGREGO IMAGEN DE PAYPAL--}}
-        <div class="bg-white rounded-lg shadow-lg p-6 flex justify-between items-center">
-            <img class="h-12" src="{{asset('img/paypal2.png')}}" alt="">
-            <div class="text-gray-700">
-                <p class="text-lg font-semibold uppercase">
-                    Pago: {{$order->total}} BS
-                </p>
-            </div>
-        </div>
+
+       <div class="col-span-1">{{--lo que entra a la derecha--}}
+          {{--AGREGO IMAGEN DE PAYPAL--}}
+          <div class="bg-white rounded-lg shadow-lg px-6 pt-6 ">
+              <div class="flex justify-between items-center mb-4">
+                <img class="h-12" src="{{asset('img/paypal2.png')}}" alt="">
+                <div class="text-gray-700">
+                    <p class="text-lg font-semibold uppercase">
+                        Total a pagar: {{$order->total}} BS
+                    </p>
+                </div>
+              </div>
+
+              <div id="paypal-button-container"></div>
+          </div>
+         
+       </div>
+
+
     </div>
+</div>
+
+   <script src="https://www.paypal.com/sdk/js?client-id={{config('services.paypal.client_id')}}">
+   </script>
+
+
+   <script>
+    paypal.Buttons({
+        createOrder: function(data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: "{{ $order->total }}"
+                    }
+                }]
+            });
+        },
+        onApprove: function(data, actions) { //si el pago se realiza correctamente
+            return actions.order.capture().then(function(details) {
+
+                Livewire.emit('payOrder');
+
+                /* console.log(details);
+
+                alert('Transaction completed by ' + details.payer.name.given_name); */
+            });
+        }
+    }).render('#paypal-button-container'); // Display payment options on your web page
+
+   </script>
+
 </x-app-layout>

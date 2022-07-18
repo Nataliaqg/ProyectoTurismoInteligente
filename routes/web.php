@@ -13,6 +13,7 @@ use App\Http\Controllers\Cliente\ViajeController;
 use App\Http\Livewire\Cliente\EmpresaVista;
 use App\Http\Livewire\Cliente\SCart\ShoppingCart;
 use App\Http\Livewire\Cliente\Orden\CreateOrden;
+use App\Http\Livewire\Cliente\Pago\PaymentOrder;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,5 +62,6 @@ Route::get('prueba',function(){
 Route::get('shopping-cart',ShoppingCart::class)->name('shopping-cart');
 
 //ruta para las ordenes
-Route::get('orders/create',CreateOrden::class)->middleware('auth')->name('orders.create');
-Route::get('orders/{order}/payment',[OrderController::class,'payment'])->name('orders.payment');
+Route::get('orders/create',CreateOrden::class)->middleware('auth')->name('orders.create'); //manda la orden por url
+Route::get('orders/{order}',[OrderController::class,'show'])->name('orders.show');
+Route::get('orders/{order}/payment',PaymentOrder::class)->name('orders.payment');
