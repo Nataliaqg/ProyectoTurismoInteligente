@@ -30,7 +30,7 @@ class AddCartRestaurante extends Component
         if ($this->restaurante->imagen != null) { //si tiene imagen que mostrar
             $this->options['image'] = $this->restaurante->images->first()->url;
         } else {
-            $this->options['image'] = "https://images.pexels.com/photos/4883800/pexels-photo-4883800.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
+            $this->options['image'] = "https://www.enter.co/wp-content/uploads/2017/02/menu-restaurant-vintage-tableFINAL.jpg";
         }
         // aqui le puedo agrrgar mesa parece 
         $this->options['categoria_id'] = $this->restaurante->categoria->id; //trae el id de la categoria que pertenece (1)

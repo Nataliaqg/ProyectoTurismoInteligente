@@ -52,9 +52,14 @@
                                          @if (($item->options->categoria_id)==3)
                                           <p class="font-bold">reserva en la: {{ $item->name }}</p>
                                          @endif
-                                          {{-- restaurante --}}
+                                          {{-- Transporte privado --}}
                                           @if (($item->options->categoria_id)==5)
                                           <p class="font-bold">reserva de: {{ $item->name }}</p>
+                                         @endif
+
+                                          {{-- Hotel --}}
+                                          @if (($item->options->categoria_id)==2)
+                                          <p class="font-bold">reserva en: {{ $item->name }}</p>
                                          @endif
                                     </article>
                                 </div>

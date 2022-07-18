@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Cliente\Pago;
 
 use App\Models\Order;
+use App\Models\ReservaHabitacion;
 use App\Models\ReservaMesa;
 use App\Models\ReservaTransportePrivado;
 use Livewire\Component;
@@ -36,6 +37,13 @@ class PaymentOrder extends Component
                 $reservamesa->cantidad_mesas= $item->qty;     
                 $reservamesa->mesa_id= $item->id;    
                 $reservamesa->save();     
+            }
+            if( $item->options->categoria_id ==2){
+                $reservahabitacion = new ReservaHabitacion();
+                $reservahabitacion->fecha = $item->options->fecha;
+                $reservahabitacion->cantidad_habitaciones= $item->qty;     
+                $reservahabitacion->habitacion_id= $item->id;    
+                $reservahabitacion->save();     
             }
          }
        
