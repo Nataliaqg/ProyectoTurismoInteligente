@@ -10,7 +10,7 @@
             <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
                 
                     <div>
-                        <p class="text-lg font-semibold uppercase">Datos de contacto</p>
+                        <p class="text-lg font-semibold uppercase">Datos de contacto</p>                     
     
                         <p class="text-sm mt-2 mb-2">Persona a nombre del paquete: {{$order->contact}}</p>
                         <p class="text-sm mb-2">Carnet: {{$order->carnet}}</p>
@@ -50,6 +50,10 @@
                                          @endif
                                        {{-- restaurante --}}
                                          @if (($item->options->categoria_id)==3)
+                                          <p class="font-bold">reserva en la: {{ $item->name }}</p>
+                                         @endif
+                                          {{-- restaurante --}}
+                                          @if (($item->options->categoria_id)==5)
                                           <p class="font-bold">reserva de: {{ $item->name }}</p>
                                          @endif
                                     </article>
