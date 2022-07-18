@@ -20,9 +20,9 @@ class OrderPolicy
 
     public function payment(User $user, Order $order){ //PARA QUE NO VUELVA A ENTRAR A LA VISTA DE PAGO, SI YA SE HA PAGADO ESA ORDER
         if($order->status ==2){ //SI YA SE HA RECIBIDO ESA ORDEN 
-            return true;
-        }else{
             return false;
+        }else{
+            return true;
         }
     }
 }
