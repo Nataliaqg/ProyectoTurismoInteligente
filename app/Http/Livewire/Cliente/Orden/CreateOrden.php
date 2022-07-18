@@ -42,6 +42,10 @@ class CreateOrden extends Component
 
         $order->save(); //cuando se guarda
 
+        foreach(Cart::content() as $item){
+            discount($item);
+        }
+
         Cart::destroy(); //limpio el carrito
 
         return redirect()->route('orders.payment',$order); 

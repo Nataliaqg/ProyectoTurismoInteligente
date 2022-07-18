@@ -18,8 +18,25 @@ class OrderController extends Controller
         return view('cliente.orders.show',compact('order','items'));
     }
 
-    public function payment(Order $order){ //YA NO OCUPAMOS ESTE METODO Y TAMPOCO SU VISTA ADJUNTA
+   /* public function payment(Order $order){ //YA NO OCUPAMOS ESTE METODO Y TAMPOCO SU VISTA ADJUNTA
         $items= json_decode($order->content); //convierte el contenido  que estaba en formato json
         return view('cliente.orders.payment',compact('order','items'));
+    }*/
+
+    public function index(){ //PARA VISTA DE MIS PAQUETES
+        $orders=Order::query()->where('user_id',auth()->user()->id);
+
+        if(request('status')){
+            $orders->where('status',request('status'));
+        }
+
+        $orders= $orders->get();
+
+        $pendiente =Order::where('status',1)->where('user_id',auth()->user()->id)->count();
+        $recibido = Order::where('status',2)->where('user_id',auth()->user()->id)->count();
+        $confirmado = Order::where('status',3)->where('user_id',auth()->user()->id)->count();
+        $anulado = Order::where('status',4)->where('user_id',auth()->user()->id)->count();
+
+        return view('cliente.orders.index',compact('orders','pendiente','recibido','confirmado','anulado'));
     }
 }

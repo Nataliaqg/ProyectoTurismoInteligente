@@ -68,4 +68,6 @@ Route::get('orders/create',CreateOrden::class)->middleware('auth')->name('orders
 Route::get('orders/{order}',[OrderController::class,'show'])->name('orders.show');
 Route::get('orders/{order}/payment',PaymentOrder::class)->name('orders.payment');
 
+//RUTA MIS PAQUETES
+Route::get('orders',[OrderController::class,'index'])->name('orders.index');
 });

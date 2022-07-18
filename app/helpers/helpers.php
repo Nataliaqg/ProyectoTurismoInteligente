@@ -96,3 +96,7 @@ function qty_available($servicio_id, $categoria_id, $extra = null, $cantreservad
 {
     return (quantity($servicio_id, $categoria_id, $extra, $cantreservadas) - qty_added($servicio_id, $categoria_id, $extra));
 }
+
+function discount($item){
+ 
+}
