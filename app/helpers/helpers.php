@@ -1,8 +1,10 @@
 <?php
 
 use App\Models\Categoria;
+use App\Models\Habitacion;
 use App\Models\LugarTuristico;
 use App\Models\mesa;
+use App\Models\ReservaHabitacion;
 use App\Models\ReservaMesa;
 use App\Models\Restaurante;
 use App\Models\Viaje;
@@ -26,6 +28,23 @@ function quantity($servicio_id, $categoria_id, $extra = null, $cantreservadas=nu
             
         }
     }
+
+    if ($categoria_id == 2) { // restaurante
+        if ($extra) {
+            if ($cantreservadas==0){
+                $habitacion = Habitacion::find($extra);
+                $quantity = $habitacion->cantidad;
+            }else{
+                $habitacion = Habitacion::find($extra);
+                $quantity = $habitacion->cantidad;
+                $quantity = $quantity-$cantreservadas;
+            }     
+            
+        }
+    }
+
+
+
     if ($categoria_id == 1) { //si es un lugar turistico
         $lugarTuristico_id = $servicio_id;
         $lugarTuristico = LugarTuristico::find($lugarTuristico_id);
@@ -50,14 +69,20 @@ function qty_added($servicio_id, $categoria_id, $extra=null)
 { //CALCULA CANTIDAD DE ITEMS AGREGADOS DE ESE SERVICIO EN ESPECIFICO
 
     $cart = Cart::content(); //obtenemos los items agregados en el carrito
-    if ($extra) {
+    if ($extra && $categoria_id == 3) {
         $item = $cart->where('id', $servicio_id)
             ->where('options.mesa_id', $extra)
+            ->where('options.categoria_id', $categoria_id)->first();
+    }else if($extra && $categoria_id == 2){
+        $item = $cart->where('id', $servicio_id)
+            ->where('options.habitacion_id', $extra)
             ->where('options.categoria_id', $categoria_id)->first();
     } else {
         $item = $cart->where('id', $servicio_id)
             ->where('options.categoria_id', $categoria_id)->first(); //ninguno va a tener igual id con igual id de categoria
     }
+    
+
 
 
     if ($item) { //si ese servicio ha sido agregado al carrito

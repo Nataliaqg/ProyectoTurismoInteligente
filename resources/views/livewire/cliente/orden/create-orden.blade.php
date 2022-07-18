@@ -69,6 +69,15 @@
                                         <p>Precio: {{ $item->price }} BS</p>
                                         <div>
                                     @endif
+                                    @if ($item->options['categoria_id'] == 2)
+                                        {{-- hotel --}}
+                                        <h1 class="font-bold">HOTEL: {{ $item->name }}</h1>
+                                        <p>CANTIDAD: {{ $item->qty }}</p>
+                                        <P>TIPO: {{ $item->options['habitacion_tipo'] }}</P>
+                                        <P>fecha: {{ $item->options['fecha'] }}</P>
+                                        <p>Precio: {{ $item->price }} BS</p>
+                                        <div>
+                                    @endif
                                     @if ($item->options['categoria_id'] == 4)
                                         {{-- VIAJE --}}
                                         <h1 class="font-bold">Viaje a: {{ $item->name }}</h1>

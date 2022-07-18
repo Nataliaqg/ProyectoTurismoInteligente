@@ -41,6 +41,12 @@
                                         <p class="font-bold"> {{ $item->name }}   reservado</p>
                                         <p class="font-bold"> fecha: {{ $item->options['fecha'] }}</p>
                                     @endif
+                                     {{-- hotel --}}
+                                     @if ($item->options['categoria_id'] == 2)
+                                     <p class="font-bold">reserva de: {{ $item->name }}</p>
+                                     <p class="font-bold">capacidad: {{ $item->options['habitacion_tipo']}}</p>
+                                     <p class="font-bold"> fecha: {{ $item->options['fecha'] }}</p>
+                                 @endif
                                     </div>
                                 </div>
                             </td>

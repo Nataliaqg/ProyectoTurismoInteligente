@@ -34,15 +34,6 @@ class HabitacionSeeder extends Seeder
         ]);
 
         Habitacion::create([
-            'tipo' => 'Doble',
-            'cantidad' => '12',
-            'capacidadPersonaAdulta' => '2',
-            'capacidadPersonaMenor' => '1',
-            'precio' => '220',
-            'hotel_id' => '1'
-        ]);
-
-        Habitacion::create([
             'tipo' => 'Matrimonial',
             'cantidad' => '8',
             'capacidadPersonaAdulta' => '2',

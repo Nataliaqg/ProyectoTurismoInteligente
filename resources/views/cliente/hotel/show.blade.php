@@ -88,7 +88,7 @@
                         </div>
 
                     @endforeach
-                     {{-- @livewire('cliente.carrito.add-cart-item',['habitacion' => $habitacion]) --}}
+                     @livewire('cliente.carrito.add-cart-hotel',['hotel' => $hotel])
                 </div>
 
         </div>

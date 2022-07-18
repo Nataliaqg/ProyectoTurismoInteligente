@@ -17,4 +17,8 @@ class Habitacion extends Model
    public function hotel(){
        return $this->belongsTo(Hotel::class);
    }
+
+     public function reservamesa(){ //Recupera info de las reservas
+        return $this->hasMany(ReservaHabitacion::class);
+    }   
 }
