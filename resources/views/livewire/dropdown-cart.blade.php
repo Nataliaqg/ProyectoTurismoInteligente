@@ -39,7 +39,7 @@
                                 <p>MESAS : {{$item->qty}}</p>
                                 <p>Precio: {{$item->price}} BS</p>
                                 <p>capacidad: {{$item->options['mesa_capacidad']}} </p>
-                                <p>capacidad: {{$item->options['fecha']}} </p>
+                                <p>Fecha: {{$item->options['fecha']}} </p>
                                 <div>
                               @endif
 
@@ -49,6 +49,14 @@
                               <p>Precio: {{$item->price}} BS</p>
                               <div>
                             @endif
+                            @if ($item->options['categoria_id']==2) {{--RESTAURANTE--}}
+                                <h1 class="font-bold">HOTEL: {{$item->name}}</h1>
+                                <p>Habitaciones : {{$item->qty}}</p>
+                                <p>Precio: {{$item->price}} BS</p>
+                                <p>Tipo: {{$item->options['habitacion_tipo']}} </p>
+                                <p>Fecha: {{$item->options['fecha']}} </p>
+                                <div>
+                              @endif
                             @endisset
                             </div>
                         </article>

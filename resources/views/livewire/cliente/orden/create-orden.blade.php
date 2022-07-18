@@ -87,7 +87,7 @@
                                     @endif
                                     @if ($item->options['categoria_id'] == 3)
                                         {{-- RESTAURANTE --}}
-                                        <h1 class="font-bold">HOTEL: {{ $item->name }}</h1>
+                                        <h1 class="font-bold">Restaurante: {{ $item->name }}</h1>
                                         <p>CANTIDAD: {{ $item->qty }}</p>
                                         <P>CAPACIDAD: {{ $item->options['mesa_capacidad'] }}</P>
                                         <P>fecha: {{ $item->options['fecha'] }}</P>
