@@ -14,4 +14,8 @@ class mesa extends Model
     {
         return $this->belongsTo('App\Models\Restaurante');
     }
+
+    public function reservamesa(){ //Recupera info de las reservas
+        return $this->hasMany('App\Models\ReservaMesa');
+    }
 }

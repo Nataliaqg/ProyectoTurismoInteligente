@@ -2,9 +2,12 @@
 
 namespace App\Http\Livewire\Cliente\Carrito;
 
+use App\Models\ReservaMesa;
 use Livewire\Component;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Storage;
+use PhpParser\BuilderHelpers;
 
 class AddCartRestaurante extends Component
 {
@@ -14,6 +17,9 @@ class AddCartRestaurante extends Component
     public $quantity;
     public $qty=1; //variable que indica la cantidad que requiere el cliente
     public $options = [];
+    public $fecha = null;
+    public $cantreservamesa;
+    public $prueba;
 
     public function mount()
     {
@@ -32,11 +38,26 @@ class AddCartRestaurante extends Component
 
     public function updatedMesaId($value)
     {
-        $mesa = $this->restaurante->mesas->find($value);
-        $this->mesa_precio = $mesa->precio;
-        $this->quantity = qty_available($this->restaurante->id, $this->categoria_id, $mesa->id);
-        $this->options['mesa_capacidad'] = $mesa->capacidad_mesa;
-        $this->options['mesa_id'] = $mesa->id;
+        if ($this->fecha){
+            $mesa = $this->restaurante->mesas->find($value);
+            $this->mesa_precio = $mesa->precio;
+
+            $this->prueba= $value;
+            $serviciosquery = reservaMesa::query()->whereHas('mesa', function (Builder $query) {
+                $query->where('mesa_id', $this->prueba);
+            });
+            $serviciosquery = $serviciosquery->whereHas('mesa', function (Builder $query) {
+                $query->where('fecha', $this->fecha);
+            });
+            
+            $this->cantreservamesa = $serviciosquery->sum('cantidad_mesas');
+
+            $this->quantity = qty_available($this->restaurante->id, $this->categoria_id, $mesa->id,$this->cantreservamesa);
+            $this->options['mesa_capacidad'] = $mesa->capacidad_mesa;
+            $this->options['mesa_id'] = $mesa->id;
+            $this->options['fecha'] = $this->fecha;          
+      }
+     
     }
 
     public function decrement()

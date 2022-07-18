@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ReservaMesa;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Storage;
 
@@ -36,6 +37,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TransportePrivadoSeeder::class);
         $this->call(MesaSeeder::class);
         $this->call(EmpresaSeeder::class);
+        $this->call(ReservaMesaSeeder::class);
     }
 
 }

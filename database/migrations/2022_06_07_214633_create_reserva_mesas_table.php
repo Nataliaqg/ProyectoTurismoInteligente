@@ -15,10 +15,12 @@ class CreateReservaMesasTable extends Migration
     {
         Schema::create('reserva_mesas', function (Blueprint $table) {
             $table->id();
-            $table->date('fecha');
-            $table->time('hora');
+            $table->date('fecha');            
             $table->unsignedSmallInteger('cantidad_mesas');
-            $table->timestamps();           
+            $table->timestamps();   
+            $table->unsignedBigInteger('mesa_id');
+            $table->foreign('mesa_id')->references('id')->on('mesas');
+        
         });
     }
 
