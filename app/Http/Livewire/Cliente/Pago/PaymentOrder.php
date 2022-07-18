@@ -7,9 +7,12 @@ use App\Models\ReservaHabitacion;
 use App\Models\ReservaMesa;
 use App\Models\ReservaTransportePrivado;
 use Livewire\Component;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class PaymentOrder extends Component
 {
+
+    use AuthorizesRequests;
 
     public $order;
 
@@ -55,6 +58,10 @@ class PaymentOrder extends Component
 
     public function render()
     {
+        $this->authorize('author',$this->order);
+        $this->authorize('payment',$this->order);
+
+        
         $items= json_decode($this->order->content); //convierte el contenido  que estaba en formato json
         return view('livewire.cliente.pago.payment-order',compact('items'));
     }

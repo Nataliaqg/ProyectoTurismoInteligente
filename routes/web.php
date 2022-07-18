@@ -61,7 +61,11 @@ Route::get('prueba',function(){
 //ruta del detalle de items en el carrito
 Route::get('shopping-cart',ShoppingCart::class)->name('shopping-cart');
 
+
+Route::middleware(['auth'])->group(function(){ //protege las rutas para que no se puedan ver si no se ha iniciado sesion
 //ruta para las ordenes
 Route::get('orders/create',CreateOrden::class)->middleware('auth')->name('orders.create'); //manda la orden por url
 Route::get('orders/{order}',[OrderController::class,'show'])->name('orders.show');
 Route::get('orders/{order}/payment',PaymentOrder::class)->name('orders.payment');
+
+});

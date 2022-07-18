@@ -10,6 +10,10 @@ class OrderController extends Controller
 {
 
     public function show(Order $order){
+
+        $this->authorize('author', $order); //POLICY
+
+
         $items= json_decode($order->content); //convierte el contenido  que estaba en formato json
         return view('cliente.orders.show',compact('order','items'));
     }
