@@ -10,19 +10,18 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Database\Eloquent\Builder;
 
 //siempre va a existir un id de ese servicio con su id de categoria
-function quantity($servicio_id, $categoria_id, $mesa_id = null, $cantmesasreservadas=null)
+function quantity($servicio_id, $categoria_id, $extra = null, $cantreservadas=null)
 { //PARA CALCULAR EL "STOCK" DEL SERVICIO EN ESPECIFICO
     
-
     if ($categoria_id == 3) { // restaurante
-        if ($mesa_id) {
-            if ($cantmesasreservadas==0){
-                $mesa = mesa::find($mesa_id);
+        if ($extra) {
+            if ($cantreservadas==0){
+                $mesa = mesa::find($extra);
                 $quantity = $mesa->cantidad_mesas;
             }else{
-                $mesa = mesa::find($mesa_id);
+                $mesa = mesa::find($extra);
                 $quantity = $mesa->cantidad_mesas;
-                $quantity = $quantity-$cantmesasreservadas;
+                $quantity = $quantity-$cantreservadas;
             }     
             
         }
@@ -37,17 +36,23 @@ function quantity($servicio_id, $categoria_id, $mesa_id = null, $cantmesasreserv
         $viaje = Viaje::find($viaje_id); //encuentra que viaje en específico
         $quantity = $viaje->transporte->capacidadMaximaAsientos;
     }
-
+    if ($categoria_id == 5) {
+        if($extra){
+            $quantity=0;
+        }else{
+            $quantity=1;
+        }
+    }
     return $quantity;
 }
 
-function qty_added($servicio_id, $categoria_id, $mesa_id)
+function qty_added($servicio_id, $categoria_id, $extra=null)
 { //CALCULA CANTIDAD DE ITEMS AGREGADOS DE ESE SERVICIO EN ESPECIFICO
 
     $cart = Cart::content(); //obtenemos los items agregados en el carrito
-    if ($mesa_id) {
+    if ($extra) {
         $item = $cart->where('id', $servicio_id)
-            ->where('options.mesa_id', $mesa_id)
+            ->where('options.mesa_id', $extra)
             ->where('options.categoria_id', $categoria_id)->first();
     } else {
         $item = $cart->where('id', $servicio_id)
@@ -62,7 +67,7 @@ function qty_added($servicio_id, $categoria_id, $mesa_id)
     }
 }
 
-function qty_available($servicio_id, $categoria_id, $mesa_id = null, $cantmesasreservadas = null)
+function qty_available($servicio_id, $categoria_id, $extra = null, $cantreservadas = null)
 {
-    return (quantity($servicio_id, $categoria_id, $mesa_id, $cantmesasreservadas) - qty_added($servicio_id, $categoria_id, $mesa_id));
+    return (quantity($servicio_id, $categoria_id, $extra, $cantreservadas) - qty_added($servicio_id, $categoria_id, $extra));
 }

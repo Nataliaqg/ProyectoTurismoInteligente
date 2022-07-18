@@ -33,7 +33,14 @@
                                         {{-- restaurante --}}
                                         @if ($item->options['categoria_id'] == 3)
                                             <p class="font-bold">reserva de: {{ $item->name }}</p>
+                                            <p class="font-bold">capacidad: {{ $item->options['mesa_capacidad']}}</p>
+                                            <p class="font-bold"> fecha: {{ $item->options['fecha'] }}</p>
                                         @endif
+                                            {{-- transporte Privado --}}
+                                        @if ($item->options['categoria_id'] == 5)
+                                        <p class="font-bold"> {{ $item->name }}   reservado</p>
+                                        <p class="font-bold"> fecha: {{ $item->options['fecha'] }}</p>
+                                    @endif
                                     </div>
                                 </div>
                             </td>
@@ -61,9 +68,9 @@
                                         @livewire('cliente.s-cart.update-cart-viaje', ['rowId' => $item->rowId], key($item->rowId))
                                     @endif
                                     {{-- restaurante --}}
-                                    @if ($item->options['categoria_id'] == 3)
+                                 {{--  @if ($item->options['categoria_id'] == 3)
                                         @livewire('cliente.s-cart.update-cart-restaurante', ['rowId' => $item->rowId], key($item->rowId))
-                                    @endif
+                                    @endif--}} 
                                 </div>
                             </td>
 

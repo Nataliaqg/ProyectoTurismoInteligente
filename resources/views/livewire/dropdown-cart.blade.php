@@ -39,8 +39,16 @@
                                 <p>MESAS : {{$item->qty}}</p>
                                 <p>Precio: {{$item->price}} BS</p>
                                 <p>capacidad: {{$item->options['mesa_capacidad']}} </p>
+                                <p>capacidad: {{$item->options['fecha']}} </p>
                                 <div>
                               @endif
+
+                              @if ($item->options['categoria_id']==5) {{--transporte Privado--}}
+                              <h1 class="font-bold">transporte: {{$item->name}}</h1>
+                              <p>fecha: {{$item->options['fecha']}}</p>
+                              <p>Precio: {{$item->price}} BS</p>
+                              <div>
+                            @endif
                             @endisset
                             </div>
                         </article>

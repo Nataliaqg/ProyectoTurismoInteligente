@@ -59,6 +59,12 @@ class AddCartRestaurante extends Component
       }
      
     }
+    public function updatedFecha(){
+        if ( $this->prueba){
+            $this->updatedMesaId($this->prueba);
+        }
+
+    }
 
     public function decrement()
     {

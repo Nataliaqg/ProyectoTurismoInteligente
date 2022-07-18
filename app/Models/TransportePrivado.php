@@ -30,4 +30,8 @@ class TransportePrivado extends Model
      {
          return $this->morphMany(Image::class, 'imageable');
      }
+
+     public function reservaTransportePrivado(){ //Recupera info de las reservas
+        return $this->hasMany('App\Models\ReservaTransportePrivado');
+    }
 }

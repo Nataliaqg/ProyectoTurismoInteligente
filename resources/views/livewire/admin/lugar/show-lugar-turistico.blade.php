@@ -25,10 +25,7 @@
                     <!--la cabecera de la tabla-->
                     <thead class="bg-gray-50">
                         <tr>
-                            <th scope="col"
-                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Categorias Serv
-                            </th>
+                            
                             <th scope="col"
                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Nombre
@@ -46,7 +43,7 @@
                                 Precio
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Entradas
                             </th>
                             <th scope="col"
@@ -89,20 +86,16 @@
                                             @endif
                                             
                                         </div>
-
-                                        <div class="ml-4">
-                                            <div class="text-sm font-medium text-gray-900 ">
-                                                {{ $lugarturistico->categoria->nombre}}
+                                        <div class="ml-4 whitespace-normal">
+                                            <div class="text-xs font-medium text-gray-900">
+                                                {{ $lugarturistico->nombre }}
                                             </div>
                                         </div>
+                                        
                                     </div>
                                 </td>
 
-                                <td class="px-6 py-4 whitespace-normal">
-                                    <div class="text-xs text-center text-gray-900">
-                                        {{ $lugarturistico->nombre }}
-                                    </div>
-                                </td>
+                                
                                 <td class="px-6 py-4 whitespace-normal">
                                     <div class="text-xs text-center text-gray-900">
                                         {{ $lugarturistico->descripcion }}

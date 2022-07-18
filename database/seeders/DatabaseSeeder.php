@@ -38,6 +38,7 @@ class DatabaseSeeder extends Seeder
         $this->call(MesaSeeder::class);
         $this->call(EmpresaSeeder::class);
         $this->call(ReservaMesaSeeder::class);
+        $this->call(ReservaTansportePrivadoSeeder::class);
     }
 
 }

@@ -25,10 +25,7 @@
                     <!--la cabecera de la tabla-->
                     <thead class="bg-gray-50">
                         <tr>
-                            <th scope="col"
-                                class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Categoria Serv
-                            </th>
+                           
                             <th scope="col"
                                 class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Nombre
@@ -58,6 +55,9 @@
                                 ciudad
                             </th>
 
+                            <th scope="col" class="relative px-6 py-3">
+                                <span class="sr-only">Habitaciones</span>
+                            </th>
 
                             <th scope="col" class="relative px-6 py-3">
                                 <span class="sr-only">Editar</span>
@@ -88,21 +88,16 @@
 
                                         </div>
 
-                                        <div class="ml-4 ">
-                                            <div class="text-sm font-medium text-gray-900">
-                                                {{ $hotel->categoria_id }}
+                                        <div class="ml-4 whitespace-normal ">
+                                            <div class="text-xs font-medium text-gray-900">
+                                                {{ $hotel->nombre }}
                                             </div>
                                         </div>
                                     </div>
                                 </td>
 
 
-                                <td class="px-6 py-4 whitespace-normal">
-                                    {{-- <td class="px-4 py-4 whitespace-normal"> --}}
-                                    <div class="text-xs text-gray-900">
-                                        {{ $hotel->nombre }}
-                                    </div>
-                                </td>
+                               
                                 <td class="px-6 py-4 whitespace-normal">
                                     <div class="text-xs text-gray-900">
                                         {{ $hotel->descripcion }}
