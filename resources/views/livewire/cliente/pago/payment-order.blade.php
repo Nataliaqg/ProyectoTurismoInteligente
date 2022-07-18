@@ -90,7 +90,8 @@
                     </div>
                   </div>
     
-                  <div id="paypal-button-container"></div>
+                 {{-- <div id="paypal-button-container"></div>--}}
+                  <div id="paypal-button"></div>
               </div>
              
            </div>
@@ -99,8 +100,10 @@
         </div>
     </div>
     
-       @push('script')
-       <script src="https://www.paypal.com/sdk/js?client-id={{config('services.paypal.client_id')}}">
+     
+     {{--
+          @push('script')
+            <script src="https://www.paypal.com/sdk/js?client-id={{config('services.paypal.client_id')}}">
        </script>
     
     
@@ -128,5 +131,50 @@
         }).render('#paypal-button-container'); // Display payment options on your web page
     
        </script>
+       @endpush--}}
+       @push('script')
+       <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+       <script>
+         paypal.Button.render({
+           // Configure environment
+           env: 'sandbox',
+           client: {
+             sandbox: 'demo_sandbox_client_id',
+             production: 'demo_production_client_id'
+           },
+           // Customize button (optional)
+           locale: 'en_US',
+           style: {
+             size: 'small',
+             color: 'gold',
+             shape: 'pill',
+           },
+       
+           // Enable Pay Now checkout flow (optional)
+           commit: true,
+       
+           // Set up a payment
+           payment: function(data, actions) {
+             return actions.payment.create({
+               transactions: [{
+                 amount: {
+                   total: '{{$order->total}}',
+                   currency: 'USD'
+                 }
+               }]
+             });
+           },
+           // Execute the payment
+           onAuthorize: function(data, actions) {
+             return actions.payment.execute().then(function() {
+               // Show a confirmation message to the buyer
+               //window.alert('Gracias por tu compra!');
+               Livewire.emit('payOrder');
+             });
+           }
+         }, '#paypal-button');
+       
+       </script>
+       
        @endpush
 </div>

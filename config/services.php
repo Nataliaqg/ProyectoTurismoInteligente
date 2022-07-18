@@ -35,4 +35,8 @@ return [
         'secret' => env('PAYPAL_SECRET') 
     ],
 
+    'sandbox' => [
+        'demo_sandbox_client_id' => env('PAYPAL_CLIENT_ID'),
+        'demo_production_client_id' => env('PAYPAL_SECRET')
+    ],
 ];
