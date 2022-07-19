@@ -47,7 +47,7 @@ class HabitacionSeeder extends Seeder
             'cantidad' => '7',
             'capacidadPersonaAdulta' => '6',
             'capacidadPersonaMenor' => '4',
-            'precio' => '700',
+            'precio' => '400',
             'hotel_id' => '1'
         ]);
 
@@ -57,7 +57,7 @@ class HabitacionSeeder extends Seeder
             'cantidad' => '7',
             'capacidadPersonaAdulta' => '6',
             'capacidadPersonaMenor' => '2',
-            'precio' => '800',
+            'precio' => '400',
             'hotel_id' => '2'
         ]);
 
@@ -68,7 +68,7 @@ class HabitacionSeeder extends Seeder
             'cantidad' => '7',
             'capacidadPersonaAdulta' => '6',
             'capacidadPersonaMenor' => '6',
-            'precio' => '500',
+            'precio' => '450',
             'hotel_id' => '2'
         ]);
     }

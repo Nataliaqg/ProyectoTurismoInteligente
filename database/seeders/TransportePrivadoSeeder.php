@@ -16,7 +16,7 @@ class TransportePrivadoSeeder extends Seeder
     {
         TransportePrivado::create([
             'tipoTransPrivado_id'=>'1',
-            'precio'=>'600',
+            'precio'=>'400',
             'capacidadPersonas'=>'10',
             'categoria_id'=>'5'
         ]);

@@ -17,7 +17,7 @@ class ViajeSeeder extends Seeder
         Viaje::create([
             'fecha'=>'2022-07-08',
             'hora'=>'20:30:00',
-            'precio'=>'400',
+            'precio'=>'150',
             'transporte_id'=>'2',
             'ciudadOrigen_id'=>'1',
             'ciudadDestino_id'=>'9',
@@ -26,7 +26,7 @@ class ViajeSeeder extends Seeder
         Viaje::create([
             'fecha'=>'2022-07-10',
             'hora'=>'22:30:00',
-            'precio'=>'500',
+            'precio'=>'200',
             'transporte_id'=>'2',
             'ciudadOrigen_id'=>'9',
             'ciudadDestino_id'=>'1',
