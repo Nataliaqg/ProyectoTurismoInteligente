@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\Lugar\LugarController;
 use App\Http\Controllers\Admin\RestauranteController;
 use App\Http\Controllers\Admin\TransPriv\TransportePrivadoController;
 use App\Http\Controllers\Admin\Viaje\ViajeController;
+use App\Http\Controllers\ReportePaq;
 use App\Http\Controllers\UserExportController;
 use App\Http\Livewire\Admin\Agencia\CreateAgencia;
 use App\Http\Livewire\Admin\Agencia\EditAgencia;
@@ -123,3 +124,7 @@ Route::get('/Empresa',EditEmpresa::class)->name('admin.empresa');
 //Route::get('orders/{order}',[OrderController::class,'show'])->name('admin.orders.show');
 Route::get('orders',OrderController::class)->name('admin.orders.index');
 Route::get('orders/{order}',ShowOrder::class)->name('admin.orders.show');
+
+//Ruta pdf reporte de paquetes
+Route::get('paquetes/reportes',[ReportePaq::class, 'downloadPdf'])->name('reportes.paquetes');
+

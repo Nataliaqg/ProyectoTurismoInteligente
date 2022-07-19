@@ -176,7 +176,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
-
+        //Libreria para los PDF
+        Barryvdh\DomPDF\ServiceProvider::class,
     ],
 
     /*
