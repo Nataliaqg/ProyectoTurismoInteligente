@@ -8,7 +8,7 @@
                         <p class="text-center text-2xl">
                             {{$pendiente}} 
                         </p>
-                        <p class="uppercase text-center">Lista de deseos</p>
+                        <p class="uppercase text-center">Pendiente</p>
                         <p class="text-center text-2xl mt-2">
                             <i class="fas fa-clock"></i>
                         </p>

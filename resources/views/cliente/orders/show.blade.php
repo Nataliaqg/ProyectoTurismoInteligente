@@ -25,8 +25,14 @@
         </div>
 
 
-        <div class="bg-white rounded-lg shadow-lg px-6 py-4 mb-6">
+        <div class="bg-white rounded-lg shadow-lg px-6 py-4 mb-6 flex items-center">
             <p class="text-gray-700 uppercase"><span class="font-semibold">Número de paquete: </span>{{$order->id}}</p>
+
+           @if ($order->status == 1)
+              <x-button-enlace class="ml-auto" href="{{route('orders.payment',$order)}}">
+                Ir a pagar
+              </x-button-enlace>
+           @endif
         </div>
         <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
             
