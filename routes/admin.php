@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\Lugar\LugarController;
 use App\Http\Controllers\Admin\RestauranteController;
 use App\Http\Controllers\Admin\TransPriv\TransportePrivadoController;
 use App\Http\Controllers\Admin\Viaje\ViajeController;
+use App\Http\Controllers\PaqueteExportController;
 use App\Http\Controllers\ReportePaq;
 use App\Http\Controllers\ReporteUsuario;
 use App\Http\Controllers\UserExportController;
@@ -129,4 +130,9 @@ Route::get('orders/{order}',ShowOrder::class)->name('admin.orders.show');
 //Ruta pdf reporte de paquetes
 Route::get('paquetes/reportes',[ReportePaq::class, 'downloadPdf'])->name('reportes.paquetes');
 Route::get('reportes/usuarios',[ReporteUsuario::class, 'downloadPdf'])->name('reportes.usuariosPDF');
+Route::get('paquetes/export/excel',[PaqueteExportController::class,'exportAllPaquetesExcel'])->name('reportes.paquetesEXCEL');
+Route::get('paquetes/export/CSV',[PaqueteExportController::class,'exportAllPaquetesCSV'])->name('reportes.paquetesCSV');
+Route::get('paquetes/export/ODS',[PaqueteExportController::class,'exportAllPaquetesODS'])->name('reportes.paquetesODS');
+Route::get('paquetes/export/TSV',[PaqueteExportController::class,'exportAllPaquetesTSV'])->name('reportes.paquetesTSV');
+Route::get('paquetes/export/HTML',[PaqueteExportController::class,'exportAllPaquetesHTML'])->name('reportes.paquetesHTML');
 
