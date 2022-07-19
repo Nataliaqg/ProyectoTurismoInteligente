@@ -8,6 +8,7 @@ use App\Models\Ciudad;
 use App\Models\Transporte;
 use App\Models\Bitacora;
 use App\Models\Categoria;
+use Illuminate\Mail\Transport\Transport;
 
 class CreateViaje extends Component
 {
@@ -37,15 +38,19 @@ class CreateViaje extends Component
     public function save(){
         $rules = $this->rules;
         $this->validate($rules);
+       
 
         $viaje = new Viaje();
         $viaje->fecha= $this->fecha;
         $viaje->hora= $this->hora;
         $viaje->precio= $this->precio;
+       
         $viaje->transporte_id= $this->transporte_id;
         $viaje->ciudadOrigen_id= $this->ciudadOrigen_id;
         $viaje->ciudadDestino_id= $this->ciudadDestino_id;
         $viaje->categoria_id=$this->categoria_id;
+        $canttransporte = Transporte::find($viaje->transporte_id);
+        $viaje->cantidad =$canttransporte->capacidadMaximaAsientos;
 
         $viaje->save();
         $bitacora = new Bitacora();

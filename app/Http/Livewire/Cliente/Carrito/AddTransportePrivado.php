@@ -23,8 +23,6 @@ class AddTransportePrivado extends Component
     public function mount()
     {
         $this->categoria_id = $this->transportePrivado->categoria->id;
-
-
         
         if ($this->transportePrivado->imagen != null) { //si tiene imagen que mostrar
             $this->options['image'] = $this->transportePrivado->images->first()->url;
@@ -36,20 +34,13 @@ class AddTransportePrivado extends Component
       
     }
     public function updatedFecha(){
-        
-     /*   $serviciosquery = ReservaTransportePrivado::query()->whereHas('transporteprivado', function (Builder $query) {
-            $query->where('transporte_id', $this->qty);
-        });
-        $serviciosquery = $serviciosquery->whereHas('transporteprivado', function (Builder $query) {
-            $query->where('fecha', $this->fecha);
-        });*/
-        
+      
         $this->reserva = ReservaTransportePrivado::where('transporte_id',$this->transportePrivado->id)->where('fecha',$this->fecha)->first();
 
       $this->quantity = qty_available($this->transportePrivado->id, $this->categoria_id,$this->reserva);
         $this->options['fecha'] = $this->fecha;
-    }
 
+    }
 
     public function decrement()
     {

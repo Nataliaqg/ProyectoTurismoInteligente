@@ -23,4 +23,8 @@ class LugarTuristico extends Model
     {
         return $this->morphMany(Image::class, 'imageable');
     }
+
+    public function reservaLugarTuristico(){ //Recupera info de las reservas
+        return $this->hasMany('App\Models\ReservaLugarTuristico');
+    }
 }

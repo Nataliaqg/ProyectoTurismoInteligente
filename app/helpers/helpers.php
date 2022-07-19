@@ -4,7 +4,9 @@ use App\Models\Categoria;
 use App\Models\Habitacion;
 use App\Models\LugarTuristico;
 use App\Models\mesa;
+use App\Models\Order;
 use App\Models\ReservaHabitacion;
+use App\Models\ReservaLugarTuristico;
 use App\Models\ReservaMesa;
 use App\Models\Restaurante;
 use App\Models\Viaje;
@@ -43,19 +45,21 @@ function quantity($servicio_id, $categoria_id, $extra = null, $cantreservadas=nu
         }
     }
 
-
-
     if ($categoria_id == 1) { //si es un lugar turistico
+       // $cantidadreservada = ReservaLugarTuristico::where('id', $servicio_id);
+       // $cantidadreservada = $cantidadreservada->sum('cantidad');
         $lugarTuristico_id = $servicio_id;
         $lugarTuristico = LugarTuristico::find($lugarTuristico_id);
         $quantity = $lugarTuristico->cantidad;
+      //  $quantity = $quantity + $cantidadreservada;
     }
     if ($categoria_id == 4) {
         $viaje_id = $servicio_id;
         $viaje = Viaje::find($viaje_id); //encuentra que viaje en específico
-        $quantity = $viaje->transporte->capacidadMaximaAsientos;
+        $quantity = $viaje->cantidad;
+        $cantidadvendida = Order::all();
     }
-    if ($categoria_id == 5) {
+    if ($categoria_id == 5) {// viaje
         if($extra){
             $quantity=0;
         }else{

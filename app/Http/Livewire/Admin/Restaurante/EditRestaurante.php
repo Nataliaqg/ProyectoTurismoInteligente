@@ -20,7 +20,7 @@ class EditRestaurante extends Component
     public $imagen;
 
     protected $rules = [
-        'restaurante.categoria_id'=>'nullable',
+        'restaurante.categoriai_d'=>'nullable',
         'restaurante.ciudad_id' => 'nullable',
         'restaurante.nombre' => 'required',
         'restaurante.descripcion' => 'required',

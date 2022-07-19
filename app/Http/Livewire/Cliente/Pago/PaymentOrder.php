@@ -2,10 +2,12 @@
 
 namespace App\Http\Livewire\Cliente\Pago;
 
+use App\Models\LugarTuristico;
 use App\Models\Order;
 use App\Models\ReservaHabitacion;
 use App\Models\ReservaMesa;
 use App\Models\ReservaTransportePrivado;
+use App\Models\Viaje;
 use Livewire\Component;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
@@ -15,11 +17,22 @@ class PaymentOrder extends Component
     use AuthorizesRequests;
 
     public $order;
+  
 
     protected $listeners=['payOrder'];
 
     public function mount(Order $order){
         $this->order=$order;
+        $datosreservas=json_decode($this->order->content);
+        foreach ($datosreservas as $item){  
+            if($item->options->categoria_id ==4 ){
+            $viaje= Viaje::find($item->id);
+            $viaje->cantidad = $viaje->cantidad - $item->qty;
+            $viaje->save();
+      
+      }
+        
+     }
         
     }
 
@@ -48,6 +61,13 @@ class PaymentOrder extends Component
                 $reservahabitacion->habitacion_id= $item->id;    
                 $reservahabitacion->save();     
             }
+            if($item->options->categoria_id ==1 ){
+                $lugar= LugarTuristico::find($item->id);
+                $lugar->cantidad = $lugar->cantidad - $item->qty;
+                $lugar->save();
+          
+          }
+            
          }
        
 
