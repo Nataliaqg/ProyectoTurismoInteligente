@@ -25,6 +25,8 @@ use App\Http\Livewire\Admin\Lugar\CreateLugarturistico;
 use App\Http\Livewire\Admin\Lugar\EditLugarturistico;
 use App\Http\Livewire\Admin\Lugar\ShowLugarTuristico;
 use App\Http\Livewire\Admin\LwBitacora;
+use App\Http\Livewire\Admin\Ordenes\OrderController;
+use App\Http\Livewire\Admin\Ordenes\ShowOrder;
 use App\Http\Livewire\Admin\Restaurante\CreateMesa;
 use App\Http\Livewire\Admin\Restaurante\CreateRestaurante;
 use App\Http\Livewire\Admin\Restaurante\EditRestaurante;
@@ -116,3 +118,8 @@ Route::get('transporteprivados/{transportePrivado}/edit',EditTransPriv::class)->
 //Informacion de la Empresa
 Route::get('/Empresa',EditEmpresa::class)->name('admin.empresa');
 
+//ruta para ver las ordenes
+//Route::get('orders',[OrderController::class,'index'])->name('admin.orders.index');
+//Route::get('orders/{order}',[OrderController::class,'show'])->name('admin.orders.show');
+Route::get('orders',OrderController::class)->name('admin.orders.index');
+Route::get('orders/{order}',ShowOrder::class)->name('admin.orders.show');

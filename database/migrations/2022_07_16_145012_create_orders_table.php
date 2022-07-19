@@ -30,7 +30,7 @@ class CreateOrdersTable extends Migration
 
             $table->enum('status',[Order::PENDIENTE,Order::RECIBIDO,Order::CONFIRMADO,Order::ANULADO])->default(Order::PENDIENTE);
 
-            $table->float('total');
+            $table->double('total');
 
             $table->json('content'); //almacena todos los items guardados en el carrito de compra
             

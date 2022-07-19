@@ -1,21 +1,17 @@
-<x-app-layout>
+<div>
+    <x-slot name="header">
+        <div class="flex items-center">
+            <h2 class="font-semibold text-xl text-gray-600 leading-tight">
+                Lista de Ordenes- Paquetes
+            </h2>
+        </div>
+    </x-slot>
+
     <div class="container py-12">
         {{--MUESTRA LAS TARJETITAS--}}
-        <section class="grid grid-cols-3 gap-6 mb-4">
+        <section class="grid grid-cols-2 gap-6 mb-4">
 
-                <a href="{{route('orders.index') . "?status=1"}}" >
-                    <div class="bg-cyan-600 rounded-lg px-12 pt-8 pb-4"> {{--primer div--}}
-                        <p class="text-center text-2xl">
-                            {{$pendiente}} 
-                        </p>
-                        <p class="uppercase text-center">Pendiente</p>
-                        <p class="text-center text-2xl mt-2">
-                            <i class="fas fa-clock"></i>
-                        </p>
-                    </div>
-                </a>
-
-                <a href="{{route('orders.index') . "?status=2"}}" >
+                <a href="{{route('admin.orders.index') . "?status=2"}}" >
                     <div class="bg-cyan-600 rounded-lg px-12 pt-8 pb-4"> {{--primer div--}}
                         <p class="text-center text-2xl">
                             {{$recibido}} 
@@ -27,7 +23,7 @@
                     </div>
                 </a>
 
-                <a href="{{route('orders.index') . "?status=3"}}" >
+                <a href="{{route('admin.orders.index') . "?status=3"}}" >
                     <div class="bg-cyan-600 rounded-lg px-12 pt-8 pb-4"> {{--primer div--}}
                         <p class="text-center text-2xl">
                             {{$confirmado}} 
@@ -42,14 +38,14 @@
                
         </section>
 
-      @if ($orders->count())
-        <section class="bg-white shadow-lg rounded-lg px-12 py-8 mt-13 text-gray-700">
-          <h1 class="text-2xl mb-4">Paquetes recientes: </h1>
+       @if ($orders->count()) {{--si existen ordenes--}}
+       <section class="bg-white shadow-lg rounded-lg px-12 py-8 mt-13 text-gray-700">
+        <h1 class="text-2xl mb-4">Paquetes recientes: </h1>
 
-          <ul>
+        <ul>
             @foreach ($orders as $order)
                 <li>
-                    <a href="{{route('orders.show',$order)}}" class="flex items-center py-2 px-4 hover:bg-gray-100">
+                    <a href="{{route('admin.orders.show',$order)}}" class="flex items-center py-2 px-4 hover:bg-gray-100">
                         <span class="w-12 text-center">
                             @switch($order->status)
                                 @case(1)
@@ -114,15 +110,16 @@
                     </a>
                 </li>
             @endforeach
-          </ul>
+        </ul>
        </section>
        @else
-         <div class="bg-white shadow-lg rounded-lg px-12 py-8 mt-13 text-gray-700">
-           <span class="font-bold text-lg">
-             No existen registro de ordenes
-           </span>
-         </div>
-      @endif
+           <div class="bg-white shadow-lg rounded-lg px-12 py-8 mt-13 text-gray-700">
+              <span class="font-bold text-lg">
+                No existen registro de ordenes
+              </span>
+           </div>
+       @endif
+
 
     </div>
-</x-app-layout>
+</div>

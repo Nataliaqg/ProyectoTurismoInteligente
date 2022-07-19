@@ -20,6 +20,10 @@
                         {{ __('Empresa') }}
                     </x-jet-nav-link>
 
+                    <x-jet-nav-link href="{{ route('admin.orders.index') }}" :active="request()->routeIs('admin.orders.index')">
+                        {{ __('Ordenes') }}
+                    </x-jet-nav-link>
+
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-jet-nav-link href="{{ route('admin.contraseñabitacora') }}" :active="request()->routeIs('admin.contraseñabitacora')">
                             {{ __('Bitacora') }}
